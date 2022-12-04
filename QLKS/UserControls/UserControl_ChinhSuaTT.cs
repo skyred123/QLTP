@@ -17,7 +17,11 @@ namespace QLKS.UserControls
         {
             Controls_Controller.Instance.HidePanel(panel_DTTTK);
             Controls_Controller.Instance.HidePanel(panel_DMK);
-            if (ViewData.Instance.GetNhanVien().ChucVu.TenCV == "Quản Lý")
+            if(ViewData.Instance.GetNhanVien() == null)
+            {
+
+            }
+            else if (ViewData.Instance.GetNhanVien().ChucVu.TenCV == "Quản Lý")
             {
 
             }

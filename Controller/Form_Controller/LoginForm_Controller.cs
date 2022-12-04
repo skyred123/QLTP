@@ -33,8 +33,16 @@ namespace Controller.Form_Controller
                 {
                     if (item.Name == username && item.Password == password)
                     {
-                        ViewData.nhanVien = Server.Instance.GetData().GetNhanVien(item.MaNV);
-                        return true;
+                        if (item.Name == "Admin")
+                        {
+                            ViewData.nhanVien = null;
+                            return true;
+                        }
+                        else
+                        {
+                            ViewData.nhanVien = Server.Instance.GetData().GetNhanVien(item.MaNV);
+                            return true;
+                        }
                     }
                 }
             }
