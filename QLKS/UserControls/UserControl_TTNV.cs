@@ -3,9 +3,9 @@ using Library.Entity;
 
 namespace QLKS.UserControls
 {
-    public partial class UserControl_TTNhanVien : UserControl
+    public partial class UserControl_TTNV : UserControl
     {
-        public UserControl_TTNhanVien()
+        public UserControl_TTNV()
         {
             InitializeComponent();
         }

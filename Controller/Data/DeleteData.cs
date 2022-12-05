@@ -29,5 +29,9 @@ namespace Controller.Data
         {
             throw new NotImplementedException();
         }
+        public void DeleteKH(KhachHang kh)
+        {
+            Server.Instance.DeleteData().DeleteKhachHang(kh);
+        }
     }
 }

@@ -26,7 +26,7 @@ namespace Library.Entity
         public string SDT { get; set; }
 
         [Column(TypeName = "image")]
-        public byte[] Image { get; set; }
+        public byte[]? Image { get; set; }
 
         [StringLength(50)]
         public string Email { get; set; }

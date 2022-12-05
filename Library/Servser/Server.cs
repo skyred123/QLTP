@@ -10,7 +10,7 @@ namespace Library.Servser
 {
     public class Server
     {
-        private static Server instance;
+        private static Server? instance;
         public static Server Instance
         {
             get
@@ -23,52 +23,13 @@ namespace Library.Servser
             }
         }
 
-        private ApplicationDbContext dbContext;
-        public Server() { 
-            dbContext= new ApplicationDbContext();
+        
+        public Server()
+        {
         }
         public AddData AddData() => new AddData();
         public DeleteData DeleteData() => new DeleteData();
         public GetData GetData() => new GetData();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public void UpdateNV(NhanVien nv)
-        {
-            var nhanvien = dbContext.NhanViens.Where(p => p.MaNV == nv.MaNV).FirstOrDefault();
-            nhanvien.TenNV = nv.TenNV;
-            nhanvien.SDT = nv.SDT;
-            nhanvien.Email = nv.Email;
-            nhanvien.MaCV = nv.MaCV;
-            nhanvien.Image = nv.Image;
-            dbContext.NhanViens.Update(nhanvien);
-            dbContext.SaveChanges();
-        }
-        public void UpdateUser(User user)
-        {
-            var item = dbContext.Users.FirstOrDefault(p => p.MaUser == user.MaUser);
-            item.Name = user.Name;
-            item.Password = user.Password;
-            dbContext.Users.Update(item);
-            dbContext.SaveChanges();
-        }
+        public UpdateData UpdateData() => new UpdateData();
     }
 }

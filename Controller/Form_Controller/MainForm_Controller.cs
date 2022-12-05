@@ -26,23 +26,5 @@ namespace Controller.Form_Controller
         public MainForm_Controller() 
         {
         }
-        public string? GetData()
-        {
-            NhanVien? nhanVien = ViewData.nhanVien;
-            if (nhanVien == null)
-            {
-                return "Admin";
-            }
-            if (nhanVien.ChucVu.TenCV == "Quản Lý")
-            {
-                return "Quản Lý";
-            }
-            else if (nhanVien.ChucVu.TenCV == "Nhân Viên")
-            {
-                return "Nhân Viên";
-            }
-            
-            return null;
-        }
     }
 }

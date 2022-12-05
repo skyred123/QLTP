@@ -11,24 +11,22 @@ using System.Threading.Tasks;
 
 namespace Controller.UserControls_Controller
 {
-    public class UC_ChinhSuaTT_Controller
+    public class UC_TKNV_Controller
     {
-        private static UC_ChinhSuaTT_Controller instance;
-        public static UC_ChinhSuaTT_Controller Instance
+        private static UC_TKNV_Controller instance;
+        public static UC_TKNV_Controller Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new UC_ChinhSuaTT_Controller();
+                    instance = new UC_TKNV_Controller();
                 }
                 return instance;
             }
         }
-        Server server;
-        public UC_ChinhSuaTT_Controller() 
+        public UC_TKNV_Controller() 
         {
-            server= new Server();
         }
         public string UpdateUser(User user,string mkm1,string mkm2)
         {
@@ -43,7 +41,7 @@ namespace Controller.UserControls_Controller
                         {
                             item.Name = user.Name;
                             item.Password = mkm2;
-                            server.UpdateUser(item);
+                            Server.Instance.UpdateData().UpdateUser(user);
                             return "Lưu Thành Công";
                         }
                     }
@@ -69,7 +67,7 @@ namespace Controller.UserControls_Controller
             {
                 return "Sai Số CCCD";
             }
-            if (System.Text.RegularExpressions.Regex.IsMatch(nhanVien.SDT, "[0-9]") == false && nhanVien.SDT.Count() != 10)
+            else if (System.Text.RegularExpressions.Regex.IsMatch(nhanVien.SDT, "[0-9]") == false && nhanVien.SDT.Count() != 10)
             {
                 return "Sai Số Điện Thoại";
             }
@@ -79,13 +77,13 @@ namespace Controller.UserControls_Controller
             }
             if (ViewData.add == true)
             {
-                if (Server.Instance.GetData().GetNhanViens().FirstOrDefault(e => e.MaNV == nhanVien.MaNV) != null)
+                if (Server.Instance.GetData().GetNhanVien(nhanVien.MaNV) != null)
                 {
                     return "CCCD Đã Tồn Tại";
                 }
                 User user = new User();
                 user.MaNV = nhanVien.MaNV;
-                user.Name = nhanVien.TenNV;
+                user.Name = nhanVien.MaNV;
                 user.Password = "1";
                 Server.Instance.AddData().AddNhanVien(nhanVien);
                 Server.Instance.AddData().AddUser(user);
@@ -93,9 +91,9 @@ namespace Controller.UserControls_Controller
             }
             else if(ViewData.update== true && nv != null)
             {
-                if (Server.Instance.GetData().GetNhanViens().FirstOrDefault(e => e.MaNV == nhanVien.MaNV) != null && nhanVien.MaNV == nv.MaNV)
+                if (Server.Instance.GetData().GetNhanVien(nhanVien.MaNV)!= null && nhanVien.MaNV == nv.MaNV)
                 {
-                    server.UpdateNV(nhanVien);
+                    Server.Instance.UpdateData().UpdateNV(nhanVien);
                     
                 }
                 else
@@ -105,7 +103,7 @@ namespace Controller.UserControls_Controller
                     Server.Instance.DeleteData().DeleteUser(nv.Users.FirstOrDefault());
                     Server.Instance.AddData().AddNhanVien(nhanVien);
                     user.MaNV = nhanVien.MaNV;
-                    Server.Instance.AddData().AddUser(user);;
+                    Server.Instance.AddData().AddUser(user);
                 }
                 if(nv == ViewData.nhanVien)
                 {

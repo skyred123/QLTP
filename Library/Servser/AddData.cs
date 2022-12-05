@@ -24,5 +24,10 @@ namespace Library.Servser
             dbContext.Users.Add(user);
             dbContext.SaveChanges();
         }
+        public void AddKhachHang(KhachHang nv)
+        {
+            dbContext.KhachHangs.Add(nv);
+            dbContext.SaveChanges();
+        }
     }
 }

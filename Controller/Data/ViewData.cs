@@ -37,14 +37,24 @@ namespace Controller.Data
         }
         public bool GetAdd => add;
         internal static bool update { get; set; }
-        public void SetUpdate(NhanVien nv)
+        public void SetUpdate(object ojb)
         {
             add = false;
             update = true;
-            nhanVienEdit = nv;
+            if(ojb.GetType() == typeof(NhanVien)) 
+            {
+                nhanVienEdit = (NhanVien)ojb;
+            }
+            else if(ojb.GetType()==typeof(KhachHang))
+            {
+                khachHangEdit = (KhachHang)ojb;
+            }
+            
         }
         public bool GetUpdate() => update;
         internal static NhanVien? nhanVienEdit { get; set; }
         public NhanVien? GetNhanVienEdit() => nhanVienEdit;
+        internal static KhachHang? khachHangEdit { get; set;}
+        public KhachHang? GetKhachHangEdit() => khachHangEdit;
     }
 }

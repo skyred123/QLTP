@@ -1,6 +1,6 @@
 ﻿namespace QLKS.UserControls
 {
-    partial class UserControl_QLNV
+    partial class UserControl_DSNV
     {
         /// <summary> 
         /// Required designer variable.
@@ -38,9 +38,9 @@
             this.Column4 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_TaoNV = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -143,15 +143,6 @@
             this.panel1.Size = new System.Drawing.Size(721, 170);
             this.panel1.TabIndex = 1;
             // 
-            // panel2
-            // 
-            this.panel2.AutoSize = true;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 170);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(721, 0);
-            this.panel2.TabIndex = 2;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -176,6 +167,15 @@
             this.btn_TaoNV.Text = "Tạo Nhân Viên";
             this.btn_TaoNV.UseVisualStyleBackColor = true;
             this.btn_TaoNV.Click += new System.EventHandler(this.btn_TaoNV_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.AutoSize = true;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 170);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(721, 0);
+            this.panel2.TabIndex = 2;
             // 
             // UserControl_QLNV
             // 

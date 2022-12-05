@@ -56,5 +56,9 @@ namespace Controller.Data
         {
             throw new NotImplementedException();
         }
+        public KhachHang GetKhachHang(string id)
+        {
+            return Server.Instance.GetData().GetKhachHang(id);
+        }
     }
 }

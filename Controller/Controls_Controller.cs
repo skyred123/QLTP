@@ -13,7 +13,7 @@ namespace Controller
 {
     public class Controls_Controller
     {
-        private static Controls_Controller instance;
+        private static Controls_Controller? instance;
         public static Controls_Controller Instance
         {
             get
@@ -94,7 +94,7 @@ namespace Controller
                 comboBox.ValueMember = "MaCV";
             }
         }
-        public DataGridView AddDataGridView(DataGridView dataGridView)
+        public DataGridView AddDGV_NhanVien(DataGridView dataGridView)
         {
             dataGridView.Rows.Clear();
             foreach (NhanVien nv in Server.Instance.GetData().GetNhanViens())
@@ -102,6 +102,19 @@ namespace Controller
                 dataGridView.Rows.Add(nv.MaNV, nv.TenNV, Image.FromStream(new MemoryStream(nv.Image)), nv.SDT, nv.Email, nv.ChucVu.TenCV);
             }
             return dataGridView;
+        }
+        public DataGridView AddDGV_KhachHang(DataGridView dataGridView)
+        {
+            dataGridView.Rows.Clear();
+            foreach (KhachHang kh in Server.Instance.GetData().GetKhachHangs())
+            {
+                dataGridView.Rows.Add(kh.MaKH, kh.TenKH, kh.SDT, kh.Email);
+            }
+            return dataGridView;
+        }
+        public void ButtonText(Button button,string str)
+        {
+            button.Text = str;
         }
     }
 }

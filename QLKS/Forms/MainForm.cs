@@ -26,43 +26,81 @@ namespace QLKS.Forms
         public void HideMenu()
         {
             Controls_Controller.Instance.HidePanel(panel_NhanVien);
+            Controls_Controller.Instance.HidePanel(panel_KhachHang);
         }
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e) => Application.Exit();
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            string? tenCV = MainForm_Controller.Instance.GetData();
+            HideMenu();
+            string? tenCV;
+            if (ViewData.Instance.GetNhanVien() == null) tenCV = "Admin";
+            else tenCV = ViewData.Instance.GetNhanVien().ChucVu.TenCV;
             if (tenCV == "Admin")
             {
-                Controls_Controller.Instance.HideButton(btn_TTNhanVien);
-                Controls_Controller.Instance.HideButton(btn_ChinhSuaTK);
+                Controls_Controller.Instance.HideButton(btn_NhanVien1);
+                Controls_Controller.Instance.HideButton(btn_NhanVien2);
+                Controls_Controller.Instance.ButtonText(btn_NhanVien3, "Danh Sach Nhân Viên");
             }
-            else if (tenCV == "Nhân Viên")
+            else
             {
-                Controls_Controller.Instance.HideButton(btn_QLNV);
+                if (tenCV == "Nhân Viên")
+                {
+                    Controls_Controller.Instance.ButtonText(btn_NhanVien1, "Thông Tin Nhân Viên");
+                    Controls_Controller.Instance.ButtonText(btn_NhanVien2, "Cài Đặt Tài Khoản");
+                    Controls_Controller.Instance.HideButton(btn_NhanVien3);
+                }
+                else  if(tenCV == "Quản Lý")
+                {
+                    Controls_Controller.Instance.ButtonText(btn_NhanVien1, "Thông Tin Nhân Viên");
+                    Controls_Controller.Instance.ButtonText(btn_NhanVien2, "Cài Đặt Tài Khoản");
+                    Controls_Controller.Instance.ButtonText(btn_NhanVien3, "Danh Sach Nhân Viên");
+                }
             }
-            else if(tenCV == "Quản Lý")
-            {
-            }
+            Controls_Controller.Instance.ButtonText(btn_NhanVien, tenCV);
         }
         private void btn_NhanVien_Click(object sender, EventArgs e)
         {
             Controls_Controller.Instance.ShowPanel(panel_NhanVien);
         }
-
-        private void btn_ChinhSuaTK_Click(object sender, EventArgs e)
+        private void btn_NhanVien1_Click(object sender, EventArgs e)
         {
+            Controls_Controller.Instance.GetUserControl(panel_View, null, new UserControl_TTNV());
+        }
+
+        private void btn_NhanVien2_Click(object sender, EventArgs e)
+        {
+
             ViewData.Instance.SetUpdate(ViewData.Instance.GetNhanVien());
-            Controls_Controller.Instance.GetUserControl(panel_View,null, new UserControl_ChinhSuaTT());
+            Controls_Controller.Instance.GetUserControl(panel_View, null, new UserControl_TKNV());
         }
 
-        private void btn_TTNhanVien_Click(object sender, EventArgs e)
+        private void btn_NhanVien3_Click(object sender, EventArgs e)
         {
-            Controls_Controller.Instance.GetUserControl(panel_View,null, new UserControl_TTNhanVien());
+            Controls_Controller.Instance.GetUserControl(panel_View, null, new UserControl_DSNV());
         }
-        private void btn_QLNV_Click(object sender, EventArgs e)
+        #region 
+        /*
+            btn_NhanVien1: Thông Tin Nhân Viên
+            btn_NhanVien2: Cài Đặt Tài Khoản
+            btn_NhânVien3: Danh Sach Nhân Viên
+        */
+        #endregion
+
+        private void btn_KhachHang_Click(object sender, EventArgs e)
         {
-            Controls_Controller.Instance.GetUserControl(panel_View,null, new UserControl_QLNV());
+            Controls_Controller.Instance.ShowPanel(panel_KhachHang);
+        }
+
+        private void btn_KhachHang1_Click(object sender, EventArgs e)
+        {
+            ViewData.Instance.SetAdd();
+            Controls_Controller.Instance.GetUserControl(panel_View, null, new UserControl_TKKH());
+        }
+
+        private void btn_KhachHang2_Click(object sender, EventArgs e)
+        {
+            Controls_Controller.Instance.GetUserControl(panel_View, null, new UserControl_DSKH());
         }
     }
 }

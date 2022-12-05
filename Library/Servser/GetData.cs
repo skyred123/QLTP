@@ -40,5 +40,13 @@ namespace Library.Servser
         {
             return GetUsers().FirstOrDefault(e=>e.MaUser == id);
         }
+        public List<KhachHang> GetKhachHangs() 
+        {
+            return dbContext.KhachHangs.Include(e => e.HopDongs).ToList();
+        }
+        public KhachHang? GetKhachHang(string id)
+        {
+            return GetKhachHangs().FirstOrDefault(e => e.MaKH == id);
+        }
     }
 }

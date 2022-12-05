@@ -6,9 +6,9 @@ using Library.Servser;
 
 namespace QLKS.UserControls
 {
-    public partial class UserControl_ChinhSuaTT : UserControl
+    public partial class UserControl_TKNV : UserControl
     {
-        public UserControl_ChinhSuaTT()
+        public UserControl_TKNV()
         {
             InitializeComponent();
             hideSubMenu();
@@ -97,11 +97,11 @@ namespace QLKS.UserControls
             }
             if (ViewData.Instance.GetAdd)
             {
-                MessageBox.Show(UC_ChinhSuaTT_Controller.Instance.UpdateNhanVien(item,null));
+                MessageBox.Show(UC_TKNV_Controller.Instance.UpdateNhanVien(item,null));
             }
             else if (ViewData.Instance.GetUpdate())
             {
-                MessageBox.Show(UC_ChinhSuaTT_Controller.Instance.UpdateNhanVien(item,ViewData.Instance.GetNhanVienEdit()));
+                MessageBox.Show(UC_TKNV_Controller.Instance.UpdateNhanVien(item,ViewData.Instance.GetNhanVienEdit()));
                 Controls_Controller.Instance.HidePanel(panel_DTTTK);
             }
             
@@ -116,7 +116,7 @@ namespace QLKS.UserControls
             User user = new User();
             user.Name = txt_TenMK.Text;
             user.Password = txt_MKC.Text;
-            MessageBox.Show(UC_ChinhSuaTT_Controller.Instance.UpdateUser(user, txt_MKM1.Text, txt_MKM2.Text));
+            MessageBox.Show(UC_TKNV_Controller.Instance.UpdateUser(user, txt_MKM1.Text, txt_MKM2.Text));
             Controls_Controller.Instance.HidePanel(panel_DMK);
         }
 

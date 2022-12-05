@@ -1,6 +1,6 @@
 ﻿namespace QLKS.UserControls
 {
-    partial class UserControl_TTNhanVien
+    partial class UserControl_TTNV
     {
         /// <summary> 
         /// Required designer variable.
@@ -70,7 +70,7 @@
             this.tlp_ThongTin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlp_ThongTin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlp_ThongTin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlp_ThongTin.Size = new System.Drawing.Size(542, 520);
+            this.tlp_ThongTin.Size = new System.Drawing.Size(615, 520);
             this.tlp_ThongTin.TabIndex = 1;
             // 
             // image_Avatar
@@ -78,7 +78,7 @@
             this.image_Avatar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.image_Avatar.Location = new System.Drawing.Point(3, 3);
             this.image_Avatar.Name = "image_Avatar";
-            this.image_Avatar.Size = new System.Drawing.Size(191, 174);
+            this.image_Avatar.Size = new System.Drawing.Size(211, 174);
             this.image_Avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.image_Avatar.TabIndex = 0;
             this.image_Avatar.TabStop = false;
@@ -126,37 +126,37 @@
             // txt_Email
             // 
             this.txt_Email.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_Email.Location = new System.Drawing.Point(274, 455);
+            this.txt_Email.Location = new System.Drawing.Point(310, 455);
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.ReadOnly = true;
-            this.txt_Email.Size = new System.Drawing.Size(265, 27);
+            this.txt_Email.Size = new System.Drawing.Size(302, 27);
             this.txt_Email.TabIndex = 12;
             // 
             // txt_CV
             // 
             this.txt_CV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_CV.Location = new System.Drawing.Point(274, 387);
+            this.txt_CV.Location = new System.Drawing.Point(310, 387);
             this.txt_CV.Name = "txt_CV";
             this.txt_CV.ReadOnly = true;
-            this.txt_CV.Size = new System.Drawing.Size(265, 27);
+            this.txt_CV.Size = new System.Drawing.Size(302, 27);
             this.txt_CV.TabIndex = 11;
             // 
             // txt_SDT
             // 
             this.txt_SDT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_SDT.Location = new System.Drawing.Point(274, 319);
+            this.txt_SDT.Location = new System.Drawing.Point(310, 319);
             this.txt_SDT.Name = "txt_SDT";
             this.txt_SDT.ReadOnly = true;
-            this.txt_SDT.Size = new System.Drawing.Size(265, 27);
+            this.txt_SDT.Size = new System.Drawing.Size(302, 27);
             this.txt_SDT.TabIndex = 10;
             // 
             // txt_Ten
             // 
             this.txt_Ten.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_Ten.Location = new System.Drawing.Point(274, 251);
+            this.txt_Ten.Location = new System.Drawing.Point(310, 251);
             this.txt_Ten.Name = "txt_Ten";
             this.txt_Ten.ReadOnly = true;
-            this.txt_Ten.Size = new System.Drawing.Size(265, 27);
+            this.txt_Ten.Size = new System.Drawing.Size(302, 27);
             this.txt_Ten.TabIndex = 9;
             // 
             // label2
@@ -172,19 +172,20 @@
             // txt_MaNV
             // 
             this.txt_MaNV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_MaNV.Location = new System.Drawing.Point(274, 183);
+            this.txt_MaNV.Location = new System.Drawing.Point(310, 183);
             this.txt_MaNV.Name = "txt_MaNV";
             this.txt_MaNV.ReadOnly = true;
-            this.txt_MaNV.Size = new System.Drawing.Size(265, 27);
+            this.txt_MaNV.Size = new System.Drawing.Size(302, 27);
             this.txt_MaNV.TabIndex = 14;
             // 
-            // UserControl_TTNhanVien
+            // UserControl_TTNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.tlp_ThongTin);
-            this.Name = "UserControl_TTNhanVien";
-            this.Size = new System.Drawing.Size(542, 520);
+            this.Name = "UserControl_TTNV";
+            this.Size = new System.Drawing.Size(615, 520);
             this.Load += new System.EventHandler(this.UserControl_TTNhanVien_Load);
             this.tlp_ThongTin.ResumeLayout(false);
             this.tlp_ThongTin.PerformLayout();

@@ -5,15 +5,15 @@ using QLKS.Forms;
 
 namespace QLKS.UserControls
 {
-    public partial class UserControl_QLNV : UserControl
+    public partial class UserControl_DSNV : UserControl
     {
-        public UserControl_QLNV()
+        public UserControl_DSNV()
         {
             InitializeComponent();
         }
         private void UserControl_QLNV_Load(object sender, EventArgs e)
         {
-            Controls_Controller.Instance.AddDataGridView(dgv_NhanVien);
+            Controls_Controller.Instance.AddDGV_NhanVien(dgv_NhanVien);
             dgv_NhanVien.Refresh();
         }
 
@@ -23,7 +23,7 @@ namespace QLKS.UserControls
             {
                 NhanVien nhanVien = GetData.Instance.GetNhanVien(dgv_NhanVien.Rows[e.RowIndex].Cells[0].Value.ToString());
                 ViewData.Instance.SetUpdate(nhanVien);
-                Controls_Controller.Instance.GetEditForm(new UserControl_ChinhSuaTT(), new EditForm());
+                Controls_Controller.Instance.GetEditForm(new UserControl_TKNV(), new EditForm());
             }
             else if(dgv_NhanVien.Columns[e.ColumnIndex].ToolTipText == "Delete")
             {
@@ -40,7 +40,7 @@ namespace QLKS.UserControls
         private void btn_TaoNV_Click(object sender, EventArgs e)
         {
             ViewData.Instance.SetAdd();
-            Controls_Controller.Instance.GetEditForm(new UserControl_ChinhSuaTT(), new EditForm());
+            Controls_Controller.Instance.GetEditForm(new UserControl_TKNV(), new EditForm());
             dgv_NhanVien.Refresh();
         }
     }
