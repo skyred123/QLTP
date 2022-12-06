@@ -35,7 +35,7 @@ namespace Controller.Data
             update = false;
             add = true;
         }
-        public bool GetAdd => add;
+        public bool GetAdd() => add;
         internal static bool update { get; set; }
         public void SetUpdate(object ojb)
         {

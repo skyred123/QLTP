@@ -37,7 +37,14 @@ namespace QLKS.UserControls
             khachHang.TenKH= txt_TenKH.Text;
             khachHang.SDT = txt_SDT.Text;
             khachHang.Email = txt_Email.Text;
-            MessageBox.Show(UC_TKKH_Controller.Instance.UpdateKhachHang(khachHang,null));
+            if (ViewData.Instance.GetUpdate() == true)
+            {
+                MessageBox.Show(UC_TKKH_Controller.Instance.UpdateKhachHang(khachHang, ViewData.Instance.GetKhachHangEdit()));
+            }
+            else if(ViewData.Instance.GetAdd() == true)
+            {
+                MessageBox.Show(UC_TKKH_Controller.Instance.UpdateKhachHang(khachHang, null));
+            }
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)

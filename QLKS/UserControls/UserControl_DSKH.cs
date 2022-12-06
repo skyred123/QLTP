@@ -25,7 +25,6 @@ namespace QLKS.UserControls
         {
             Controls_Controller.Instance.AddDGV_KhachHang(dgv_KhachHang);
         }
-
         private void dgv_KhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgv_KhachHang.Columns[e.ColumnIndex].ToolTipText == "Edit")

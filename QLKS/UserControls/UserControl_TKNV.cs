@@ -45,11 +45,18 @@ namespace QLKS.UserControls
         private void UserControl_ChinhSuaTT_Load(object sender, EventArgs e)
         {
             Controls_Controller.Instance.AddComboBox(cbx_ChucVu, "ChucVu");
+            if (ViewData.Instance.GetAdd())
+            {
+                Controls_Controller.Instance.HidePanel(panel_DMK);
+                Controls_Controller.Instance.HidePanel(panel_MK);
+                Controls_Controller.Instance.ButtonText(btn_TTTK, "Tạo");
+            }
+                
         }
         private void btn_TTTK_Click(object sender, EventArgs e)
         {
             Controls_Controller.Instance.ShowPanel(panel_DTTTK);
-            if (ViewData.Instance.GetAdd)
+            if (ViewData.Instance.GetAdd() == true)
             {
                 Clear();
             }
@@ -75,7 +82,22 @@ namespace QLKS.UserControls
         private void btn_MK_Click(object sender, EventArgs e)
         {
             Controls_Controller.Instance.ShowPanel(panel_DMK);
-            txt_TenMK.Text = ViewData.Instance.GetNhanVien().Users.FirstOrDefault().Name;
+            if (ViewData.Instance.GetAdd())
+            {
+
+            }
+            if (ViewData.Instance.GetUpdate())
+            {
+                if (ViewData.Instance.GetNhanVien() != null)
+                {
+                    txt_TenMK.Text = "Admin";
+                }
+                else
+                {
+                    txt_TenMK.Text = ViewData.Instance.GetNhanVienEdit().Users.FirstOrDefault().Name;
+                }
+            }
+            
         }
 
         private void btn_LuuTTTK_Click(object sender, EventArgs e)
@@ -95,7 +117,7 @@ namespace QLKS.UserControls
             {
                 item.Image = (byte[])converter.ConvertTo(image_Avatar.Image, typeof(byte[]));
             }
-            if (ViewData.Instance.GetAdd)
+            if (ViewData.Instance.GetAdd() == true)
             {
                 MessageBox.Show(UC_TKNV_Controller.Instance.UpdateNhanVien(item,null));
             }

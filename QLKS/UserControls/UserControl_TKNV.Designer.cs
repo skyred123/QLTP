@@ -94,7 +94,7 @@
             this.btn_TTTK.Name = "btn_TTTK";
             this.btn_TTTK.Size = new System.Drawing.Size(159, 60);
             this.btn_TTTK.TabIndex = 1;
-            this.btn_TTTK.Text = "Chỉnh Sửa";
+            this.btn_TTTK.Text = "Sửa";
             this.btn_TTTK.UseVisualStyleBackColor = true;
             this.btn_TTTK.Click += new System.EventHandler(this.btn_TTTK_Click);
             // 
@@ -104,9 +104,9 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(14, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(260, 31);
+            this.label1.Size = new System.Drawing.Size(219, 31);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Đổi Thông Tin Tài Khoản";
+            this.label1.Text = "Thông Tin Tài Khoản";
             // 
             // panel_DTTTK
             // 
@@ -332,7 +332,7 @@
             this.btn_MK.Name = "btn_MK";
             this.btn_MK.Size = new System.Drawing.Size(159, 60);
             this.btn_MK.TabIndex = 1;
-            this.btn_MK.Text = "Chỉnh Sửa";
+            this.btn_MK.Text = "Sửa";
             this.btn_MK.UseVisualStyleBackColor = true;
             this.btn_MK.Click += new System.EventHandler(this.btn_MK_Click);
             // 
@@ -470,6 +470,7 @@
             this.txt_TenMK.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_TenMK.Location = new System.Drawing.Point(291, 3);
             this.txt_TenMK.Name = "txt_TenMK";
+            this.txt_TenMK.ReadOnly = true;
             this.txt_TenMK.Size = new System.Drawing.Size(282, 27);
             this.txt_TenMK.TabIndex = 11;
             // 
@@ -484,7 +485,7 @@
             this.label12.Size = new System.Drawing.Size(282, 25);
             this.label12.TabIndex = 12;
             // 
-            // UserControl_ChinhSuaTT
+            // UserControl_TKNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -494,7 +495,7 @@
             this.Controls.Add(this.panel_MK);
             this.Controls.Add(this.panel_DTTTK);
             this.Controls.Add(this.panel_TTTK);
-            this.Name = "UserControl_ChinhSuaTT";
+            this.Name = "UserControl_TKNV";
             this.Size = new System.Drawing.Size(576, 763);
             this.Load += new System.EventHandler(this.UserControl_ChinhSuaTT_Load);
             this.panel_TTTK.ResumeLayout(false);
