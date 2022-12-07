@@ -29,7 +29,7 @@ namespace Controller.Data
 
         public ChucVu? GetChucVu(Guid id)
         {
-            throw new NotImplementedException();
+            return Server.Instance.GetData().GetChucVu(id);
         }
 
         public List<ChucVu> GetChucVus()

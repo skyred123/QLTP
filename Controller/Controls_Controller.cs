@@ -85,7 +85,7 @@ namespace Controller
                 }
             }
         }
-        public void AddComboBox(ComboBox comboBox,Object ojb)
+        public void AddComboBox(ComboBox comboBox,object ojb)
         {
             if (ojb.GetType() == typeof(ChucVu))
             {
@@ -94,33 +94,78 @@ namespace Controller
                 comboBox.ValueMember = "MaCV";
             }
         }
-        public DataGridView AddDGV_NhanViens(DataGridView dataGridView)
+        public DataGridView AddDGV(DataGridView dataGridView, object ojb)
         {
-            dataGridView.Rows.Clear();
-            foreach (NhanVien nv in Server.Instance.GetData().GetNhanViens())
+            if(ojb.GetType() == typeof(ChucVu)) 
             {
-                dataGridView = AddDGV_NhanVien(dataGridView, nv);
+                ChucVu cv = (ChucVu)ojb;
+                dataGridView.Rows.Add(cv.MaCV,cv.TenCV);
             }
-            return dataGridView;
-        }
-        public DataGridView AddDGV_NhanVien(DataGridView dataGridView,NhanVien nv)
-        {
-            nv = Server.Instance.GetData().GetNhanVien(nv.MaNV);
-            dataGridView.Rows.Add(nv.MaNV, nv.TenNV, Image.FromStream(new MemoryStream(nv.Image)), nv.SDT, nv.Email, nv.ChucVu.TenCV);
-            return dataGridView;
-        }
-        public DataGridView AddDGV_KhachHangs(DataGridView dataGridView)
-        {
-            dataGridView.Rows.Clear();
-            foreach (KhachHang kh in Server.Instance.GetData().GetKhachHangs())
+            else if(ojb.GetType() == typeof(NhanVien))
             {
+                NhanVien? nv = Server.Instance.GetData().GetNhanVien(((NhanVien)ojb).MaNV);
+                dataGridView.Rows.Add(nv.MaNV, nv.TenNV, Image.FromStream(new MemoryStream(nv.Image)), nv.SDT, nv.Email, nv.ChucVu.TenCV);
+            }
+            else if(ojb.GetType() == typeof(KhachHang))
+            {
+                KhachHang kh = (KhachHang)ojb;
                 dataGridView.Rows.Add(kh.MaKH, kh.TenKH, kh.SDT, kh.Email);
             }
             return dataGridView;
         }
-        public DataGridView AddDGV_KhachHang(DataGridView dataGridView, KhachHang kh)
+        public DataGridView AddDGVs(DataGridView dataGridView,object ojb)
         {
-            dataGridView.Rows.Add(kh.MaKH, kh.TenKH, kh.SDT, kh.Email);
+            dataGridView.Rows.Clear();
+            if (ojb.GetType() == typeof(ChucVu))
+            {
+                foreach (ChucVu cv in Server.Instance.GetData().GetChucVus())
+                {
+                    dataGridView = AddDGV(dataGridView, cv);
+                }
+            }
+            else if (ojb.GetType() == typeof(NhanVien))
+            {
+                foreach (NhanVien nv in Server.Instance.GetData().GetNhanViens())
+                {
+                    dataGridView = AddDGV(dataGridView, nv);
+                }
+            }
+            else if (ojb.GetType() == typeof(KhachHang))
+            {
+                foreach (KhachHang kh in Server.Instance.GetData().GetKhachHangs())
+                {
+                    dataGridView = AddDGV(dataGridView,kh);
+                }
+            }
+            return dataGridView;
+        }
+        public DataGridView Search(DataGridView dataGridView, String str,object ojb)
+        {
+            dataGridView.Rows.Clear();
+            if(ojb.GetType() == typeof(ChucVu))
+            {
+
+            }
+            else if(ojb.GetType() == typeof(NhanVien))
+            {
+                foreach (NhanVien item in Server.Instance.GetData().GetNhanViens())
+                {
+                    if (item.MaNV.Contains(str) || item.TenNV.ToLower().Contains(str) || item.SDT.Contains(str) || item.ChucVu.TenCV.ToLower().Contains(str) || item.Email.ToLower().Contains(str))
+                    {
+                        AddDGVs(dataGridView, item);
+                    }
+                }
+            }
+            else if (ojb.GetType() == typeof(KhachHang))
+            {
+                foreach (KhachHang item in Server.Instance.GetData().GetKhachHangs())
+                {
+                    if (item.MaKH.Contains(str) || item.TenKH.ToLower().Contains(str) || item.SDT.Contains(str) || item.Email.ToLower().Contains(str))
+                    {
+                        AddDGV(dataGridView, item);
+                    }
+                }
+            }
             return dataGridView;
         }
         public void ButtonText(Button button,string str)

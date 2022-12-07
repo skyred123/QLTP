@@ -42,5 +42,11 @@ namespace Library.Servser
             item.Email = khachHang.Email;
             dbContext.SaveChanges();
         }
+        public void UpdateChucVu(ChucVu chucVu)
+        {
+            var item = dbContext.ChucVus.FirstOrDefault(p => p.MaCV == chucVu.MaCV);
+            item.TenCV = chucVu.TenCV;
+            dbContext.SaveChanges();
+        }
     }
 }

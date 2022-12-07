@@ -29,5 +29,10 @@ namespace Library.Servser
             dbContext.KhachHangs.Add(nv);
             dbContext.SaveChanges();
         }
+        public void AddChucVu(ChucVu cv)
+        {
+            dbContext.ChucVus.Add(cv);
+            dbContext.SaveChanges();
+        }
     }
 }

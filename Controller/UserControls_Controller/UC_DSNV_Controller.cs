@@ -29,7 +29,7 @@ namespace Controller.UserControls_Controller
             {
                 if (item.MaNV.Contains(str)  || item.TenNV.ToLower().Contains(str) || item.SDT.Contains(str) ||item.ChucVu.TenCV.ToLower().Contains(str) || item.Email.ToLower().Contains(str))
                 {
-                    Controls_Controller.Instance.AddDGV_NhanVien(dataGridView, item);
+                    Controls_Controller.Instance.AddDGVs(dataGridView, item);
                 }
             }
             return dataGridView;

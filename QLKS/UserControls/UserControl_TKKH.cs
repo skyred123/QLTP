@@ -42,20 +42,14 @@ namespace QLKS.UserControls
             {
                 if(UC_TKKH_Controller.Instance.UpdateKhachHang(khachHang, ViewData.Instance.GetKhachHangEdit()))
                 {
-                    DataGridViewRow gridViewRow = UserControl_DSKH.instance.dataGridView.SelectedCells[0].OwningRow;
-                    if (gridViewRow == null) { }
-                    else
-                    {
-                        UserControl_DSKH.instance.dataGridView.Rows.Remove(gridViewRow);
-                        UserControl_DSKH.instance.dataGridView = Controls_Controller.Instance.AddDGV_KhachHang(UserControl_DSKH.instance.dataGridView, khachHang);
-                    }
+                    Controls_Controller.Instance.AddDGV(UserControl_DSKH.instance.dataGridView, new KhachHang());
                 }
             }
             else if(ViewData.Instance.GetAdd() == true)
             {
                 if(UC_TKKH_Controller.Instance.UpdateKhachHang(khachHang, null))
                 {
-                    UserControl_DSKH.instance.dataGridView = Controls_Controller.Instance.AddDGV_KhachHang(UserControl_DSKH.instance.dataGridView, khachHang);
+                    Controls_Controller.Instance.AddDGV(UserControl_DSKH.instance.dataGridView, new KhachHang());
                 }
             }
         }

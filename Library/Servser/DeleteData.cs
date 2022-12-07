@@ -30,5 +30,10 @@ namespace Library.Servser
             dbContext.KhachHangs.Remove(khachHang);
             dbContext.SaveChanges();
         }
+        public void DeleteChucVu(ChucVu chucVu)
+        {
+            dbContext.ChucVus.Remove(chucVu);
+            dbContext.SaveChanges();
+        }
     }
 }

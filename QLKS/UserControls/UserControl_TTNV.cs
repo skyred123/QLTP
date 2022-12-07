@@ -1,5 +1,7 @@
-﻿using Controller.Data;
+﻿using Controller;
+using Controller.Data;
 using Library.Entity;
+using QLKS.Forms;
 
 namespace QLKS.UserControls
 {
@@ -18,6 +20,11 @@ namespace QLKS.UserControls
             txt_SDT.Text = ViewData.Instance.GetNhanVien().SDT;
             txt_Email.Text = ViewData.Instance.GetNhanVien().Email;
             txt_CV.Text = ViewData.Instance.GetNhanVien().ChucVu.TenCV;
+        }
+
+        private void link_ChucVu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Controls_Controller.Instance.GetEditForm(new UserControl_ChucVu(), new EditForm());
         }
     }
 }

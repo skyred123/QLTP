@@ -28,7 +28,7 @@ namespace QLKS.UserControls
 
         private void UserControl_DSKH_Load(object sender, EventArgs e)
         {
-            Controls_Controller.Instance.AddDGV_KhachHangs(dgv_KhachHang);
+            Controls_Controller.Instance.AddDGVs(dgv_KhachHang,new KhachHang());
         }
         private void dgv_KhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -53,14 +53,14 @@ namespace QLKS.UserControls
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
             txt_TimKiem.Text = string.Empty;
-            Controls_Controller.Instance.AddDGV_KhachHangs(dgv_KhachHang);
+            Controls_Controller.Instance.AddDGVs(dgv_KhachHang,new KhachHang());
         }
 
         private void btn_TimKiem_Click(object sender, EventArgs e)
         {
             if (txt_TimKiem.Text != string.Empty)
             {
-                dgv_KhachHang = UC_DSKH_Controller.Instance.Search(dgv_KhachHang, txt_TimKiem.Text.ToLower());
+                dgv_KhachHang = Controls_Controller.Instance.Search(dgv_KhachHang, txt_TimKiem.Text.ToLower(),new KhachHang());
             }
             else
             {

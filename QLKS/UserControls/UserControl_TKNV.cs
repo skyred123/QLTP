@@ -122,7 +122,7 @@ namespace QLKS.UserControls
             {
                 if(UC_TKNV_Controller.Instance.UpdateNhanVien(item,null) == true)
                 {
-                    UserControl_DSNV.instance.dataGridView = Controls_Controller.Instance.AddDGV_NhanVien(UserControl_DSNV.instance.dataGridView, item);
+                    Controls_Controller.Instance.AddDGVs(UserControl_DSNV.instance.dataGridView, new NhanVien());
                 }
             }
             else if (ViewData.Instance.GetUpdate())
@@ -130,13 +130,7 @@ namespace QLKS.UserControls
                 if (UC_TKNV_Controller.Instance.UpdateNhanVien(item, ViewData.Instance.GetNhanVienEdit()))
                 {
                     Controls_Controller.Instance.HidePanel(panel_DTTTK);
-                    DataGridViewRow gridViewRow = UserControl_DSNV.instance.dataGridView.SelectedCells[0].OwningRow;
-                    if (gridViewRow == null) { }
-                    else
-                    {
-                        UserControl_DSNV.instance.dataGridView.Rows.Remove(gridViewRow);
-                        UserControl_DSNV.instance.dataGridView = Controls_Controller.Instance.AddDGV_NhanVien(UserControl_DSNV.instance.dataGridView, item);
-                    }
+                    Controls_Controller.Instance.AddDGVs(UserControl_DSNV.instance.dataGridView, new NhanVien());
                 }
             }
         }
@@ -156,6 +150,16 @@ namespace QLKS.UserControls
 
         private void cbx_ChucVu_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Controls_Controller.Instance.GetEditForm(new UserControl_ChucVu(), new EditForm());
+        }
+
+        private void link_ChucVu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Controls_Controller.Instance.GetEditForm(new UserControl_ChucVu(), new EditForm());
         }
     }
 }

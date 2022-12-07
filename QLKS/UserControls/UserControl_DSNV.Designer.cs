@@ -224,7 +224,6 @@
             this.btn_Xoa.TabIndex = 6;
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.UseVisualStyleBackColor = true;
-            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
             // UserControl_DSNV
             // 

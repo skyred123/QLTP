@@ -178,7 +178,7 @@
             // 
             // btn_TimKiem
             // 
-            this.btn_TimKiem.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_TimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_TimKiem.Location = new System.Drawing.Point(309, 168);
             this.btn_TimKiem.Name = "btn_TimKiem";
             this.btn_TimKiem.Size = new System.Drawing.Size(150, 29);

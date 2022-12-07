@@ -33,22 +33,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel_DTTTK = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.image_Avatar = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btn_DoiAvatar = new System.Windows.Forms.Button();
+            this.image_Avatar = new System.Windows.Forms.PictureBox();
             this.btn_LuuTTTK = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.txt_Email = new System.Windows.Forms.TextBox();
             this.txt_SDT = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_Ten = new System.Windows.Forms.TextBox();
             this.txt_CCCD = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.cbx_ChucVu = new System.Windows.Forms.ComboBox();
+            this.link_ChucVu = new System.Windows.Forms.LinkLabel();
             this.panel_MK = new System.Windows.Forms.Panel();
             this.btn_MK = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -63,13 +60,10 @@
             this.txt_MKC = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_TenMK = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel_TTTK.SuspendLayout();
             this.panel_DTTTK.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.image_Avatar)).BeginInit();
-            this.panel2.SuspendLayout();
             this.panel_MK.SuspendLayout();
             this.panel_DMK.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -122,20 +116,19 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btn_DoiAvatar, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.image_Avatar, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btn_LuuTTTK, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.txt_Email, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.txt_SDT, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.txt_Ten, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.txt_CCCD, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label11, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.label13, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.cbx_ChucVu, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.link_ChucVu, 0, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -151,82 +144,42 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(576, 446);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // panel1
+            // btn_DoiAvatar
             // 
-            this.panel1.Controls.Add(this.image_Avatar);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(282, 172);
-            this.panel1.TabIndex = 9;
+            this.btn_DoiAvatar.AutoSize = true;
+            this.btn_DoiAvatar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_DoiAvatar.Location = new System.Drawing.Point(291, 137);
+            this.btn_DoiAvatar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_DoiAvatar.Name = "btn_DoiAvatar";
+            this.btn_DoiAvatar.Size = new System.Drawing.Size(282, 39);
+            this.btn_DoiAvatar.TabIndex = 0;
+            this.btn_DoiAvatar.Text = "Chỉnh Sửa ảnh";
+            this.btn_DoiAvatar.UseVisualStyleBackColor = true;
+            this.btn_DoiAvatar.Click += new System.EventHandler(this.btn_DoiAvatar_Click);
             // 
             // image_Avatar
             // 
             this.image_Avatar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.image_Avatar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.image_Avatar.Location = new System.Drawing.Point(0, 0);
-            this.image_Avatar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.image_Avatar.Location = new System.Drawing.Point(25, 4);
+            this.image_Avatar.Margin = new System.Windows.Forms.Padding(25, 4, 3, 4);
             this.image_Avatar.Name = "image_Avatar";
             this.image_Avatar.Size = new System.Drawing.Size(204, 172);
             this.image_Avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.image_Avatar.TabIndex = 0;
             this.image_Avatar.TabStop = false;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btn_DoiAvatar);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(291, 4);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(282, 172);
-            this.panel2.TabIndex = 10;
-            // 
-            // btn_DoiAvatar
-            // 
-            this.btn_DoiAvatar.AutoSize = true;
-            this.btn_DoiAvatar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btn_DoiAvatar.Location = new System.Drawing.Point(0, 132);
-            this.btn_DoiAvatar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_DoiAvatar.Name = "btn_DoiAvatar";
-            this.btn_DoiAvatar.Size = new System.Drawing.Size(282, 40);
-            this.btn_DoiAvatar.TabIndex = 0;
-            this.btn_DoiAvatar.Text = "Chỉnh Sửa ảnh";
-            this.btn_DoiAvatar.UseVisualStyleBackColor = true;
-            this.btn_DoiAvatar.Click += new System.EventHandler(this.btn_DoiAvatar_Click);
-            // 
             // btn_LuuTTTK
             // 
             this.btn_LuuTTTK.AutoSize = true;
             this.btn_LuuTTTK.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btn_LuuTTTK.Location = new System.Drawing.Point(291, 413);
+            this.btn_LuuTTTK.Location = new System.Drawing.Point(291, 403);
             this.btn_LuuTTTK.Name = "btn_LuuTTTK";
-            this.btn_LuuTTTK.Size = new System.Drawing.Size(282, 30);
+            this.btn_LuuTTTK.Size = new System.Drawing.Size(282, 40);
             this.btn_LuuTTTK.TabIndex = 8;
             this.btn_LuuTTTK.Text = "Lưu";
             this.btn_LuuTTTK.UseVisualStyleBackColor = true;
             this.btn_LuuTTTK.Click += new System.EventHandler(this.btn_LuuTTTK_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(3, 356);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 25);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "     Chức Vụ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(3, 312);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 25);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "     Email";
             // 
             // txt_Email
             // 
@@ -247,20 +200,22 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(3, 268);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 25);
+            this.label3.Size = new System.Drawing.Size(282, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "     Số Điện Thoại";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(3, 224);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 25);
+            this.label2.Size = new System.Drawing.Size(282, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "     Tên";
             // 
@@ -280,27 +235,27 @@
             this.txt_CCCD.Size = new System.Drawing.Size(282, 27);
             this.txt_CCCD.TabIndex = 12;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(3, 400);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(282, 28);
-            this.label11.TabIndex = 11;
-            this.label11.UseCompatibleTextRendering = true;
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.Dock = System.Windows.Forms.DockStyle.Top;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label13.Location = new System.Drawing.Point(3, 180);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(83, 25);
+            this.label13.Size = new System.Drawing.Size(282, 25);
             this.label13.TabIndex = 13;
             this.label13.Text = "     CCCD";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(3, 312);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(282, 25);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "     Email";
             // 
             // cbx_ChucVu
             // 
@@ -312,6 +267,20 @@
             this.cbx_ChucVu.Size = new System.Drawing.Size(282, 28);
             this.cbx_ChucVu.TabIndex = 14;
             this.cbx_ChucVu.TextChanged += new System.EventHandler(this.cbx_ChucVu_TextChanged);
+            // 
+            // link_ChucVu
+            // 
+            this.link_ChucVu.AutoSize = true;
+            this.link_ChucVu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.link_ChucVu.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.link_ChucVu.Location = new System.Drawing.Point(3, 356);
+            this.link_ChucVu.Name = "link_ChucVu";
+            this.link_ChucVu.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.link_ChucVu.Size = new System.Drawing.Size(282, 25);
+            this.link_ChucVu.TabIndex = 15;
+            this.link_ChucVu.TabStop = true;
+            this.link_ChucVu.Text = "Chức Vụ";
+            this.link_ChucVu.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_ChucVu_LinkClicked);
             // 
             // panel_MK
             // 
@@ -369,7 +338,6 @@
             this.tableLayoutPanel2.Controls.Add(this.txt_MKC, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label10, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.txt_TenMK, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label12, 0, 4);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -474,17 +442,6 @@
             this.txt_TenMK.Size = new System.Drawing.Size(282, 27);
             this.txt_TenMK.TabIndex = 11;
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(3, 156);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(282, 25);
-            this.label12.TabIndex = 12;
-            // 
             // UserControl_TKNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -503,10 +460,7 @@
             this.panel_DTTTK.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.image_Avatar)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel_MK.ResumeLayout(false);
             this.panel_MK.PerformLayout();
             this.panel_DMK.ResumeLayout(false);
@@ -527,7 +481,6 @@
         private TextBox txt_Ten;
         private Label label3;
         private TextBox txt_SDT;
-        private Label label4;
         private TextBox txt_Email;
         private Panel panel_MK;
         private Button btn_MK;
@@ -545,14 +498,11 @@
         private Label label5;
         private Label label10;
         private TextBox txt_TenMK;
-        private Label label11;
-        private Label label12;
         private TextBox txt_CCCD;
         private Label label13;
         private ComboBox cbx_ChucVu;
-        private Panel panel2;
         private Button btn_DoiAvatar;
-        private Panel panel1;
         private PictureBox image_Avatar;
+        private LinkLabel link_ChucVu;
     }
 }

@@ -18,7 +18,7 @@ namespace QLKS.UserControls
         }
         private void UserControl_QLNV_Load(object sender, EventArgs e)
         {
-            Controls_Controller.Instance.AddDGV_NhanViens(dgv_NhanVien);
+            Controls_Controller.Instance.AddDGVs(dgv_NhanVien,new NhanVien());
         }
         private void dgv_NhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -43,16 +43,11 @@ namespace QLKS.UserControls
             }
             
         }
-        private void btn_Xoa_Click(object sender, EventArgs e)
-        {
-            txt_TimKiem.Text = string.Empty;
-            Controls_Controller.Instance.AddDGV_NhanViens(dgv_NhanVien);
-        }
         private void btn_TimKiem_Click(object sender, EventArgs e)
         {
             if (txt_TimKiem.Text != string.Empty) 
             { 
-                dgv_NhanVien= UC_DSNV_Controller.Instance.Search(dgv_NhanVien, txt_TimKiem.Text.ToLower()); 
+                dgv_NhanVien= Controls_Controller.Instance.Search(dgv_NhanVien, txt_TimKiem.Text.ToLower(),new NhanVien()); 
             }
             else
             {

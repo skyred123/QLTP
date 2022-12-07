@@ -1,6 +1,7 @@
 ﻿using Library.Entity;
 using Library.Interfaces;
 using Library.Servser;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic.ApplicationServices;
 
 namespace Controller.Data
@@ -32,6 +33,10 @@ namespace Controller.Data
         public void DeleteKH(KhachHang kh)
         {
             Server.Instance.DeleteData().DeleteKhachHang(kh);
+        }
+        public void DeleteChucVu(ChucVu cv)
+        {
+            Server.Instance.DeleteData().DeleteChucVu(cv);
         }
     }
 }

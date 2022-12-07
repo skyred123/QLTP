@@ -25,13 +25,7 @@ namespace Controller.UserControls_Controller
         public DataGridView Search(DataGridView dataGridView, String str)
         {
             dataGridView.Rows.Clear();
-            foreach (KhachHang item in Server.Instance.GetData().GetKhachHangs())
-            {
-                if (item.MaKH.Contains(str) || item.TenKH.ToLower().Contains(str) || item.SDT.Contains(str) || item.Email.ToLower().Contains(str))
-                {
-                    Controls_Controller.Instance.AddDGV_KhachHang(dataGridView, item);
-                }
-            }
+            
             return dataGridView;
         }
     }
