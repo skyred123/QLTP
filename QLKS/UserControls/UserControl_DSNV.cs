@@ -52,7 +52,7 @@ namespace QLKS.UserControls
         {
             if (txt_TimKiem.Text != string.Empty) 
             { 
-                dgv_NhanVien= UC_DSNV_Controller.Instance.Search(dgv_NhanVien, txt_TimKiem.Text); 
+                dgv_NhanVien= UC_DSNV_Controller.Instance.Search(dgv_NhanVien, txt_TimKiem.Text.ToLower()); 
             }
             else
             {

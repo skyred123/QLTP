@@ -27,7 +27,7 @@ namespace Controller.UserControls_Controller
             dataGridView.Rows.Clear();
             foreach (NhanVien item in Server.Instance.GetData().GetNhanViens())
             {
-                if ((item.MaNV).Contains(str)  || item.TenNV.Contains(str) || item.SDT.Contains(str) ||item.ChucVu.TenCV.Contains(str) || item.Email.Contains(str))
+                if (item.MaNV.Contains(str)  || item.TenNV.ToLower().Contains(str) || item.SDT.Contains(str) ||item.ChucVu.TenCV.ToLower().Contains(str) || item.Email.ToLower().Contains(str))
                 {
                     Controls_Controller.Instance.AddDGV_NhanVien(dataGridView, item);
                 }
