@@ -99,7 +99,7 @@ namespace Controller
             dataGridView.Rows.Clear();
             foreach (NhanVien nv in Server.Instance.GetData().GetNhanViens())
             {
-                dataGridView.Rows.Add(nv.MaNV, nv.TenNV, Image.FromStream(new MemoryStream(nv.Image)), nv.SDT, nv.Email, nv.ChucVu.TenCV);
+                dataGridView = AddDGV_NhanVien(dataGridView, nv);
             }
             return dataGridView;
         }

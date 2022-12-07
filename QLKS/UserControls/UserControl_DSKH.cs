@@ -1,5 +1,6 @@
 ﻿using Controller;
 using Controller.Data;
+using Controller.UserControls_Controller;
 using Library.Entity;
 using QLKS.Forms;
 using System;
@@ -47,6 +48,24 @@ namespace QLKS.UserControls
                 }
             }
             dgv_KhachHang.Refresh();
+        }
+
+        private void btn_Xoa_Click(object sender, EventArgs e)
+        {
+            txt_TimKiem.Text = string.Empty;
+            Controls_Controller.Instance.AddDGV_KhachHangs(dgv_KhachHang);
+        }
+
+        private void btn_TimKiem_Click(object sender, EventArgs e)
+        {
+            if (txt_TimKiem.Text != string.Empty)
+            {
+                dgv_KhachHang = UC_DSKH_Controller.Instance.Search(dgv_KhachHang, txt_TimKiem.Text.ToLower());
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu.");
+            }
         }
     }
 }
