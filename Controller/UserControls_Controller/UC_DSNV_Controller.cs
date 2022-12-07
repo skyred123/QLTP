@@ -22,17 +22,14 @@ namespace Controller.UserControls_Controller
                 return instance;
             }
         }
-        public DataGridView Search(DataGridView dataGridView,NhanVien nv)
+        public DataGridView Search(DataGridView dataGridView,String str)
         {
             dataGridView.Rows.Clear();
-            if (nv.MaNV != string.Empty || nv.MaCV != Guid.Empty || nv.SDT != null || nv.TenNV != null)
+            foreach (NhanVien item in Server.Instance.GetData().GetNhanViens())
             {
-                foreach(NhanVien item in Server.Instance.GetData().GetNhanViens())
+                if ((item.MaNV).Contains(str)  || item.TenNV.Contains(str) || item.SDT.Contains(str) ||item.ChucVu.TenCV.Contains(str) || item.Email.Contains(str))
                 {
-                    if(nv.MaNV == item.MaNV || nv.TenNV == item.TenNV || nv.SDT == item.SDT || nv.MaCV == item.MaCV)
-                    {
-                        Controls_Controller.Instance.AddDGV_NhanVien(dataGridView, item);
-                    }
+                    Controls_Controller.Instance.AddDGV_NhanVien(dataGridView, item);
                 }
             }
             return dataGridView;

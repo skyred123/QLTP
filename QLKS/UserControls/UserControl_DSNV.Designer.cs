@@ -40,15 +40,9 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.btn_TimKiem = new System.Windows.Forms.Button();
-            this.txt_CCCD = new System.Windows.Forms.TextBox();
-            this.txt_SDT = new System.Windows.Forms.TextBox();
-            this.txt_TenNV = new System.Windows.Forms.TextBox();
+            this.txt_TimKiem = new System.Windows.Forms.TextBox();
             this.btn_Xoa = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbx_ChucVu = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -169,126 +163,68 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.BackColor = System.Drawing.SystemColors.Control;
-            this.tableLayoutPanel2.ColumnCount = 4;
+            this.tableLayoutPanel2.ColumnCount = 5;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Controls.Add(this.label1, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label2, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.label3, 1, 3);
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel2.Controls.Add(this.label1, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.btn_TimKiem, 2, 5);
-            this.tableLayoutPanel2.Controls.Add(this.txt_CCCD, 2, 1);
-            this.tableLayoutPanel2.Controls.Add(this.txt_SDT, 2, 3);
-            this.tableLayoutPanel2.Controls.Add(this.txt_TenNV, 2, 2);
+            this.tableLayoutPanel2.Controls.Add(this.txt_TimKiem, 2, 2);
             this.tableLayoutPanel2.Controls.Add(this.btn_Xoa, 3, 5);
-            this.tableLayoutPanel2.Controls.Add(this.label4, 1, 4);
-            this.tableLayoutPanel2.Controls.Add(this.cbx_ChucVu, 2, 4);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 6;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(767, 195);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Location = new System.Drawing.Point(153, 32);
+            this.label1.Location = new System.Drawing.Point(153, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 25);
+            this.label1.Size = new System.Drawing.Size(149, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "CCCD";
-            // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Location = new System.Drawing.Point(153, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(199, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Tên Nhân Viên";
-            // 
-            // label3
-            // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Location = new System.Drawing.Point(153, 96);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(199, 25);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Số Điện Thoại";
+            this.label1.Text = "Tìm Kiếm";
             // 
             // btn_TimKiem
             // 
             this.btn_TimKiem.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btn_TimKiem.Location = new System.Drawing.Point(358, 163);
+            this.btn_TimKiem.Location = new System.Drawing.Point(308, 163);
             this.btn_TimKiem.Name = "btn_TimKiem";
-            this.btn_TimKiem.Size = new System.Drawing.Size(199, 29);
+            this.btn_TimKiem.Size = new System.Drawing.Size(149, 29);
             this.btn_TimKiem.TabIndex = 7;
             this.btn_TimKiem.Text = "Tìm Kiếm";
             this.btn_TimKiem.UseVisualStyleBackColor = true;
             this.btn_TimKiem.Click += new System.EventHandler(this.btn_TimKiem_Click);
             // 
-            // txt_CCCD
+            // txt_TimKiem
             // 
-            this.txt_CCCD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_CCCD.Location = new System.Drawing.Point(358, 35);
-            this.txt_CCCD.Name = "txt_CCCD";
-            this.txt_CCCD.Size = new System.Drawing.Size(199, 27);
-            this.txt_CCCD.TabIndex = 8;
-            // 
-            // txt_SDT
-            // 
-            this.txt_SDT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_SDT.Location = new System.Drawing.Point(358, 99);
-            this.txt_SDT.Name = "txt_SDT";
-            this.txt_SDT.Size = new System.Drawing.Size(199, 27);
-            this.txt_SDT.TabIndex = 10;
-            // 
-            // txt_TenNV
-            // 
-            this.txt_TenNV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_TenNV.Location = new System.Drawing.Point(358, 67);
-            this.txt_TenNV.Name = "txt_TenNV";
-            this.txt_TenNV.Size = new System.Drawing.Size(199, 27);
-            this.txt_TenNV.TabIndex = 9;
+            this.tableLayoutPanel2.SetColumnSpan(this.txt_TimKiem, 2);
+            this.txt_TimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_TimKiem.Location = new System.Drawing.Point(308, 67);
+            this.txt_TimKiem.Name = "txt_TimKiem";
+            this.txt_TimKiem.Size = new System.Drawing.Size(304, 27);
+            this.txt_TimKiem.TabIndex = 8;
             // 
             // btn_Xoa
             // 
             this.btn_Xoa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Xoa.Location = new System.Drawing.Point(563, 163);
+            this.btn_Xoa.Location = new System.Drawing.Point(463, 163);
             this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(201, 29);
+            this.btn_Xoa.Size = new System.Drawing.Size(149, 29);
             this.btn_Xoa.TabIndex = 6;
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.UseVisualStyleBackColor = true;
             this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Location = new System.Drawing.Point(153, 128);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(199, 20);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Chức Vụ";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // cbx_ChucVu
-            // 
-            this.cbx_ChucVu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbx_ChucVu.FormattingEnabled = true;
-            this.cbx_ChucVu.Location = new System.Drawing.Point(358, 131);
-            this.cbx_ChucVu.Name = "cbx_ChucVu";
-            this.cbx_ChucVu.Size = new System.Drawing.Size(199, 28);
-            this.cbx_ChucVu.TabIndex = 12;
             // 
             // UserControl_DSNV
             // 
@@ -320,14 +256,8 @@
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;
         private Label label1;
-        private Label label2;
-        private Label label3;
         private Button btn_Xoa;
         private Button btn_TimKiem;
-        private TextBox txt_CCCD;
-        private TextBox txt_SDT;
-        private TextBox txt_TenNV;
-        private Label label4;
-        private ComboBox cbx_ChucVu;
+        private TextBox txt_TimKiem;
     }
 }
