@@ -15,18 +15,6 @@ namespace QLKS.Forms
 {
     public partial class EditForm : Form
     {
-        private static EditForm instance;
-        public static EditForm Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new EditForm();
-                }
-                return instance;
-            }
-        }
         public EditForm()
         {
             InitializeComponent();

@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panel_Menu = new System.Windows.Forms.Panel();
+            this.btn_DangXuat = new System.Windows.Forms.Button();
+            this.panel_HopDong = new System.Windows.Forms.Panel();
+            this.btn_HopDong3 = new System.Windows.Forms.Button();
+            this.btn_HopDong2 = new System.Windows.Forms.Button();
+            this.btn_HopDong1 = new System.Windows.Forms.Button();
+            this.btn_HopDong = new System.Windows.Forms.Button();
+            this.panel_DichVu = new System.Windows.Forms.Panel();
+            this.btn_DichVu3 = new System.Windows.Forms.Button();
+            this.btn_DichVu2 = new System.Windows.Forms.Button();
+            this.btn_DichVu1 = new System.Windows.Forms.Button();
+            this.btn_DichVu = new System.Windows.Forms.Button();
             this.panel_Phong = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.btn_Phong4 = new System.Windows.Forms.Button();
             this.btn_Phong3 = new System.Windows.Forms.Button();
             this.btn_Phong2 = new System.Windows.Forms.Button();
@@ -50,183 +51,211 @@
             this.btn_KhachHang1 = new System.Windows.Forms.Button();
             this.btn_KhachHang = new System.Windows.Forms.Button();
             this.panel_NhanVien = new System.Windows.Forms.Panel();
+            this.btn_NhanVien4 = new System.Windows.Forms.Button();
             this.btn_NhanVien3 = new System.Windows.Forms.Button();
             this.btn_NhanVien2 = new System.Windows.Forms.Button();
             this.btn_NhanVien1 = new System.Windows.Forms.Button();
             this.btn_NhanVien = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel_View = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.btn_NhanVien5 = new System.Windows.Forms.Button();
+            this.panel_Menu.SuspendLayout();
+            this.panel_HopDong.SuspendLayout();
+            this.panel_DichVu.SuspendLayout();
             this.panel_Phong.SuspendLayout();
             this.panel_KhachHang.SuspendLayout();
             this.panel_NhanVien.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panel_Menu
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.panel_Phong);
-            this.panel1.Controls.Add(this.btn_Phong);
-            this.panel1.Controls.Add(this.panel_KhachHang);
-            this.panel1.Controls.Add(this.btn_KhachHang);
-            this.panel1.Controls.Add(this.panel_NhanVien);
-            this.panel1.Controls.Add(this.btn_NhanVien);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(233, 1055);
-            this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel_Menu.AutoScroll = true;
+            this.panel_Menu.Controls.Add(this.btn_DangXuat);
+            this.panel_Menu.Controls.Add(this.panel_HopDong);
+            this.panel_Menu.Controls.Add(this.btn_HopDong);
+            this.panel_Menu.Controls.Add(this.panel_DichVu);
+            this.panel_Menu.Controls.Add(this.btn_DichVu);
+            this.panel_Menu.Controls.Add(this.panel_Phong);
+            this.panel_Menu.Controls.Add(this.btn_Phong);
+            this.panel_Menu.Controls.Add(this.panel_KhachHang);
+            this.panel_Menu.Controls.Add(this.btn_KhachHang);
+            this.panel_Menu.Controls.Add(this.panel_NhanVien);
+            this.panel_Menu.Controls.Add(this.btn_NhanVien);
+            this.panel_Menu.Controls.Add(this.panel2);
+            this.panel_Menu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel_Menu.Location = new System.Drawing.Point(0, 0);
+            this.panel_Menu.Name = "panel_Menu";
+            this.panel_Menu.Size = new System.Drawing.Size(233, 569);
+            this.panel_Menu.TabIndex = 0;
             // 
-            // button8
+            // btn_DangXuat
             // 
-            this.button8.BackColor = System.Drawing.Color.CadetBlue;
-            this.button8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button8.Location = new System.Drawing.Point(0, 1022);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(212, 50);
-            this.button8.TabIndex = 11;
-            this.button8.Text = "Đăng Xuất";
-            this.button8.UseVisualStyleBackColor = false;
+            this.btn_DangXuat.BackColor = System.Drawing.Color.CadetBlue;
+            this.btn_DangXuat.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_DangXuat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_DangXuat.Location = new System.Drawing.Point(0, 1157);
+            this.btn_DangXuat.Name = "btn_DangXuat";
+            this.btn_DangXuat.Size = new System.Drawing.Size(212, 50);
+            this.btn_DangXuat.TabIndex = 11;
+            this.btn_DangXuat.Text = "Đăng Xuất";
+            this.btn_DangXuat.UseVisualStyleBackColor = false;
+            this.btn_DangXuat.Click += new System.EventHandler(this.btn_DangXuat_Click);
             // 
-            // panel4
+            // panel_HopDong
             // 
-            this.panel4.AutoSize = true;
-            this.panel4.Controls.Add(this.button7);
-            this.panel4.Controls.Add(this.button6);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 932);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(212, 90);
-            this.panel4.TabIndex = 10;
+            this.panel_HopDong.AutoSize = true;
+            this.panel_HopDong.Controls.Add(this.btn_HopDong3);
+            this.panel_HopDong.Controls.Add(this.btn_HopDong2);
+            this.panel_HopDong.Controls.Add(this.btn_HopDong1);
+            this.panel_HopDong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_HopDong.Location = new System.Drawing.Point(0, 1022);
+            this.panel_HopDong.Name = "panel_HopDong";
+            this.panel_HopDong.Size = new System.Drawing.Size(212, 135);
+            this.panel_HopDong.TabIndex = 10;
+            this.panel_HopDong.Visible = false;
             // 
-            // button7
+            // btn_HopDong3
             // 
-            this.button7.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button7.Location = new System.Drawing.Point(0, 45);
-            this.button7.Name = "button7";
-            this.button7.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(212, 45);
-            this.button7.TabIndex = 5;
-            this.button7.Text = "Lập Hợp Đồng";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.UseVisualStyleBackColor = false;
+            this.btn_HopDong3.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btn_HopDong3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_HopDong3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_HopDong3.Location = new System.Drawing.Point(0, 90);
+            this.btn_HopDong3.Name = "btn_HopDong3";
+            this.btn_HopDong3.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btn_HopDong3.Size = new System.Drawing.Size(212, 45);
+            this.btn_HopDong3.TabIndex = 6;
+            this.btn_HopDong3.Text = "Báo Cáo";
+            this.btn_HopDong3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_HopDong3.UseVisualStyleBackColor = false;
+            this.btn_HopDong3.Click += new System.EventHandler(this.btn_HopDong3_Click);
             // 
-            // button6
+            // btn_HopDong2
             // 
-            this.button6.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button6.Location = new System.Drawing.Point(0, 0);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(212, 45);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "Danh Sách Hợp Đồng";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = false;
+            this.btn_HopDong2.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btn_HopDong2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_HopDong2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_HopDong2.Location = new System.Drawing.Point(0, 45);
+            this.btn_HopDong2.Name = "btn_HopDong2";
+            this.btn_HopDong2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btn_HopDong2.Size = new System.Drawing.Size(212, 45);
+            this.btn_HopDong2.TabIndex = 5;
+            this.btn_HopDong2.Text = "Lập Hợp Đồng";
+            this.btn_HopDong2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_HopDong2.UseVisualStyleBackColor = false;
+            this.btn_HopDong2.Click += new System.EventHandler(this.btn_HopDong2_Click);
             // 
-            // button5
+            // btn_HopDong1
             // 
-            this.button5.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button5.Location = new System.Drawing.Point(0, 882);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(212, 50);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Hợp Đồng";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btn_HopDong1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btn_HopDong1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_HopDong1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_HopDong1.Location = new System.Drawing.Point(0, 0);
+            this.btn_HopDong1.Name = "btn_HopDong1";
+            this.btn_HopDong1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btn_HopDong1.Size = new System.Drawing.Size(212, 45);
+            this.btn_HopDong1.TabIndex = 4;
+            this.btn_HopDong1.Text = "Danh Sách Hợp Đồng";
+            this.btn_HopDong1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_HopDong1.UseVisualStyleBackColor = false;
+            this.btn_HopDong1.Click += new System.EventHandler(this.btn_HopDong1_Click);
             // 
-            // panel3
+            // btn_HopDong
             // 
-            this.panel3.AutoSize = true;
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 792);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(212, 90);
-            this.panel3.TabIndex = 8;
+            this.btn_HopDong.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_HopDong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_HopDong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_HopDong.Location = new System.Drawing.Point(0, 972);
+            this.btn_HopDong.Name = "btn_HopDong";
+            this.btn_HopDong.Size = new System.Drawing.Size(212, 50);
+            this.btn_HopDong.TabIndex = 9;
+            this.btn_HopDong.Text = "Hợp Đồng";
+            this.btn_HopDong.UseVisualStyleBackColor = false;
+            this.btn_HopDong.Click += new System.EventHandler(this.btn_HopDong_Click);
             // 
-            // button4
+            // panel_DichVu
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(0, 45);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(212, 45);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Đăng Ký Dịch Vụ";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = false;
+            this.panel_DichVu.AutoSize = true;
+            this.panel_DichVu.Controls.Add(this.btn_DichVu3);
+            this.panel_DichVu.Controls.Add(this.btn_DichVu2);
+            this.panel_DichVu.Controls.Add(this.btn_DichVu1);
+            this.panel_DichVu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_DichVu.Location = new System.Drawing.Point(0, 837);
+            this.panel_DichVu.Name = "panel_DichVu";
+            this.panel_DichVu.Size = new System.Drawing.Size(212, 135);
+            this.panel_DichVu.TabIndex = 8;
+            this.panel_DichVu.Visible = false;
             // 
-            // button2
+            // btn_DichVu3
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(212, 45);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Danh Sách Dịch Vụ";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_DichVu3.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btn_DichVu3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_DichVu3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_DichVu3.Location = new System.Drawing.Point(0, 90);
+            this.btn_DichVu3.Name = "btn_DichVu3";
+            this.btn_DichVu3.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btn_DichVu3.Size = new System.Drawing.Size(212, 45);
+            this.btn_DichVu3.TabIndex = 5;
+            this.btn_DichVu3.Text = "Báo Cáo";
+            this.btn_DichVu3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_DichVu3.UseVisualStyleBackColor = false;
+            this.btn_DichVu3.Click += new System.EventHandler(this.btn_DichVu3_Click);
             // 
-            // button1
+            // btn_DichVu2
             // 
-            this.button1.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(0, 742);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(212, 50);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Dịch Vụ";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_DichVu2.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btn_DichVu2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_DichVu2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_DichVu2.Location = new System.Drawing.Point(0, 45);
+            this.btn_DichVu2.Name = "btn_DichVu2";
+            this.btn_DichVu2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btn_DichVu2.Size = new System.Drawing.Size(212, 45);
+            this.btn_DichVu2.TabIndex = 4;
+            this.btn_DichVu2.Text = "Đăng Ký Dịch Vụ";
+            this.btn_DichVu2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_DichVu2.UseVisualStyleBackColor = false;
+            this.btn_DichVu2.Click += new System.EventHandler(this.btn_DichVu2_Click);
+            // 
+            // btn_DichVu1
+            // 
+            this.btn_DichVu1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btn_DichVu1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_DichVu1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_DichVu1.Location = new System.Drawing.Point(0, 0);
+            this.btn_DichVu1.Name = "btn_DichVu1";
+            this.btn_DichVu1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btn_DichVu1.Size = new System.Drawing.Size(212, 45);
+            this.btn_DichVu1.TabIndex = 3;
+            this.btn_DichVu1.Text = "Danh Sách Dịch Vụ";
+            this.btn_DichVu1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_DichVu1.UseVisualStyleBackColor = false;
+            this.btn_DichVu1.Click += new System.EventHandler(this.btn_DichVu1_Click);
+            // 
+            // btn_DichVu
+            // 
+            this.btn_DichVu.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_DichVu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_DichVu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_DichVu.Location = new System.Drawing.Point(0, 787);
+            this.btn_DichVu.Name = "btn_DichVu";
+            this.btn_DichVu.Size = new System.Drawing.Size(212, 50);
+            this.btn_DichVu.TabIndex = 7;
+            this.btn_DichVu.Text = "Dịch Vụ";
+            this.btn_DichVu.UseVisualStyleBackColor = false;
+            this.btn_DichVu.Click += new System.EventHandler(this.btn_DichVu_Click);
             // 
             // panel_Phong
             // 
             this.panel_Phong.AutoSize = true;
-            this.panel_Phong.Controls.Add(this.button3);
             this.panel_Phong.Controls.Add(this.btn_Phong4);
             this.panel_Phong.Controls.Add(this.btn_Phong3);
             this.panel_Phong.Controls.Add(this.btn_Phong2);
             this.panel_Phong.Controls.Add(this.btn_Phong1);
             this.panel_Phong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_Phong.Location = new System.Drawing.Point(0, 517);
+            this.panel_Phong.Location = new System.Drawing.Point(0, 607);
             this.panel_Phong.Name = "panel_Phong";
-            this.panel_Phong.Size = new System.Drawing.Size(212, 225);
+            this.panel_Phong.Size = new System.Drawing.Size(212, 180);
             this.panel_Phong.TabIndex = 6;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(0, 180);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(212, 45);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Bảng Giá";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
+            this.panel_Phong.Visible = false;
             // 
             // btn_Phong4
             // 
@@ -293,7 +322,7 @@
             this.btn_Phong.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btn_Phong.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_Phong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Phong.Location = new System.Drawing.Point(0, 467);
+            this.btn_Phong.Location = new System.Drawing.Point(0, 557);
             this.btn_Phong.Name = "btn_Phong";
             this.btn_Phong.Size = new System.Drawing.Size(212, 50);
             this.btn_Phong.TabIndex = 5;
@@ -307,10 +336,11 @@
             this.panel_KhachHang.Controls.Add(this.btn_KhachHang2);
             this.panel_KhachHang.Controls.Add(this.btn_KhachHang1);
             this.panel_KhachHang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_KhachHang.Location = new System.Drawing.Point(0, 377);
+            this.panel_KhachHang.Location = new System.Drawing.Point(0, 467);
             this.panel_KhachHang.Name = "panel_KhachHang";
             this.panel_KhachHang.Size = new System.Drawing.Size(212, 90);
             this.panel_KhachHang.TabIndex = 4;
+            this.panel_KhachHang.Visible = false;
             // 
             // btn_KhachHang2
             // 
@@ -347,7 +377,7 @@
             this.btn_KhachHang.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btn_KhachHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_KhachHang.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_KhachHang.Location = new System.Drawing.Point(0, 327);
+            this.btn_KhachHang.Location = new System.Drawing.Point(0, 417);
             this.btn_KhachHang.Name = "btn_KhachHang";
             this.btn_KhachHang.Size = new System.Drawing.Size(212, 50);
             this.btn_KhachHang.TabIndex = 3;
@@ -358,14 +388,32 @@
             // panel_NhanVien
             // 
             this.panel_NhanVien.AutoSize = true;
+            this.panel_NhanVien.Controls.Add(this.btn_NhanVien5);
+            this.panel_NhanVien.Controls.Add(this.btn_NhanVien4);
             this.panel_NhanVien.Controls.Add(this.btn_NhanVien3);
             this.panel_NhanVien.Controls.Add(this.btn_NhanVien2);
             this.panel_NhanVien.Controls.Add(this.btn_NhanVien1);
             this.panel_NhanVien.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_NhanVien.Location = new System.Drawing.Point(0, 192);
             this.panel_NhanVien.Name = "panel_NhanVien";
-            this.panel_NhanVien.Size = new System.Drawing.Size(212, 135);
+            this.panel_NhanVien.Size = new System.Drawing.Size(212, 225);
             this.panel_NhanVien.TabIndex = 2;
+            this.panel_NhanVien.Visible = false;
+            // 
+            // btn_NhanVien4
+            // 
+            this.btn_NhanVien4.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btn_NhanVien4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_NhanVien4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_NhanVien4.Location = new System.Drawing.Point(0, 135);
+            this.btn_NhanVien4.Name = "btn_NhanVien4";
+            this.btn_NhanVien4.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btn_NhanVien4.Size = new System.Drawing.Size(212, 45);
+            this.btn_NhanVien4.TabIndex = 6;
+            this.btn_NhanVien4.Text = "Danh Sách Nhân Viên";
+            this.btn_NhanVien4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_NhanVien4.UseVisualStyleBackColor = false;
+            this.btn_NhanVien4.Click += new System.EventHandler(this.btn_NhanVien4_Click);
             // 
             // btn_NhanVien3
             // 
@@ -378,7 +426,7 @@
             this.btn_NhanVien3.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btn_NhanVien3.Size = new System.Drawing.Size(212, 45);
             this.btn_NhanVien3.TabIndex = 2;
-            this.btn_NhanVien3.Text = "Danh Sách Nhân Viên";
+            this.btn_NhanVien3.Text = "Tạo Tài Khoản";
             this.btn_NhanVien3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_NhanVien3.UseVisualStyleBackColor = false;
             this.btn_NhanVien3.Click += new System.EventHandler(this.btn_NhanVien3_Click);
@@ -444,24 +492,40 @@
             this.panel_View.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_View.Location = new System.Drawing.Point(233, 0);
             this.panel_View.Name = "panel_View";
-            this.panel_View.Size = new System.Drawing.Size(818, 1055);
+            this.panel_View.Size = new System.Drawing.Size(818, 569);
             this.panel_View.TabIndex = 1;
+            // 
+            // btn_NhanVien5
+            // 
+            this.btn_NhanVien5.AutoSize = true;
+            this.btn_NhanVien5.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btn_NhanVien5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_NhanVien5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_NhanVien5.Location = new System.Drawing.Point(0, 180);
+            this.btn_NhanVien5.Name = "btn_NhanVien5";
+            this.btn_NhanVien5.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btn_NhanVien5.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_NhanVien5.Size = new System.Drawing.Size(212, 45);
+            this.btn_NhanVien5.TabIndex = 7;
+            this.btn_NhanVien5.Text = "Báo Cáo";
+            this.btn_NhanVien5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_NhanVien5.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1051, 1055);
+            this.ClientSize = new System.Drawing.Size(1051, 569);
             this.Controls.Add(this.panel_View);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel_Menu);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.panel_Menu.ResumeLayout(false);
+            this.panel_Menu.PerformLayout();
+            this.panel_HopDong.ResumeLayout(false);
+            this.panel_DichVu.ResumeLayout(false);
             this.panel_Phong.ResumeLayout(false);
             this.panel_KhachHang.ResumeLayout(false);
             this.panel_NhanVien.ResumeLayout(false);
@@ -473,7 +537,7 @@
 
         #endregion
 
-        private Panel panel1;
+        private Panel panel_Menu;
         private Button btn_NhanVien;
         private Panel panel2;
         private Button btn_KhachHang;
@@ -491,15 +555,18 @@
         private Button btn_Phong2;
         private Button btn_Phong4;
         private Button btn_Phong3;
-        private Panel panel3;
-        private Button button4;
-        private Button button2;
-        private Button button1;
-        private Button button3;
-        private Panel panel4;
-        private Button button7;
-        private Button button6;
-        private Button button5;
-        private Button button8;
+        private Panel panel_DichVu;
+        private Button btn_DichVu2;
+        private Button btn_DichVu1;
+        private Button btn_DichVu;
+        private Panel panel_HopDong;
+        private Button btn_HopDong2;
+        private Button btn_HopDong1;
+        private Button btn_HopDong;
+        private Button btn_DangXuat;
+        private Button btn_HopDong3;
+        private Button btn_DichVu3;
+        private Button btn_NhanVien4;
+        private Button btn_NhanVien5;
     }
 }

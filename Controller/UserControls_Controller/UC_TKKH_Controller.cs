@@ -24,23 +24,27 @@ namespace Controller.UserControls_Controller
                 return instance;
             }
         }
-        public string UpdateKhachHang(KhachHang khachHang,KhachHang kh)
+        public bool UpdateKhachHang(KhachHang khachHang,KhachHang kh)
         {
             if(khachHang.MaKH != null && khachHang.TenKH != null && khachHang.SDT != null && khachHang.Email != null)
             {
                 if (khachHang.MaKH.Count() != 10)
                 {
-                    return "Sai Số CCCD";
+                    MessageBox.Show("Sai Số CCCD");
+                    return false;
+
                 }
                 else if (System.Text.RegularExpressions.Regex.IsMatch(khachHang.SDT, "[0-9]") == false && khachHang.SDT.Count() != 10)
                 {
-                    return "Sai Số Điện Thoại";
+                    MessageBox.Show("Sai Số Điện Thoại");
+                    return false;
                 }
                 if(ViewData.add == true)
                 {
                     if (Server.Instance.GetData().GetKhachHang(khachHang.MaKH) != null)
                     {
-                        return "CCCD Đã Tồn Tại";
+                        MessageBox.Show("CCCD Đã Tồn Tại");
+                        return false;
                     }
                     Server.Instance.AddData().AddKhachHang(khachHang);
                 }
@@ -57,7 +61,9 @@ namespace Controller.UserControls_Controller
                     }
                 }
             }
-            return "Lưu Thành Công";
+            ViewData.khachHangEdit = khachHang;
+            MessageBox.Show("Lưu Thành Công");
+            return true;
         }
     }
 }

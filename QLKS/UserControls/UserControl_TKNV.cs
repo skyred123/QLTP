@@ -3,6 +3,7 @@ using Controller.Data;
 using Controller.UserControls_Controller;
 using Library.Entity;
 using Library.Servser;
+using QLKS.Forms;
 
 namespace QLKS.UserControls
 {
@@ -44,7 +45,7 @@ namespace QLKS.UserControls
         }
         private void UserControl_ChinhSuaTT_Load(object sender, EventArgs e)
         {
-            Controls_Controller.Instance.AddComboBox(cbx_ChucVu, "ChucVu");
+            Controls_Controller.Instance.AddComboBox(cbx_ChucVu, new ChucVu());
             if (ViewData.Instance.GetAdd())
             {
                 Controls_Controller.Instance.HidePanel(panel_DMK);
@@ -119,14 +120,25 @@ namespace QLKS.UserControls
             }
             if (ViewData.Instance.GetAdd() == true)
             {
-                MessageBox.Show(UC_TKNV_Controller.Instance.UpdateNhanVien(item,null));
+                if(UC_TKNV_Controller.Instance.UpdateNhanVien(item,null) == true)
+                {
+                    UserControl_DSNV.instance.dataGridView = Controls_Controller.Instance.AddDGV_NhanVien(UserControl_DSNV.instance.dataGridView, item);
+                }
             }
             else if (ViewData.Instance.GetUpdate())
             {
-                MessageBox.Show(UC_TKNV_Controller.Instance.UpdateNhanVien(item,ViewData.Instance.GetNhanVienEdit()));
-                Controls_Controller.Instance.HidePanel(panel_DTTTK);
+                if (UC_TKNV_Controller.Instance.UpdateNhanVien(item, ViewData.Instance.GetNhanVienEdit()))
+                {
+                    Controls_Controller.Instance.HidePanel(panel_DTTTK);
+                    DataGridViewRow gridViewRow = UserControl_DSNV.instance.dataGridView.SelectedCells[0].OwningRow;
+                    if (gridViewRow == null) { }
+                    else
+                    {
+                        UserControl_DSNV.instance.dataGridView.Rows.Remove(gridViewRow);
+                        UserControl_DSNV.instance.dataGridView = Controls_Controller.Instance.AddDGV_NhanVien(UserControl_DSNV.instance.dataGridView, item);
+                    }
+                }
             }
-            
         }
         private void btn_DoiAvatar_Click(object sender, EventArgs e)
         {

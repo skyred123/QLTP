@@ -1,4 +1,5 @@
-﻿using Controller.Data;
+﻿using Controller;
+using Controller.Data;
 using Controller.UserControls_Controller;
 using Library.Entity;
 using QLKS.Forms;
@@ -39,11 +40,23 @@ namespace QLKS.UserControls
             khachHang.Email = txt_Email.Text;
             if (ViewData.Instance.GetUpdate() == true)
             {
-                MessageBox.Show(UC_TKKH_Controller.Instance.UpdateKhachHang(khachHang, ViewData.Instance.GetKhachHangEdit()));
+                if(UC_TKKH_Controller.Instance.UpdateKhachHang(khachHang, ViewData.Instance.GetKhachHangEdit()))
+                {
+                    DataGridViewRow gridViewRow = UserControl_DSKH.instance.dataGridView.SelectedCells[0].OwningRow;
+                    if (gridViewRow == null) { }
+                    else
+                    {
+                        UserControl_DSKH.instance.dataGridView.Rows.Remove(gridViewRow);
+                        UserControl_DSKH.instance.dataGridView = Controls_Controller.Instance.AddDGV_KhachHang(UserControl_DSKH.instance.dataGridView, khachHang);
+                    }
+                }
             }
             else if(ViewData.Instance.GetAdd() == true)
             {
-                MessageBox.Show(UC_TKKH_Controller.Instance.UpdateKhachHang(khachHang, null));
+                if(UC_TKKH_Controller.Instance.UpdateKhachHang(khachHang, null))
+                {
+                    UserControl_DSKH.instance.dataGridView = Controls_Controller.Instance.AddDGV_KhachHang(UserControl_DSKH.instance.dataGridView, khachHang);
+                }
             }
         }
 

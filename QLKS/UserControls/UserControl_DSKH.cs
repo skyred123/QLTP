@@ -16,14 +16,18 @@ namespace QLKS.UserControls
 {
     public partial class UserControl_DSKH : UserControl
     {
+        public static UserControl_DSKH instance;
+        public DataGridView dataGridView;
         public UserControl_DSKH()
         {
             InitializeComponent();
+            instance= this;
+            dataGridView = dgv_KhachHang;
         }
 
         private void UserControl_DSKH_Load(object sender, EventArgs e)
         {
-            Controls_Controller.Instance.AddDGV_KhachHang(dgv_KhachHang);
+            Controls_Controller.Instance.AddDGV_KhachHangs(dgv_KhachHang);
         }
         private void dgv_KhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

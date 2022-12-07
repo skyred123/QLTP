@@ -46,18 +46,18 @@ namespace Controller
         {
             if(formHide == null)
             {
-                formShow.Show();
+                formShow.ShowDialog();
             }
             else
             {
                 formHide.Hide();
-                formShow.Show();
+                formShow.ShowDialog();
             }
         }
         public void GetEditForm(UserControl userControl,Form form)
         {
-            GetForm(null, form);
             GetUserControl(null, form, userControl);
+            GetForm(null, form);
         }
         public void HidePanel(Panel panel)
         {
@@ -72,7 +72,7 @@ namespace Controller
             else
             {
                 panel.Visible = false;
-            }  
+            }
         }
         public void HideButton(Button button) => button.Visible = false;
         public void OpenFile(PictureBox pictureBox)
@@ -85,16 +85,16 @@ namespace Controller
                 }
             }
         }
-        public void AddComboBox(ComboBox comboBox,string str)
+        public void AddComboBox(ComboBox comboBox,Object ojb)
         {
-            if(str == "ChucVu")
+            if (ojb.GetType() == typeof(ChucVu))
             {
                 comboBox.DataSource = Server.Instance.GetData().GetChucVus();
                 comboBox.DisplayMember = "TenCV";
                 comboBox.ValueMember = "MaCV";
             }
         }
-        public DataGridView AddDGV_NhanVien(DataGridView dataGridView)
+        public DataGridView AddDGV_NhanViens(DataGridView dataGridView)
         {
             dataGridView.Rows.Clear();
             foreach (NhanVien nv in Server.Instance.GetData().GetNhanViens())
@@ -103,13 +103,24 @@ namespace Controller
             }
             return dataGridView;
         }
-        public DataGridView AddDGV_KhachHang(DataGridView dataGridView)
+        public DataGridView AddDGV_NhanVien(DataGridView dataGridView,NhanVien nv)
+        {
+            nv = Server.Instance.GetData().GetNhanVien(nv.MaNV);
+            dataGridView.Rows.Add(nv.MaNV, nv.TenNV, Image.FromStream(new MemoryStream(nv.Image)), nv.SDT, nv.Email, nv.ChucVu.TenCV);
+            return dataGridView;
+        }
+        public DataGridView AddDGV_KhachHangs(DataGridView dataGridView)
         {
             dataGridView.Rows.Clear();
             foreach (KhachHang kh in Server.Instance.GetData().GetKhachHangs())
             {
                 dataGridView.Rows.Add(kh.MaKH, kh.TenKH, kh.SDT, kh.Email);
             }
+            return dataGridView;
+        }
+        public DataGridView AddDGV_KhachHang(DataGridView dataGridView, KhachHang kh)
+        {
+            dataGridView.Rows.Add(kh.MaKH, kh.TenKH, kh.SDT, kh.Email);
             return dataGridView;
         }
         public void ButtonText(Button button,string str)

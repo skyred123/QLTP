@@ -42,7 +42,7 @@ namespace Controller.UserControls_Controller
                             item.Name = user.Name;
                             item.Password = mkm2;
                             Server.Instance.UpdateData().UpdateUser(user);
-                            return "Lưu Thành Công";
+                            return "Lưu Thành Công 1";
                         }
                     }
                     else
@@ -61,25 +61,29 @@ namespace Controller.UserControls_Controller
             }
             return null;
         }
-        public string UpdateNhanVien(NhanVien nhanVien,NhanVien nv)
+        public bool UpdateNhanVien(NhanVien nhanVien,NhanVien nv)
         {
             if (nhanVien.MaNV.Count() != 10)
             {
-                return "Sai Số CCCD";
+                MessageBox.Show("Sai Số CCCD");
+                return false;
             }
             else if (System.Text.RegularExpressions.Regex.IsMatch(nhanVien.SDT, "[0-9]") == false && nhanVien.SDT.Count() != 10)
             {
-                return "Sai Số Điện Thoại";
+                MessageBox.Show("Sai Số Điện Thoại");
+                return false;
             }
             if (nhanVien.MaCV == Guid.Empty)
             {
-                return "Tên Chức Vụ Không Tồn Tại";
+                MessageBox.Show("Tên Chức Vụ Không Tồn Tại");
+                return false;
             }
             if (ViewData.add == true)
             {
                 if (Server.Instance.GetData().GetNhanVien(nhanVien.MaNV) != null)
                 {
-                    return "CCCD Đã Tồn Tại";
+                    MessageBox.Show("CCCD Đã Tồn Tại");
+                    return false;
                 }
                 User user = new User();
                 user.MaNV = nhanVien.MaNV;
@@ -87,7 +91,8 @@ namespace Controller.UserControls_Controller
                 user.Password = "1";
                 Server.Instance.AddData().AddNhanVien(nhanVien);
                 Server.Instance.AddData().AddUser(user);
-                return "Lưu Thành Công Tài Khoản Có Mật Khẩu Là 1";
+                MessageBox.Show("Lưu Thành Công Tài Khoản Có Mật Khẩu Là 1");
+                return true;
             }
             else if(ViewData.update== true && nv != null)
             {
@@ -109,9 +114,11 @@ namespace Controller.UserControls_Controller
                 {
                     ViewData.nhanVien= nhanVien;
                 }
-                return "Lưu Thành Công";
+                ViewData.nhanVienEdit = nhanVien;
+                MessageBox.Show("Lưu Thành Công");
+                return true;
             }
-            return null;
+            return false;
         }
     }
 }
