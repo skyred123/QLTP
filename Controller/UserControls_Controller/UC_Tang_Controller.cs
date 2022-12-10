@@ -22,19 +22,25 @@ namespace Controller.UserControls_Controller
                 return instance;
             }
         }
-        public bool AddTang(Tang tang)
+        public Tang AddTang()
         {
-            foreach (Tang item in Server.Instance.GetData().GetTangs())
-            {
-                if (item.SoTang == tang.SoTang)
-                {
-                    MessageBox.Show("Tang Đã tồn tại");
-                    return false;
-                }
-            }
+            Tang tang = new Tang();
+            tang.SoTang = Server.Instance.GetData().GetTangs().Count +1;
             Server.Instance.AddData().AddTang(tang);
             MessageBox.Show("Thêm Thành Công");
-            return true;
+            return tang;
+        }
+        public Tang DeleteTang()
+        {
+            if (Server.Instance.GetData().GetTangs().Count() ==0)
+            {
+                MessageBox.Show("Không Có Tầng Nào Để Xóa");
+                return null;
+            }
+            Tang tang = Server.Instance.GetData().GetTangs().LastOrDefault();
+            Server.Instance.DeleteData().DeleteTang(tang);
+            MessageBox.Show("Xóa Thành Công");
+            return tang;
         }
     }
 }

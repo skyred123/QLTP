@@ -38,5 +38,9 @@ namespace Controller.Data
         {
             Server.Instance.DeleteData().DeleteChucVu(cv);
         }
+        public void DeletePhong(Phong p)
+        {
+            Server.Instance.DeleteData().DeletePhong(p);
+        }
     }
 }

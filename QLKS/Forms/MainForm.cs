@@ -114,22 +114,13 @@ namespace QLKS.Forms
 
         private void btn_Phong1_Click(object sender, EventArgs e)
         {
-
+            ViewData.Instance.SetAdd();
+            Controls_Controller.Instance.GetUserControl(panel_View, null, new UserControl_TTPhong());
         }
 
         private void btn_Phong2_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btn_Phong3_Click(object sender, EventArgs e)
-        {
-            Controls_Controller.Instance.GetUserControl(panel_View, null, new UserControl_TTPhong());
-        }
-
-        private void btn_Phong4_Click(object sender, EventArgs e)
-        {
-
+            Controls_Controller.Instance.GetUserControl(panel_View, null, new UserControl_DSPhong());
         }
         #endregion
 

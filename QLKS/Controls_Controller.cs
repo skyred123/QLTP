@@ -1,6 +1,8 @@
-﻿using Controller.Form_Controller;
+﻿using Controller.Data;
+using Controller.Form_Controller;
 using Library.Entity;
 using Library.Servser;
+using QLKS.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +10,9 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GetData = Controller.Data.GetData;
 
-namespace Controller
+namespace QLKS
 {
     public class Controls_Controller
     {
@@ -193,6 +196,42 @@ namespace Controller
         {
             button.Text = str;
         }
+        public Panel SettingControls(Panel panel_View,object ojb)
+        {
+            panel_View.Controls.Clear();
+            Panel panel = new Panel();
+            Label label = new Label();
+            List<Tang> list = GetData.Instance.GetTangs();
+            list.Reverse();
 
+
+            foreach (Tang tang in list)
+            {
+
+
+                panel = new Panel();
+                panel.Dock = DockStyle.Top;
+                panel.AutoSize = true;
+                panel_View.Controls.Add(panel);
+
+                FlowLayoutPanel flowLayout = new FlowLayoutPanel();
+                flowLayout.Dock = DockStyle.Top;
+                flowLayout.AutoScroll = true;
+                flowLayout.Size = new Size(panel_View.Width, 210);
+                panel.Controls.Add(flowLayout);
+
+                label = new Label();
+                label.Dock = DockStyle.Top;
+                label.Text = "Tầng " + tang.SoTang;
+                panel.Controls.Add(label);
+
+                foreach (Phong phong in tang.Phongs)
+                {
+                    flowLayout.Controls.Add(new UserControl_ThePhong(phong));
+
+                }
+            }
+            return panel_View;
+        }
     }
 }

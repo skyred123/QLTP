@@ -48,5 +48,14 @@ namespace Library.Servser
             item.TenCV = chucVu.TenCV;
             dbContext.SaveChanges();
         }
+        public void UpdatePhong(Phong phong)
+        {
+            var item = dbContext.Phongs.FirstOrDefault(p => p.MaPhong == phong.MaPhong);
+            item.TenPhong = phong.TenPhong;
+            item.Gia = phong.Gia;
+            item.DienTich= phong.DienTich;
+            item.TinhTrang = phong.TinhTrang;
+            dbContext.SaveChanges();
+        }
     }
 }

@@ -18,9 +18,13 @@ namespace Library.Entity
         [Key]
         public Guid MaPhong { get; set; }
 
-        [StringLength(50)]
         public string TenPhong { get; set; }
         public Guid MaTang { get; set; }
+
+        public int DienTich { get; set; }
+        public bool TinhTrang { get; set; }
+        public int Gia { get; set; }
+        public string TrangThai { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HD_DichVu> HD_DichVu { get; set; }

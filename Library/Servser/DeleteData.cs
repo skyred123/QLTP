@@ -35,5 +35,15 @@ namespace Library.Servser
             dbContext.ChucVus.Remove(chucVu);
             dbContext.SaveChanges();
         }
+        public void DeleteTang(Tang tang)
+        {
+            dbContext.Tangs.Remove(tang);
+            dbContext.SaveChanges();
+        }
+        public void DeletePhong(Phong phong)
+        {
+            dbContext.Phongs.Remove(phong);
+            dbContext.SaveChanges();
+        }
     }
 }

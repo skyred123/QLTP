@@ -39,5 +39,10 @@ namespace Library.Servser
             dbContext.Tangs.Add(t);
             dbContext.SaveChanges();
         }
+        public void AddPhong(Phong p)
+        {
+            dbContext.Phongs.Add(p);
+            dbContext.SaveChanges();
+        }
     }
 }

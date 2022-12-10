@@ -1,6 +1,7 @@
 ﻿using Library.Entity;
 using Library.Interfaces;
 using Library.Servser;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -59,6 +60,22 @@ namespace Controller.Data
         public KhachHang GetKhachHang(string id)
         {
             return Server.Instance.GetData().GetKhachHang(id);
+        }
+        public List<Tang> GetTangs()
+        {
+            return Server.Instance.GetData().GetTangs();
+        }
+        public Tang? GetTang(Guid id)
+        {
+            return Server.Instance.GetData().GetTang(id);
+        }
+        public List<Phong> GetPhongs()
+        {
+            return Server.Instance.GetData().GetPhongs();
+        }
+        public Phong? GetPhong(Guid id)
+        {
+            return Server.Instance.GetData().GetPhong(id);
         }
     }
 }

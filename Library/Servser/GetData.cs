@@ -56,5 +56,13 @@ namespace Library.Servser
         {
             return GetTangs().FirstOrDefault(e=>e.MaTang == id);
         }
+        public List<Phong> GetPhongs()
+        {
+            return dbContext.Phongs.Include(e => e.HD_DichVu).Include(e=>e.CT_HD).ToList();
+        }
+        public Phong? GetPhong(Guid id)
+        {
+            return GetPhongs().FirstOrDefault(e => e.MaTang == id);
+        }
     }
 }

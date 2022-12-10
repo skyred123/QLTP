@@ -43,7 +43,7 @@
             this.btn_DichVu = new System.Windows.Forms.Button();
             this.panel_Phong = new System.Windows.Forms.Panel();
             this.btn_Phong4 = new System.Windows.Forms.Button();
-            this.btn_Phong3 = new System.Windows.Forms.Button();
+            this.btn_Phong1 = new System.Windows.Forms.Button();
             this.btn_Phong = new System.Windows.Forms.Button();
             this.panel_KhachHang = new System.Windows.Forms.Panel();
             this.btn_KhachHang2 = new System.Windows.Forms.Button();
@@ -253,7 +253,7 @@
             // 
             this.panel_Phong.AutoSize = true;
             this.panel_Phong.Controls.Add(this.btn_Phong4);
-            this.panel_Phong.Controls.Add(this.btn_Phong3);
+            this.panel_Phong.Controls.Add(this.btn_Phong1);
             this.panel_Phong.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Phong.Location = new System.Drawing.Point(0, 420);
             this.panel_Phong.Name = "panel_Phong";
@@ -274,22 +274,22 @@
             this.btn_Phong4.Text = "Danh Sách Phòng";
             this.btn_Phong4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Phong4.UseVisualStyleBackColor = false;
-            this.btn_Phong4.Click += new System.EventHandler(this.btn_Phong4_Click);
+            this.btn_Phong4.Click += new System.EventHandler(this.btn_Phong2_Click);
             // 
-            // btn_Phong3
+            // btn_Phong1
             // 
-            this.btn_Phong3.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btn_Phong3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_Phong3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Phong3.Location = new System.Drawing.Point(0, 0);
-            this.btn_Phong3.Name = "btn_Phong3";
-            this.btn_Phong3.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btn_Phong3.Size = new System.Drawing.Size(223, 45);
-            this.btn_Phong3.TabIndex = 4;
-            this.btn_Phong3.Text = "Nhập Phòng";
-            this.btn_Phong3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Phong3.UseVisualStyleBackColor = false;
-            this.btn_Phong3.Click += new System.EventHandler(this.btn_Phong3_Click);
+            this.btn_Phong1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btn_Phong1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Phong1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Phong1.Location = new System.Drawing.Point(0, 0);
+            this.btn_Phong1.Name = "btn_Phong1";
+            this.btn_Phong1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btn_Phong1.Size = new System.Drawing.Size(223, 45);
+            this.btn_Phong1.TabIndex = 4;
+            this.btn_Phong1.Text = "Nhập Phòng";
+            this.btn_Phong1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Phong1.UseVisualStyleBackColor = false;
+            this.btn_Phong1.Click += new System.EventHandler(this.btn_Phong1_Click);
             // 
             // btn_Phong
             // 
@@ -509,7 +509,7 @@
         private Button btn_DichVu;
         private Panel panel_Phong;
         private Button btn_Phong4;
-        private Button btn_Phong3;
+        private Button btn_Phong1;
         private Button btn_Phong;
         private Panel panel_KhachHang;
         private Button btn_KhachHang;
