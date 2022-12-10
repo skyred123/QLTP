@@ -13,18 +13,17 @@ namespace Library
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public virtual DbSet<BangGia> BangGias { get; set; }
         public virtual DbSet<ChucVu> ChucVus { get; set; }
         public virtual DbSet<DichVu> DichVus { get; set; }
         public virtual DbSet<HD_DichVu> HD_DichVu { get; set; }
         public virtual DbSet<HopDong> HopDongs { get; set; }
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
-        public virtual DbSet<LoaiPhong> LoaiPhongs { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<Phong> Phongs { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<CT_HD> CT_HD { get; set; }
         public virtual DbSet<CT_HDDV> CT_HDDV { get; set; }
+        public virtual DbSet<Tang> Tangs { get; set; }
         public ApplicationDbContext()
             : base(getApplicationDbContext())
         {

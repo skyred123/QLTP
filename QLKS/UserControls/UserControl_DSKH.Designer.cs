@@ -178,10 +178,10 @@
             // 
             // btn_TimKiem
             // 
-            this.btn_TimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_TimKiem.Location = new System.Drawing.Point(309, 168);
+            this.btn_TimKiem.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_TimKiem.Location = new System.Drawing.Point(343, 168);
             this.btn_TimKiem.Name = "btn_TimKiem";
-            this.btn_TimKiem.Size = new System.Drawing.Size(150, 29);
+            this.btn_TimKiem.Size = new System.Drawing.Size(116, 29);
             this.btn_TimKiem.TabIndex = 7;
             this.btn_TimKiem.Text = "Tìm Kiếm";
             this.btn_TimKiem.UseVisualStyleBackColor = true;
@@ -198,10 +198,10 @@
             // 
             // btn_Xoa
             // 
-            this.btn_Xoa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Xoa.Location = new System.Drawing.Point(465, 168);
+            this.btn_Xoa.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_Xoa.Location = new System.Drawing.Point(490, 168);
             this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(150, 29);
+            this.btn_Xoa.Size = new System.Drawing.Size(125, 29);
             this.btn_Xoa.TabIndex = 6;
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.UseVisualStyleBackColor = true;

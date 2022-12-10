@@ -32,22 +32,25 @@ namespace QLKS.UserControls
         }
         private void dgv_KhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgv_KhachHang.Columns[e.ColumnIndex].ToolTipText == "Edit")
+            if(e.RowIndex >= 0)
             {
-                KhachHang khachHang = GetData.Instance.GetKhachHang(dgv_KhachHang.Rows[e.RowIndex].Cells[0].Value.ToString());
-                ViewData.Instance.SetUpdate(khachHang);
-                Controls_Controller.Instance.GetEditForm(new UserControl_TKKH(), new EditForm());
-            }
-            else if (dgv_KhachHang.Columns[e.ColumnIndex].ToolTipText == "Delete")
-            {
-                if (MessageBox.Show("Thông Báo", "Bạn Muốn Xóa", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (dgv_KhachHang.Columns[e.ColumnIndex].ToolTipText == "Edit")
                 {
                     KhachHang khachHang = GetData.Instance.GetKhachHang(dgv_KhachHang.Rows[e.RowIndex].Cells[0].Value.ToString());
-                    DeleteData.Instance.DeleteKH(khachHang);
-                    MessageBox.Show("Xóa Thành Công");
+                    ViewData.Instance.SetUpdate(khachHang);
+                    Controls_Controller.Instance.GetEditForm(new UserControl_TKKH(), new EditForm());
                 }
+                else if (dgv_KhachHang.Columns[e.ColumnIndex].ToolTipText == "Delete")
+                {
+                    if (MessageBox.Show("Thông Báo", "Bạn Muốn Xóa", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        KhachHang khachHang = GetData.Instance.GetKhachHang(dgv_KhachHang.Rows[e.RowIndex].Cells[0].Value.ToString());
+                        DeleteData.Instance.DeleteKH(khachHang);
+                        MessageBox.Show("Xóa Thành Công");
+                    }
+                }
+                dgv_KhachHang.Refresh();
             }
-            dgv_KhachHang.Refresh();
         }
 
         private void btn_Xoa_Click(object sender, EventArgs e)

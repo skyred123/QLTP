@@ -93,6 +93,12 @@ namespace Controller
                 comboBox.DisplayMember = "TenCV";
                 comboBox.ValueMember = "MaCV";
             }
+            else if (ojb.GetType() == typeof(Tang))
+            {
+                comboBox.DataSource = Server.Instance.GetData().GetTangs();
+                comboBox.DisplayMember = "SoTang";
+                comboBox.ValueMember = "MaTang";
+            }
         }
         public DataGridView AddDGV(DataGridView dataGridView, object ojb)
         {
@@ -110,6 +116,11 @@ namespace Controller
             {
                 KhachHang kh = (KhachHang)ojb;
                 dataGridView.Rows.Add(kh.MaKH, kh.TenKH, kh.SDT, kh.Email);
+            }
+            else if (ojb.GetType() == typeof(Tang))
+            {
+                Tang t = (Tang)ojb;
+                dataGridView.Rows.Add(t.MaTang, t.SoTang, t.Phongs.Count());
             }
             return dataGridView;
         }
@@ -135,6 +146,13 @@ namespace Controller
                 foreach (KhachHang kh in Server.Instance.GetData().GetKhachHangs())
                 {
                     dataGridView = AddDGV(dataGridView,kh);
+                }
+            }
+            else if(ojb.GetType() == typeof(Tang))
+            {
+                foreach (Tang tang in Server.Instance.GetData().GetTangs())
+                {
+                    dataGridView = AddDGV(dataGridView, tang);
                 }
             }
             return dataGridView;

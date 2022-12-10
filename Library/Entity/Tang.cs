@@ -1,26 +1,28 @@
-namespace Library.Entity
+﻿namespace Library.Entity
 {
+    using Library.Entity;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("LoaiPhong")]
-    public partial class LoaiPhong
+    [Table("Tang")]
+    public partial class Tang
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LoaiPhong()
+        public Tang()
         {
             Phongs = new HashSet<Phong>();
         }
 
         [Key]
-        public Guid MaLoai { get; set; }
+        public Guid MaTang { get; set; }
 
-        [StringLength(50)]
-        public string TenLoai { get; set; }
+        [Column("SoTang")]
+        public int? SoTang { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Phong> Phongs { get; set; }
     }
 }
+

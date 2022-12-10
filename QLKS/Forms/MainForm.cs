@@ -60,7 +60,6 @@ namespace QLKS.Forms
 
         private void btn_NhanVien_Click(object sender, EventArgs e)
         {
-            
             Controls_Controller.Instance.ShowPanel(panel_NhanVien);
             
         }
@@ -125,7 +124,7 @@ namespace QLKS.Forms
 
         private void btn_Phong3_Click(object sender, EventArgs e)
         {
-
+            Controls_Controller.Instance.GetUserControl(panel_View, null, new UserControl_TTPhong());
         }
 
         private void btn_Phong4_Click(object sender, EventArgs e)
@@ -181,6 +180,11 @@ namespace QLKS.Forms
         private void btn_DangXuat_Click(object sender, EventArgs e)
         {
             Controls_Controller.Instance.GetForm(this, new LoginForm());
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

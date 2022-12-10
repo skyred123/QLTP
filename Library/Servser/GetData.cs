@@ -48,5 +48,13 @@ namespace Library.Servser
         {
             return GetKhachHangs().FirstOrDefault(e => e.MaKH == id);
         }
+        public List<Tang> GetTangs()
+        {
+            return dbContext.Tangs.Include(e=>e.Phongs).ToList();
+        }
+        public Tang? GetTang(Guid id)
+        {
+            return GetTangs().FirstOrDefault(e=>e.MaTang == id);
+        }
     }
 }

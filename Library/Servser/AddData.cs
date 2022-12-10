@@ -34,5 +34,10 @@ namespace Library.Servser
             dbContext.ChucVus.Add(cv);
             dbContext.SaveChanges();
         }
+        public void AddTang(Tang t)
+        {
+            dbContext.Tangs.Add(t);
+            dbContext.SaveChanges();
+        }
     }
 }
