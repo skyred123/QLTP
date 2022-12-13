@@ -42,14 +42,14 @@ namespace QLKS.UserControls
             {
                 if(UC_TKKH_Controller.Instance.UpdateKhachHang(khachHang, ViewData.Instance.GetKhachHangEdit()))
                 {
-                    Controls_Controller.Instance.AddDGV(UserControl_DSKH.instance.dataGridView, new KhachHang());
+                    QLKS.Controlss.Instance.AddDGV(UserControl_DSKH.instance.dataGridView, new KhachHang());
                 }
             }
             else if(ViewData.Instance.GetAdd() == true)
             {
                 if(UC_TKKH_Controller.Instance.UpdateKhachHang(khachHang, null))
                 {
-                    Controls_Controller.Instance.AddDGV(UserControl_DSKH.instance.dataGridView, new KhachHang());
+                    QLKS.Controlss.Instance.AddDGV(UserControl_DSKH.instance.dataGridView, new KhachHang());
                 }
             }
         }

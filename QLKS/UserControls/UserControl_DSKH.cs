@@ -28,7 +28,7 @@ namespace QLKS.UserControls
 
         private void UserControl_DSKH_Load(object sender, EventArgs e)
         {
-            Controls_Controller.Instance.AddDGVs(dgv_KhachHang,new KhachHang());
+            QLKS.Controlss.Instance.AddDGVs(dgv_KhachHang, new KhachHang());
         }
         private void dgv_KhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -38,7 +38,7 @@ namespace QLKS.UserControls
                 {
                     KhachHang khachHang = GetData.Instance.GetKhachHang(dgv_KhachHang.Rows[e.RowIndex].Cells[0].Value.ToString());
                     ViewData.Instance.SetUpdate(khachHang);
-                    Controls_Controller.Instance.GetEditForm(new UserControl_TKKH(), new EditForm());
+                    QLKS.Controlss.Instance.GetEditForm(new UserControl_TKKH(), new EditForm());
                 }
                 else if (dgv_KhachHang.Columns[e.ColumnIndex].ToolTipText == "Delete")
                 {
@@ -56,14 +56,14 @@ namespace QLKS.UserControls
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
             txt_TimKiem.Text = string.Empty;
-            Controls_Controller.Instance.AddDGVs(dgv_KhachHang,new KhachHang());
+            QLKS.Controlss.Instance.AddDGVs(dgv_KhachHang, new KhachHang());
         }
 
         private void btn_TimKiem_Click(object sender, EventArgs e)
         {
             if (txt_TimKiem.Text != string.Empty)
             {
-                dgv_KhachHang = Controls_Controller.Instance.Search(dgv_KhachHang, txt_TimKiem.Text.ToLower(),new KhachHang());
+                dgv_KhachHang = QLKS.Controlss.Instance.Search(dgv_KhachHang, txt_TimKiem.Text.ToLower(),new KhachHang());
             }
             else
             {

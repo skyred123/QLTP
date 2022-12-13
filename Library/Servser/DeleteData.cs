@@ -45,5 +45,10 @@ namespace Library.Servser
             dbContext.Phongs.Remove(phong);
             dbContext.SaveChanges();
         }
+        public void DeleteLoaiPhong(LoaiPhong loaihhong)
+        {
+            dbContext.LoaiPhongs.Remove(loaihhong);
+            dbContext.SaveChanges();
+        }
     }
 }

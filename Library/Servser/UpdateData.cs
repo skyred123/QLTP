@@ -52,9 +52,16 @@ namespace Library.Servser
         {
             var item = dbContext.Phongs.FirstOrDefault(p => p.MaPhong == phong.MaPhong);
             item.TenPhong = phong.TenPhong;
-            item.Gia = phong.Gia;
-            item.DienTich= phong.DienTich;
-            item.TinhTrang = phong.TinhTrang;
+            item.TrangThai = phong.TrangThai;
+            item.LoaiPhong = phong.LoaiPhong;
+            item.MaLoai= phong.MaLoai;
+            dbContext.SaveChanges();
+        }
+        public void UpdateLoaiPhong(LoaiPhong loaiPhong)
+        {
+            var item = dbContext.LoaiPhongs.FirstOrDefault(p => p.MaLoai == loaiPhong.MaLoai);
+            item.TenLoaiPhong = loaiPhong.TenLoaiPhong;
+            item.Gia = loaiPhong.Gia;
             dbContext.SaveChanges();
         }
     }

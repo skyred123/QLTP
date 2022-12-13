@@ -42,5 +42,9 @@ namespace Controller.Data
         {
             Server.Instance.DeleteData().DeletePhong(p);
         }
+        public void DeleteLoaiPhong(LoaiPhong lp)
+        {
+            Server.Instance.DeleteData().DeleteLoaiPhong(lp);
+        }
     }
 }

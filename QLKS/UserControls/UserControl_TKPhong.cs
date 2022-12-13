@@ -16,9 +16,9 @@ using System.Windows.Forms;
 
 namespace QLKS.UserControls
 {
-    public partial class UserControl_TTPhong : UserControl
+    public partial class UserControl_TKPhong : UserControl
     {
-        public UserControl_TTPhong()
+        public UserControl_TKPhong()
         {
             InitializeComponent();
         }
@@ -30,8 +30,22 @@ namespace QLKS.UserControls
         private void UserControl_TTPhong_Load(object sender, EventArgs e)
         {
             txt_TenPhong.Enabled= false;
-            Controls_Controller.Instance.AddComboBox(cbx_Tang, new Tang());
+            QLKS.Controlss.Instance.AddComboBox(cbx_Tang, new Tang());
+            Controlss.Instance.AddComboBox(cbx_LoaiPhong, new LoaiPhong());
             Form_Load();
+            if(ViewData.Instance.GetAdd() == true)
+            {
+
+            }
+            else if (ViewData.Instance.GetUpdate() == true)
+            {
+                var x = ViewData.Instance.GetPhongEdit();
+                cbx_Tang.Enabled = false;
+                cbx_Tang.Text = ViewData.Instance.GetPhongEdit().Tang.SoTang.ToString();
+                cbx_LoaiPhong.Text = ViewData.Instance.GetPhongEdit().LoaiPhong.TenLoaiPhong.ToString();
+                txt_TenPhong.Text = ViewData.Instance.GetPhongEdit().TenPhong;
+                txt_TrangThai.Text = ViewData.Instance.GetPhongEdit().TrangThai;
+            }
         }
         private void cbx_Tang_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -39,42 +53,38 @@ namespace QLKS.UserControls
         }
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            txt_DienTich.Text = string.Empty;
-            txt_TenPhong.Text = string.Empty;
-            txt_Gia.Text = string.Empty;
             txt_TrangThai.Text = string.Empty;
         }
 
         private void link_Tang_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Controls_Controller.Instance.GetEditForm(new UserControl_Tang(), new EditForm());
+            QLKS.Controlss.Instance.GetEditForm(new UserControl_Tang(), new EditForm());
         }
 
         private void btn_Luu_Click(object sender, EventArgs e)
         {
             Phong phong = new Phong();
             phong.TenPhong = txt_TenPhong.Text;
-            if (txt_DienTich.Text == string.Empty || txt_Gia.Text == string.Empty)
-            {
-                MessageBox.Show("Thiếu dữ liệu");
-                return;
-            }
-            else
-            {
-                phong.DienTich = int.Parse(txt_DienTich.Text);
-                phong.Gia = int.Parse(txt_Gia.Text);
-            }
+            phong.MaLoai = ((LoaiPhong)cbx_LoaiPhong.SelectedItem).MaLoai;
+            //phong.LoaiPhong = ((LoaiPhong)cbx_LoaiPhong.SelectedItem);
             phong.TrangThai = txt_TrangThai.Text;
             phong.MaTang = ((Tang)cbx_Tang.SelectedItem).MaTang;
             if (ViewData.Instance.GetAdd() == true)
             {
                 UC_TTPhong_Controller.Instance.UpdatePhong(phong);
+                Form_Load();
             }
             else if(ViewData.Instance.GetUpdate() == true)
             {
+                phong.MaPhong = ViewData.Instance.GetPhongEdit().MaPhong;
                 UC_TTPhong_Controller.Instance.UpdatePhong(phong);
+                UserControl_DSPhong.instance.Panel = QLKS.Controlss.Instance.SettingControls(UserControl_DSPhong.instance.Panel, new Phong());
             }
-            Form_Load();
+        }
+
+        private void Link_LoaiPhong_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Controlss.Instance.GetEditForm(new UserControl_LoaiPhong(), new EditForm());
         }
     }
 }

@@ -26,7 +26,7 @@ namespace QLKS.Forms
         {
             if(LoginForm_Controller.Instance.DangNhap(txt_Ten.Text, txt_MatKhau.Text)) 
             {
-                Controls_Controller.Instance.GetForm(this, new MainForm());
+                QLKS.Controlss.Instance.GetForm(this, new MainForm());
             }
             else
             {

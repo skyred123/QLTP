@@ -26,7 +26,7 @@ namespace QLKS.UserControls
 
         private void UserControl_DSPhong_Load(object sender, EventArgs e)
         {
-            panel_View =Controls_Controller.Instance.SettingControls(panel_View, new Phong());
+            panel_View = QLKS.Controlss.Instance.SettingControls(panel_View, new Phong());
         }
     }
 }

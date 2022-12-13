@@ -1,5 +1,6 @@
 ﻿using Controller.Data;
 using Library.Entity;
+using QLKS.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +25,7 @@ namespace QLKS.UserControls
         {
             pbx_Image.Image = Image.FromFile("D:\\Eleaning\\Code\\QLKS\\QLKS\\Image\\house.jfif");
             label_TenPhong.Text = phong.TenPhong;
-            if (phong.TinhTrang == true)
+            if (phong.CT_HD.Count() != 0)
             {
                 label_TinhTrang.Text = "Phòng Đang Thuê";
             }
@@ -32,29 +33,23 @@ namespace QLKS.UserControls
             {
                 label_TinhTrang.Text = "Phòng Trống";
             }
-            if(phong.CT_HD.Count() == 0)
-            {
-                label_TenKH.Text = "Phòng Trống";
-            }
-            else
-            {
-            }
         }
 
         private void xoaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DeleteData.Instance.DeletePhong(phong);
-            UserControl_DSPhong.instance.Panel = Controls_Controller.Instance.SettingControls(UserControl_DSPhong.instance.Panel, new Phong());
+            UserControl_DSPhong.instance.Panel = QLKS.Controlss.Instance.SettingControls(UserControl_DSPhong.instance.Panel, new Phong());
         }
 
         private void xemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(this.phong.TenPhong);
+            MessageBox.Show(this.phong.LoaiPhong.TenLoaiPhong);
         }
 
         private void suaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ViewData.Instance.SetUpdate(phong);
+            QLKS.Controlss.Instance.GetEditForm(new UserControl_TKPhong(), new EditForm());
         }
     }
 }

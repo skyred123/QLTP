@@ -25,11 +25,11 @@ namespace QLKS.Forms
         }
         public void HideMenu()
         {
-            Controls_Controller.Instance.HidePanel(panel_NhanVien);
-            Controls_Controller.Instance.HidePanel(panel_KhachHang);
-            Controls_Controller.Instance.HidePanel(panel_Phong);
-            Controls_Controller.Instance.HidePanel(panel_DichVu);
-            Controls_Controller.Instance.HidePanel(panel_HopDong);
+            QLKS.Controlss.Instance.HidePanel(panel_NhanVien);
+            QLKS.Controlss.Instance.HidePanel(panel_KhachHang);
+            QLKS.Controlss.Instance.HidePanel(panel_Phong);
+            QLKS.Controlss.Instance.HidePanel(panel_DichVu);
+            QLKS.Controlss.Instance.HidePanel(panel_HopDong);
         }
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e) => Application.Exit();
 
@@ -40,94 +40,94 @@ namespace QLKS.Forms
             else tenCV = ViewData.Instance.GetNhanVien().ChucVu.TenCV;
             if (tenCV == "Admin")
             {
-                Controls_Controller.Instance.HideButton(btn_NhanVien1);
-                Controls_Controller.Instance.HideButton(btn_NhanVien2);
+                QLKS.Controlss.Instance.HideButton(btn_NhanVien1);
+                QLKS.Controlss.Instance.HideButton(btn_NhanVien2);
             }
             else
             {
                 if (tenCV == "Nhân Viên")
                 {
-                    Controls_Controller.Instance.HideButton(btn_NhanVien3);
+                    QLKS.Controlss.Instance.HideButton(btn_NhanVien3);
                 }
                 else  if(tenCV == "Quản Lý")
                 {
                     
                 }
             }
-            Controls_Controller.Instance.ButtonText(btn_NhanVien, tenCV);
+            QLKS.Controlss.Instance.ButtonText(btn_NhanVien, tenCV);
         }
         #region Nhan Vien
 
         private void btn_NhanVien_Click(object sender, EventArgs e)
         {
-            Controls_Controller.Instance.ShowPanel(panel_NhanVien);
+            QLKS.Controlss.Instance.ShowPanel(panel_NhanVien);
             
         }
         private void btn_NhanVien1_Click(object sender, EventArgs e)
         {
-            Controls_Controller.Instance.GetUserControl(panel_View, null, new UserControl_TTNV());
+            QLKS.Controlss.Instance.GetUserControl(panel_View, null, new UserControl_TTNV());
         }
 
         private void btn_NhanVien2_Click(object sender, EventArgs e)
         {
 
             ViewData.Instance.SetUpdate(ViewData.Instance.GetNhanVien());
-            Controls_Controller.Instance.GetUserControl(panel_View, null, new UserControl_TKNV());
+            QLKS.Controlss.Instance.GetUserControl(panel_View, null, new UserControl_TKNV());
         }
 
         private void btn_NhanVien3_Click(object sender, EventArgs e)
         {
             ViewData.Instance.SetAdd();
-            Controls_Controller.Instance.GetUserControl(panel_View, null, new UserControl_TKNV());
+            QLKS.Controlss.Instance.GetUserControl(panel_View, null, new UserControl_TKNV());
         }
         private void btn_NhanVien4_Click(object sender, EventArgs e)
         {
-            Controls_Controller.Instance.GetUserControl(panel_View, null, new UserControl_DSNV());
+            QLKS.Controlss.Instance.GetUserControl(panel_View, null, new UserControl_DSNV());
         }
         #endregion
 
         #region Khach Hang
         private void btn_KhachHang_Click(object sender, EventArgs e)
         {
-            Controls_Controller.Instance.ShowPanel(panel_KhachHang);
+            QLKS.Controlss.Instance.ShowPanel(panel_KhachHang);
             
         }
 
         private void btn_KhachHang1_Click(object sender, EventArgs e)
         {
             ViewData.Instance.SetAdd();
-            Controls_Controller.Instance.GetUserControl(panel_View, null, new UserControl_TKKH());
+            QLKS.Controlss.Instance.GetUserControl(panel_View, null, new UserControl_TKKH());
         }
 
         private void btn_KhachHang2_Click(object sender, EventArgs e)
         {
-            Controls_Controller.Instance.GetUserControl(panel_View, null, new UserControl_DSKH());
+            QLKS.Controlss.Instance.GetUserControl(panel_View, null, new UserControl_DSKH());
         }
         #endregion
 
         #region Phong
         private void btn_Phong_Click(object sender, EventArgs e)
         {
-            Controls_Controller.Instance.ShowPanel(panel_Phong);
+            QLKS.Controlss.Instance.ShowPanel(panel_Phong);
 
         }
 
         private void btn_Phong1_Click(object sender, EventArgs e)
         {
             ViewData.Instance.SetAdd();
-            Controls_Controller.Instance.GetUserControl(panel_View, null, new UserControl_TTPhong());
+            QLKS.Controlss.Instance.GetUserControl(panel_View, null, new UserControl_TKPhong());
         }
 
         private void btn_Phong2_Click(object sender, EventArgs e)
         {
-            Controls_Controller.Instance.GetUserControl(panel_View, null, new UserControl_DSPhong());
+            QLKS.Controlss.Instance.GetUserControl(panel_View, null, new UserControl_DSPhong());
         }
         #endregion
 
         #region Dich Vu
         private void btn_DichVu_Click(object sender, EventArgs e)
         {
-            Controls_Controller.Instance.ShowPanel(panel_DichVu);
+            QLKS.Controlss.Instance.ShowPanel(panel_DichVu);
         }
 
         private void btn_DichVu1_Click(object sender, EventArgs e)
@@ -149,7 +149,7 @@ namespace QLKS.Forms
         #region Hop Dong
         private void btn_HopDong_Click(object sender, EventArgs e)
         {
-            Controls_Controller.Instance.ShowPanel(panel_HopDong);
+            QLKS.Controlss.Instance.ShowPanel(panel_HopDong);
         }
 
         private void btn_HopDong1_Click(object sender, EventArgs e)
@@ -159,7 +159,7 @@ namespace QLKS.Forms
 
         private void btn_HopDong2_Click(object sender, EventArgs e)
         {
-
+            Controlss.Instance.GetUserControl(panel_View, null, new UserControl_HopDong());
         }
 
         private void btn_HopDong3_Click(object sender, EventArgs e)
@@ -170,7 +170,7 @@ namespace QLKS.Forms
 
         private void btn_DangXuat_Click(object sender, EventArgs e)
         {
-            Controls_Controller.Instance.GetForm(this, new LoginForm());
+            QLKS.Controlss.Instance.GetForm(this, new LoginForm());
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)

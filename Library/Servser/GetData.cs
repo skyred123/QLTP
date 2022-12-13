@@ -58,11 +58,19 @@ namespace Library.Servser
         }
         public List<Phong> GetPhongs()
         {
-            return dbContext.Phongs.Include(e => e.HD_DichVu).Include(e=>e.CT_HD).ToList();
+            return dbContext.Phongs.Include(e => e.HD_DichVu).Include(e => e.LoaiPhong).Include(e=>e.CT_HD).Include(e=> e.Tang).ToList();
         }
         public Phong? GetPhong(Guid id)
         {
-            return GetPhongs().FirstOrDefault(e => e.MaTang == id);
+            return GetPhongs().FirstOrDefault(e => e.MaPhong == id);
+        }
+        public List<LoaiPhong> GetLoaiPhongs()
+        {
+            return dbContext.LoaiPhongs.Include(e => e.Phongs).ToList();
+        }
+        public LoaiPhong? GetLoaiPhong(Guid id)
+        {
+            return GetLoaiPhongs().FirstOrDefault(e => e.MaLoai == id);
         }
     }
 }

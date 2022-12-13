@@ -24,7 +24,7 @@ namespace QLKS.UserControls
 
         private void link_ChucVu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Controls_Controller.Instance.GetEditForm(new UserControl_ChucVu(), new EditForm());
+            QLKS.Controlss.Instance.GetEditForm(new UserControl_ChucVu(), new EditForm());
         }
     }
 }

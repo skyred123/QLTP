@@ -44,5 +44,10 @@ namespace Library.Servser
             dbContext.Phongs.Add(p);
             dbContext.SaveChanges();
         }
+        public void AddLoaiPhong(LoaiPhong lp)
+        {
+            dbContext.LoaiPhongs.Add(lp);
+            dbContext.SaveChanges();
+        }
     }
 }

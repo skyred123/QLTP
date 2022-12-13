@@ -49,12 +49,18 @@ namespace Controller.Data
             {
                 khachHangEdit = (KhachHang)ojb;
             }
-            
+            else if (ojb.GetType() == typeof(Phong))
+            {
+                phongEdit = (Phong)ojb;
+            }
         }
         public bool GetUpdate() => update;
         internal static NhanVien? nhanVienEdit { get; set; }
         public NhanVien? GetNhanVienEdit() => nhanVienEdit;
         internal static KhachHang? khachHangEdit { get; set;}
         public KhachHang? GetKhachHangEdit() => khachHangEdit;
+
+        internal static Phong? phongEdit { get; set; }
+        public Phong? GetPhongEdit() => phongEdit;
     }
 }

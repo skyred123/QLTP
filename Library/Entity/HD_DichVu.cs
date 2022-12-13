@@ -17,7 +17,7 @@ namespace Library.Entity
         public Guid MaHDDV { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime? NgaySD { get; set; }
+        public DateTime? NgayDat { get; set; }
 
         public long? TongTien { get; set; }
 

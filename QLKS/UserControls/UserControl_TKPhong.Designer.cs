@@ -1,6 +1,6 @@
 ﻿namespace QLKS.UserControls
 {
-    partial class UserControl_TTPhong
+    partial class UserControl_TKPhong
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,18 +29,16 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.Link_LoaiPhong = new System.Windows.Forms.LinkLabel();
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.txt_TenPhong = new System.Windows.Forms.TextBox();
-            this.txt_DienTich = new System.Windows.Forms.TextBox();
-            this.txt_Gia = new System.Windows.Forms.TextBox();
             this.btn_Luu = new System.Windows.Forms.Button();
             this.cbx_Tang = new System.Windows.Forms.ComboBox();
             this.link_Tang = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_TrangThai = new System.Windows.Forms.TextBox();
+            this.cbx_LoaiPhong = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,18 +47,16 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.Link_LoaiPhong, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.btn_Xoa, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.txt_TenPhong, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txt_DienTich, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txt_Gia, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.btn_Luu, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.cbx_Tang, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.link_Tang, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.txt_TrangThai, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txt_TrangThai, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.cbx_LoaiPhong, 1, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -75,6 +71,18 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(502, 502);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // Link_LoaiPhong
+            // 
+            this.Link_LoaiPhong.AutoSize = true;
+            this.Link_LoaiPhong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Link_LoaiPhong.Location = new System.Drawing.Point(3, 250);
+            this.Link_LoaiPhong.Name = "Link_LoaiPhong";
+            this.Link_LoaiPhong.Size = new System.Drawing.Size(245, 20);
+            this.Link_LoaiPhong.TabIndex = 17;
+            this.Link_LoaiPhong.TabStop = true;
+            this.Link_LoaiPhong.Text = "Loại Phòng";
+            this.Link_LoaiPhong.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Link_LoaiPhong_LinkClicked);
             // 
             // btn_Xoa
             // 
@@ -97,26 +105,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên Phòng";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Location = new System.Drawing.Point(3, 200);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(245, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Diện tích";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Location = new System.Drawing.Point(3, 250);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(245, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Giá";
-            // 
             // txt_TenPhong
             // 
             this.txt_TenPhong.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -124,22 +112,6 @@
             this.txt_TenPhong.Name = "txt_TenPhong";
             this.txt_TenPhong.Size = new System.Drawing.Size(245, 27);
             this.txt_TenPhong.TabIndex = 6;
-            // 
-            // txt_DienTich
-            // 
-            this.txt_DienTich.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_DienTich.Location = new System.Drawing.Point(254, 203);
-            this.txt_DienTich.Name = "txt_DienTich";
-            this.txt_DienTich.Size = new System.Drawing.Size(245, 27);
-            this.txt_DienTich.TabIndex = 8;
-            // 
-            // txt_Gia
-            // 
-            this.txt_Gia.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_Gia.Location = new System.Drawing.Point(254, 253);
-            this.txt_Gia.Name = "txt_Gia";
-            this.txt_Gia.Size = new System.Drawing.Size(245, 27);
-            this.txt_Gia.TabIndex = 9;
             // 
             // btn_Luu
             // 
@@ -178,7 +150,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Location = new System.Drawing.Point(3, 300);
+            this.label2.Location = new System.Drawing.Point(3, 200);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(245, 20);
             this.label2.TabIndex = 14;
@@ -187,17 +159,26 @@
             // txt_TrangThai
             // 
             this.txt_TrangThai.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_TrangThai.Location = new System.Drawing.Point(254, 303);
+            this.txt_TrangThai.Location = new System.Drawing.Point(254, 203);
             this.txt_TrangThai.Name = "txt_TrangThai";
             this.txt_TrangThai.Size = new System.Drawing.Size(245, 27);
             this.txt_TrangThai.TabIndex = 15;
             // 
-            // UserControl_TTPhong
+            // cbx_LoaiPhong
+            // 
+            this.cbx_LoaiPhong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbx_LoaiPhong.FormattingEnabled = true;
+            this.cbx_LoaiPhong.Location = new System.Drawing.Point(254, 253);
+            this.cbx_LoaiPhong.Name = "cbx_LoaiPhong";
+            this.cbx_LoaiPhong.Size = new System.Drawing.Size(245, 28);
+            this.cbx_LoaiPhong.TabIndex = 16;
+            // 
+            // UserControl_TKPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "UserControl_TTPhong";
+            this.Name = "UserControl_TKPhong";
             this.Size = new System.Drawing.Size(502, 502);
             this.Load += new System.EventHandler(this.UserControl_TTPhong_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -210,16 +191,14 @@
 
         private TableLayoutPanel tableLayoutPanel1;
         private Label label1;
-        private Label label3;
-        private Label label4;
         private TextBox txt_TenPhong;
-        private TextBox txt_DienTich;
-        private TextBox txt_Gia;
         private Button btn_Xoa;
         private Button btn_Luu;
         private ComboBox cbx_Tang;
         private LinkLabel link_Tang;
+        private LinkLabel Link_LoaiPhong;
         private Label label2;
         private TextBox txt_TrangThai;
+        private ComboBox cbx_LoaiPhong;
     }
 }

@@ -20,6 +20,7 @@ namespace Library
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<Phong> Phongs { get; set; }
+        public virtual DbSet<LoaiPhong> LoaiPhongs { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<CT_HD> CT_HD { get; set; }
         public virtual DbSet<CT_HDDV> CT_HDDV { get; set; }

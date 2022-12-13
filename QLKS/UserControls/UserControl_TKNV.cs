@@ -16,8 +16,8 @@ namespace QLKS.UserControls
         }
         private void hideSubMenu()
         {
-            Controls_Controller.Instance.HidePanel(panel_DTTTK);
-            Controls_Controller.Instance.HidePanel(panel_DMK);
+            QLKS.Controlss.Instance.HidePanel(panel_DTTTK);
+            QLKS.Controlss.Instance.HidePanel(panel_DMK);
             if(ViewData.Instance.GetNhanVien() == null)
             {
 
@@ -45,18 +45,18 @@ namespace QLKS.UserControls
         }
         private void UserControl_ChinhSuaTT_Load(object sender, EventArgs e)
         {
-            Controls_Controller.Instance.AddComboBox(cbx_ChucVu, new ChucVu());
+            QLKS.Controlss.Instance.AddComboBox(cbx_ChucVu, new ChucVu());
             if (ViewData.Instance.GetAdd())
             {
-                Controls_Controller.Instance.HidePanel(panel_DMK);
-                Controls_Controller.Instance.HidePanel(panel_MK);
-                Controls_Controller.Instance.ButtonText(btn_TTTK, "Tạo");
+                QLKS.Controlss.Instance.HidePanel(panel_DMK);
+                QLKS.Controlss.Instance.HidePanel(panel_MK);
+                QLKS.Controlss.Instance.ButtonText(btn_TTTK, "Tạo");
             }
                 
         }
         private void btn_TTTK_Click(object sender, EventArgs e)
         {
-            Controls_Controller.Instance.ShowPanel(panel_DTTTK);
+            QLKS.Controlss.Instance.ShowPanel(panel_DTTTK);
             if (ViewData.Instance.GetAdd() == true)
             {
                 Clear();
@@ -82,7 +82,7 @@ namespace QLKS.UserControls
 
         private void btn_MK_Click(object sender, EventArgs e)
         {
-            Controls_Controller.Instance.ShowPanel(panel_DMK);
+            QLKS.Controlss.Instance.ShowPanel(panel_DMK);
             if (ViewData.Instance.GetAdd())
             {
 
@@ -122,21 +122,21 @@ namespace QLKS.UserControls
             {
                 if(UC_TKNV_Controller.Instance.UpdateNhanVien(item,null) == true)
                 {
-                    Controls_Controller.Instance.AddDGVs(UserControl_DSNV.instance.dataGridView, new NhanVien());
+                    QLKS.Controlss.Instance.AddDGVs(UserControl_DSNV.instance.dataGridView, new NhanVien());
                 }
             }
             else if (ViewData.Instance.GetUpdate())
             {
                 if (UC_TKNV_Controller.Instance.UpdateNhanVien(item, ViewData.Instance.GetNhanVienEdit()))
                 {
-                    Controls_Controller.Instance.HidePanel(panel_DTTTK);
-                    Controls_Controller.Instance.AddDGVs(UserControl_DSNV.instance.dataGridView, new NhanVien());
+                    QLKS.Controlss.Instance.HidePanel(panel_DTTTK);
+                    QLKS.Controlss.Instance.AddDGVs(UserControl_DSNV.instance.dataGridView, new NhanVien());
                 }
             }
         }
         private void btn_DoiAvatar_Click(object sender, EventArgs e)
         {
-            Controls_Controller.Instance.OpenFile(image_Avatar);
+            QLKS.Controlss.Instance.OpenFile(image_Avatar);
         }
 
         private void btn_LuuMK_Click(object sender, EventArgs e)
@@ -145,7 +145,7 @@ namespace QLKS.UserControls
             user.Name = txt_TenMK.Text;
             user.Password = txt_MKC.Text;
             MessageBox.Show(UC_TKNV_Controller.Instance.UpdateUser(user, txt_MKM1.Text, txt_MKM2.Text));
-            Controls_Controller.Instance.HidePanel(panel_DMK);
+            QLKS.Controlss.Instance.HidePanel(panel_DMK);
         }
 
         private void cbx_ChucVu_TextChanged(object sender, EventArgs e)
@@ -154,12 +154,12 @@ namespace QLKS.UserControls
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Controls_Controller.Instance.GetEditForm(new UserControl_ChucVu(), new EditForm());
+            QLKS.Controlss.Instance.GetEditForm(new UserControl_ChucVu(), new EditForm());
         }
 
         private void link_ChucVu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Controls_Controller.Instance.GetEditForm(new UserControl_ChucVu(), new EditForm());
+            QLKS.Controlss.Instance.GetEditForm(new UserControl_ChucVu(), new EditForm());
         }
     }
 }

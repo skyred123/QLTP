@@ -4,31 +4,33 @@ using Library.Entity;
 using Library.Servser;
 using QLKS.UserControls;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using GetData = Controller.Data.GetData;
 
 namespace QLKS
 {
-    public class Controls_Controller
+    public class Controlss
     {
-        private static Controls_Controller? instance;
-        public static Controls_Controller Instance
+        private static Controlss? instance;
+        public static Controlss Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new Controls_Controller();
+                    instance = new Controlss();
                 }
                 return instance;
             }
         }
-        public Controls_Controller(){ }
+        public Controlss(){ }
         public void GetUserControl(Panel panel,Form form, UserControl userControl)
         {
             if(form== null)
@@ -92,15 +94,22 @@ namespace QLKS
         {
             if (ojb.GetType() == typeof(ChucVu))
             {
-                comboBox.DataSource = Server.Instance.GetData().GetChucVus();
+                comboBox.DataSource = GetData.Instance.GetChucVus();
                 comboBox.DisplayMember = "TenCV";
                 comboBox.ValueMember = "MaCV";
             }
             else if (ojb.GetType() == typeof(Tang))
             {
-                comboBox.DataSource = Server.Instance.GetData().GetTangs();
+                comboBox.DataSource = GetData.Instance.GetTangs();
                 comboBox.DisplayMember = "SoTang";
                 comboBox.ValueMember = "MaTang";
+            }
+            else if (ojb.GetType() == typeof(LoaiPhong))
+            {
+                comboBox.DataSource = GetData.Instance.GetLoaiPhongs();
+                comboBox.DisplayMember = "TenLoaiPhong";
+                comboBox.ValueMember = "MaLoai";
+                comboBox.ValueMember = "Gia";
             }
         }
         public DataGridView AddDGV(DataGridView dataGridView, object ojb)
@@ -125,6 +134,16 @@ namespace QLKS
                 Tang t = (Tang)ojb;
                 dataGridView.Rows.Add(t.MaTang, t.SoTang, t.Phongs.Count());
             }
+            else if (ojb.GetType() == typeof(Phong))
+            {
+                Phong p = (Phong)ojb;
+                dataGridView.Rows.Add(p.MaPhong,p.TenPhong,p.Tang.SoTang);
+            }
+            else if (ojb.GetType() == typeof(LoaiPhong))
+            {
+                LoaiPhong lp = (LoaiPhong)ojb;
+                dataGridView.Rows.Add(lp.MaLoai,lp.TenLoaiPhong,lp.Gia);
+            }
             return dataGridView;
         }
         public DataGridView AddDGVs(DataGridView dataGridView,object ojb)
@@ -132,32 +151,52 @@ namespace QLKS
             dataGridView.Rows.Clear();
             if (ojb.GetType() == typeof(ChucVu))
             {
-                foreach (ChucVu cv in Server.Instance.GetData().GetChucVus())
+                foreach (ChucVu cv in GetData.Instance.GetChucVus())
                 {
                     dataGridView = AddDGV(dataGridView, cv);
                 }
             }
             else if (ojb.GetType() == typeof(NhanVien))
             {
-                foreach (NhanVien nv in Server.Instance.GetData().GetNhanViens())
+                foreach (NhanVien nv in GetData.Instance.GetNhanViens())
                 {
                     dataGridView = AddDGV(dataGridView, nv);
                 }
             }
             else if (ojb.GetType() == typeof(KhachHang))
             {
-                foreach (KhachHang kh in Server.Instance.GetData().GetKhachHangs())
+                foreach (KhachHang kh in GetData.Instance.GetKhachHangs())
                 {
                     dataGridView = AddDGV(dataGridView,kh);
                 }
             }
             else if(ojb.GetType() == typeof(Tang))
             {
-                if(Server.Instance.GetData().GetTangs().Count() != 0)
+                if(GetData.Instance.GetPhongs().Count() != 0)
                 {
-                    foreach (Tang tang in Server.Instance.GetData().GetTangs())
+                    foreach (Tang tang in GetData.Instance.GetTangs())
                     {
                         dataGridView = AddDGV(dataGridView, tang);
+                    }
+                }
+            }
+            else if (ojb.GetType() == typeof(Phong))
+            {
+                if (GetData.Instance.GetPhongs().Count() != 0)
+                {
+                    foreach (Phong phong in GetData.Instance.GetPhongs())
+                    {
+                        dataGridView = AddDGV(dataGridView, phong);
+                    }
+                }
+            }
+            else if (ojb.GetType() == typeof(LoaiPhong))
+            {
+                if (GetData.Instance.GetLoaiPhongs().Count() != 0)
+                {
+                    foreach (LoaiPhong phong in GetData.Instance.GetLoaiPhongs())
+                    {
+                        dataGridView = AddDGV(dataGridView, phong);
                     }
                 }
             }
@@ -172,7 +211,7 @@ namespace QLKS
             }
             else if(ojb.GetType() == typeof(NhanVien))
             {
-                foreach (NhanVien item in Server.Instance.GetData().GetNhanViens())
+                foreach (NhanVien item in GetData.Instance.GetNhanViens())
                 {
                     if (item.MaNV.Contains(str) || item.TenNV.ToLower().Contains(str) || item.SDT.Contains(str) || item.ChucVu.TenCV.ToLower().Contains(str) || item.Email.ToLower().Contains(str))
                     {
@@ -224,11 +263,12 @@ namespace QLKS
                 label.Dock = DockStyle.Top;
                 label.Text = "Tầng " + tang.SoTang;
                 panel.Controls.Add(label);
-
-                foreach (Phong phong in tang.Phongs)
+                if (tang.Phongs.Count() >= 0)
                 {
-                    flowLayout.Controls.Add(new UserControl_ThePhong(phong));
-
+                    foreach (Phong phong in tang.Phongs)
+                    {
+                        flowLayout.Controls.Add(new UserControl_ThePhong(GetData.Instance.GetPhong(phong.MaPhong)));
+                    }
                 }
             }
             return panel_View;

@@ -159,21 +159,21 @@ namespace QLKS.UserControls
             // xemToolStripMenuItem
             // 
             this.xemToolStripMenuItem.Name = "xemToolStripMenuItem";
-            this.xemToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.xemToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
             this.xemToolStripMenuItem.Text = "Xem";
             this.xemToolStripMenuItem.Click += new System.EventHandler(this.xemToolStripMenuItem_Click);
             // 
             // suaToolStripMenuItem
             // 
             this.suaToolStripMenuItem.Name = "suaToolStripMenuItem";
-            this.suaToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.suaToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
             this.suaToolStripMenuItem.Text = "Sữa";
             this.suaToolStripMenuItem.Click += new System.EventHandler(this.suaToolStripMenuItem_Click);
             // 
             // xoaToolStripMenuItem
             // 
             this.xoaToolStripMenuItem.Name = "xoaToolStripMenuItem";
-            this.xoaToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.xoaToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
             this.xoaToolStripMenuItem.Text = "Xóa";
             this.xoaToolStripMenuItem.Click += new System.EventHandler(this.xoaToolStripMenuItem_Click);
             // 

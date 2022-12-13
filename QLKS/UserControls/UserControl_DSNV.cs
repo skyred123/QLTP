@@ -18,7 +18,7 @@ namespace QLKS.UserControls
         }
         private void UserControl_QLNV_Load(object sender, EventArgs e)
         {
-            Controls_Controller.Instance.AddDGVs(dgv_NhanVien,new NhanVien());
+            QLKS.Controlss.Instance.AddDGVs(dgv_NhanVien, new NhanVien());
         }
         private void dgv_NhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -26,7 +26,7 @@ namespace QLKS.UserControls
             {
                 NhanVien nhanVien = GetData.Instance.GetNhanVien(dgv_NhanVien.Rows[e.RowIndex].Cells[0].Value.ToString());
                 ViewData.Instance.SetUpdate(nhanVien);
-                Controls_Controller.Instance.GetEditForm(new UserControl_TKNV(), new EditForm());
+                QLKS.Controlss.Instance.GetEditForm(new UserControl_TKNV(), new EditForm());
             }
             else if(dgv_NhanVien.Columns[e.ColumnIndex].ToolTipText == "Delete")
             {
@@ -46,8 +46,8 @@ namespace QLKS.UserControls
         private void btn_TimKiem_Click(object sender, EventArgs e)
         {
             if (txt_TimKiem.Text != string.Empty) 
-            { 
-                dgv_NhanVien= Controls_Controller.Instance.Search(dgv_NhanVien, txt_TimKiem.Text.ToLower(),new NhanVien()); 
+            {
+                dgv_NhanVien = QLKS.Controlss.Instance.Search(dgv_NhanVien, txt_TimKiem.Text.ToLower(),new NhanVien()); 
             }
             else
             {

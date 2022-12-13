@@ -25,7 +25,7 @@ namespace QLKS.UserControls
 
         private void UserControl_ChucVu_Load(object sender, EventArgs e)
         {
-            Controls_Controller.Instance.AddDGVs(dgv_ChucVu, new ChucVu());
+            QLKS.Controlss.Instance.AddDGVs(dgv_ChucVu, new ChucVu());
         }
 
         private void dgv_ChucVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -57,7 +57,7 @@ namespace QLKS.UserControls
         {
             if (txt_ChucVu.Text != string.Empty)
             {
-                dgv_ChucVu = Controls_Controller.Instance.Search(dgv_ChucVu, txt_ChucVu.Text.ToLower(), new KhachHang());
+                dgv_ChucVu = QLKS.Controlss.Instance.Search(dgv_ChucVu, txt_ChucVu.Text.ToLower(), new KhachHang());
             }
             else
             {
@@ -71,7 +71,7 @@ namespace QLKS.UserControls
             chucVu.MaCV = (Guid)dgv_ChucVu.SelectedCells[0].OwningRow.Cells[0].Value;
             chucVu.TenCV = txt_ChucVu.Text;
             UC_ChucVu_Controller.Instance.UpdateChucVu(chucVu);
-            Controls_Controller.Instance.AddDGVs(dgv_ChucVu, new ChucVu());
+            QLKS.Controlss.Instance.AddDGVs(dgv_ChucVu, new ChucVu());
         }
 
         private void btn_Thêm_Click(object sender, EventArgs e)
@@ -79,7 +79,7 @@ namespace QLKS.UserControls
             ChucVu chucVu = new ChucVu();
             chucVu.TenCV = txt_ChucVu.Text;   
             if(UC_ChucVu_Controller.Instance.AddChucVu(chucVu))
-                Controls_Controller.Instance.AddDGV(dgv_ChucVu, chucVu);
+                QLKS.Controlss.Instance.AddDGV(dgv_ChucVu, chucVu);
         }
     }
 }

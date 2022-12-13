@@ -35,7 +35,7 @@ namespace Controller.Data
 
         public List<ChucVu> GetChucVus()
         {
-            throw new NotImplementedException();
+            return Server.Instance.GetData().GetChucVus();
         }
 
         public NhanVien GetNhanVien(string id)
@@ -45,7 +45,7 @@ namespace Controller.Data
 
         public List<NhanVien> GetNhanViens()
         {
-            throw new NotImplementedException();
+            return Server.Instance.GetData().GetNhanViens();
         }
 
         public User? GetUser(Guid id)
@@ -56,6 +56,10 @@ namespace Controller.Data
         public List<User> GetUsers()
         {
             throw new NotImplementedException();
+        }
+        public List<KhachHang> GetKhachHangs()
+        {
+            return Server.Instance.GetData().GetKhachHangs();
         }
         public KhachHang GetKhachHang(string id)
         {
@@ -76,6 +80,14 @@ namespace Controller.Data
         public Phong? GetPhong(Guid id)
         {
             return Server.Instance.GetData().GetPhong(id);
+        }
+        public List<LoaiPhong> GetLoaiPhongs()
+        {
+            return Server.Instance.GetData().GetLoaiPhongs();
+        }
+        public LoaiPhong? GetLoaiPhong(Guid id)
+        {
+            return Server.Instance.GetData().GetLoaiPhong(id);
         }
     }
 }
