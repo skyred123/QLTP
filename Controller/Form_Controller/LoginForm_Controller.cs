@@ -35,7 +35,7 @@ namespace Controller.Form_Controller
                     {
                         if (item.Name == "Admin")
                         {
-                            ViewData.nhanVien = null;
+                            ViewData.nhanVien = Server.Instance.GetData().GetNhanVien(item.MaNV);
                             return true;
                         }
                         else

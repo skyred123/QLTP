@@ -21,6 +21,10 @@ namespace QLKS.UserControls
         {
             InitializeComponent();
         }
+        public UserControl_TKKH(bool checks)
+        {
+            InitializeComponent();
+        }
         private void UserControl_TKKH_Load(object sender, EventArgs e)
         {
             if(ViewData.Instance.GetKhachHangEdit() != null)
@@ -31,29 +35,29 @@ namespace QLKS.UserControls
                 txt_Email.Text = ViewData.Instance.GetKhachHangEdit().Email;
             }
         }
-        private void btn_Luu_Click(object sender, EventArgs e)
+        public void btn_Luu_Click(object sender, EventArgs e)
         {
-            KhachHang khachHang = new KhachHang();
-            khachHang.MaKH = txt_MaKH.Text;
-            khachHang.TenKH= txt_TenKH.Text;
-            khachHang.SDT = txt_SDT.Text;
-            khachHang.Email = txt_Email.Text;
-            if (ViewData.Instance.GetUpdate() == true)
+            
+            KhachHang kh = new KhachHang();
+            kh.MaKH = txt_MaKH.Text;
+            kh.TenKH= txt_TenKH.Text;
+            kh.SDT = txt_SDT.Text;
+            kh.Email = txt_Email.Text;
+            if (ViewData.Instance.GetUpdate())
             {
-                if(UC_TKKH_Controller.Instance.UpdateKhachHang(khachHang, ViewData.Instance.GetKhachHangEdit()))
+                if(UC_TKKH_Controller.Instance.UpdateKhachHang(kh, ViewData.Instance.GetKhachHangEdit()))
                 {
                     QLKS.Controlss.Instance.AddDGV(UserControl_DSKH.instance.dataGridView, new KhachHang());
                 }
             }
             else if(ViewData.Instance.GetAdd() == true)
             {
-                if(UC_TKKH_Controller.Instance.UpdateKhachHang(khachHang, null))
+                if(UC_TKKH_Controller.Instance.UpdateKhachHang(kh, null))
                 {
                     QLKS.Controlss.Instance.AddDGV(UserControl_DSKH.instance.dataGridView, new KhachHang());
                 }
             }
         }
-
         private void btn_Delete_Click(object sender, EventArgs e)
         {
             txt_MaKH.Text = "";

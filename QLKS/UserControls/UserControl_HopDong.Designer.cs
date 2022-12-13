@@ -1,4 +1,6 @@
-﻿namespace QLKS.UserControls
+﻿using Library.Entity;
+
+namespace QLKS.UserControls
 {
     partial class UserControl_HopDong
     {
@@ -29,7 +31,16 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txt_MaKH = new System.Windows.Forms.TextBox();
+            this.txt_TenKH = new System.Windows.Forms.TextBox();
+            this.txt_SDT = new System.Windows.Forms.TextBox();
+            this.txt_Email = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btn_Delete = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_ChonPhong = new System.Windows.Forms.Button();
             this.dtp_NgayTra = new System.Windows.Forms.DateTimePicker();
@@ -39,11 +50,10 @@
             this.dgv_Phong = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Luu = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Phong)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +63,7 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -64,13 +74,118 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(985, 547);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // panel1
+            // tableLayoutPanel3
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(486, 541);
-            this.panel1.TabIndex = 0;
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.label3, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label4, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.label5, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.txt_MaKH, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.txt_TenKH, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.txt_SDT, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.txt_Email, 1, 4);
+            this.tableLayoutPanel3.Controls.Add(this.label6, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.btn_Delete, 0, 5);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 6;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(486, 541);
+            this.tableLayoutPanel3.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(3, 90);
+            this.label3.Name = "label3";
+            this.label3.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.label3.Size = new System.Drawing.Size(162, 25);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Mã Khách Hàng ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(3, 180);
+            this.label4.Name = "label4";
+            this.label4.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.label4.Size = new System.Drawing.Size(158, 25);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Tên Khách Hàng";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(3, 270);
+            this.label5.Name = "label5";
+            this.label5.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.label5.Size = new System.Drawing.Size(147, 25);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Số Điện Thoại ";
+            // 
+            // txt_MaKH
+            // 
+            this.txt_MaKH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_MaKH.Location = new System.Drawing.Point(246, 93);
+            this.txt_MaKH.Name = "txt_MaKH";
+            this.txt_MaKH.Size = new System.Drawing.Size(237, 27);
+            this.txt_MaKH.TabIndex = 4;
+            // 
+            // txt_TenKH
+            // 
+            this.txt_TenKH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_TenKH.Location = new System.Drawing.Point(246, 183);
+            this.txt_TenKH.Name = "txt_TenKH";
+            this.txt_TenKH.Size = new System.Drawing.Size(237, 27);
+            this.txt_TenKH.TabIndex = 5;
+            // 
+            // txt_SDT
+            // 
+            this.txt_SDT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_SDT.Location = new System.Drawing.Point(246, 273);
+            this.txt_SDT.Name = "txt_SDT";
+            this.txt_SDT.Size = new System.Drawing.Size(237, 27);
+            this.txt_SDT.TabIndex = 6;
+            // 
+            // txt_Email
+            // 
+            this.txt_Email.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_Email.Location = new System.Drawing.Point(246, 363);
+            this.txt_Email.Name = "txt_Email";
+            this.txt_Email.Size = new System.Drawing.Size(237, 27);
+            this.txt_Email.TabIndex = 7;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(3, 360);
+            this.label6.Name = "label6";
+            this.label6.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.label6.Size = new System.Drawing.Size(74, 25);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Email";
+            // 
+            // btn_Delete
+            // 
+            this.btn_Delete.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Delete.Location = new System.Drawing.Point(3, 453);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(237, 42);
+            this.btn_Delete.TabIndex = 10;
+            this.btn_Delete.Text = "Xóa";
+            this.btn_Delete.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel2
             // 
@@ -84,8 +199,8 @@
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.dgv_Phong, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.button1, 1, 5);
-            this.tableLayoutPanel2.Controls.Add(this.button2, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.button2, 0, 6);
+            this.tableLayoutPanel2.Controls.Add(this.btn_Luu, 1, 6);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(495, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -95,8 +210,8 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.82994F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.00554F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(487, 541);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
@@ -160,15 +275,14 @@
             this.dgv_Phong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Phong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.Column2,
-            this.Column3});
+            this.Column2});
             this.dgv_Phong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_Phong.Location = new System.Drawing.Point(3, 234);
             this.dgv_Phong.Name = "dgv_Phong";
             this.dgv_Phong.RowHeadersWidth = 51;
-            this.tableLayoutPanel2.SetRowSpan(this.dgv_Phong, 2);
+            this.tableLayoutPanel2.SetRowSpan(this.dgv_Phong, 3);
             this.dgv_Phong.RowTemplate.Height = 29;
-            this.dgv_Phong.Size = new System.Drawing.Size(272, 148);
+            this.dgv_Phong.Size = new System.Drawing.Size(272, 211);
             this.dgv_Phong.TabIndex = 4;
             // 
             // Column1
@@ -187,38 +301,24 @@
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
-            // Column3
+            // btn_Luu
             // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.HeaderText = "Tầng";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(281, 388);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 41);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Luu.Location = new System.Drawing.Point(281, 451);
+            this.btn_Luu.Name = "btn_Luu";
+            this.btn_Luu.Size = new System.Drawing.Size(139, 41);
+            this.btn_Luu.TabIndex = 5;
+            this.btn_Luu.Text = "Lưu";
+            this.btn_Luu.UseVisualStyleBackColor = true;
+            this.btn_Luu.Click += new System.EventHandler(this.btn_Luu_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(3, 388);
+            this.button2.Location = new System.Drawing.Point(3, 451);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(139, 41);
             this.button2.TabIndex = 6;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // sqlCommand1
-            // 
-            this.sqlCommand1.CommandTimeout = 30;
-            this.sqlCommand1.Connection = null;
-            this.sqlCommand1.Notification = null;
-            this.sqlCommand1.Transaction = null;
             // 
             // UserControl_HopDong
             // 
@@ -227,7 +327,10 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UserControl_HopDong";
             this.Size = new System.Drawing.Size(985, 547);
+            this.Load += new System.EventHandler(this.UserControl_HopDong_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Phong)).EndInit();
@@ -238,19 +341,26 @@
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private Panel panel1;
         private TableLayoutPanel tableLayoutPanel2;
         private DateTimePicker dtp_NgayTra;
         private DateTimePicker dtp_NgayNhan;
         private Label label1;
         private Label label2;
         private Button button2;
-        private Button button1;
-        private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
+        private Button btn_Luu;
         private DataGridView dgv_Phong;
+        private Button btn_ChonPhong;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private Button btn_ChonPhong;
+        private TableLayoutPanel tableLayoutPanel3;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private TextBox txt_MaKH;
+        private TextBox txt_TenKH;
+        private TextBox txt_SDT;
+        private TextBox txt_Email;
+        private Label label6;
+        private Button btn_Delete;
     }
 }

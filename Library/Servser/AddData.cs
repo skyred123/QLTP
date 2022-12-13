@@ -49,5 +49,15 @@ namespace Library.Servser
             dbContext.LoaiPhongs.Add(lp);
             dbContext.SaveChanges();
         }
+        public void AddHopDong(HopDong hd)
+        {
+            dbContext.HopDongs.Add(hd);
+            dbContext.SaveChanges();
+        }
+        public void AddCT_HD(CT_HD ct_hd)
+        {
+            dbContext.CT_HD.Add(ct_hd);
+            dbContext.SaveChanges();
+        }
     }
 }

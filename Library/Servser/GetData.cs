@@ -72,5 +72,13 @@ namespace Library.Servser
         {
             return GetLoaiPhongs().FirstOrDefault(e => e.MaLoai == id);
         }
+        public List<CT_HD> GetCT_HDs()
+        {
+            return dbContext.CT_HD.Include(e => e.HopDong).Include(e => e.Phong).ToList();
+        }/*
+        public CT_HD GetCT_HD(CT_HD cT_HD)
+        {
+            return GetCT_HDs().FirstOrDefault(e=>e.MaHD)
+        }*/
     }
 }

@@ -18,7 +18,6 @@
         [Key]
         public Guid MaTang { get; set; }
 
-        [Column("SoTang")]
         public int? SoTang { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
