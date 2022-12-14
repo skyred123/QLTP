@@ -37,7 +37,7 @@ namespace QLKS.UserControls
                     if (cT_HD.NgayTra.Value > DateTime.Now)
                     {
                         label_TinhTrang.Text = "Phòng Đang Thuê";
-                        label_TenKH.Text = GetData.Instance.GetHopDong(GetData.Instance.GetCT_HD(cT_HD.MaHD).HopDong.MaHD).KhachHang.TenKH;
+                        label_TenKH.Text = GetData.Instance.GetCT_HD(cT_HD.MaHD).HopDong.KhachHang.TenKH;
                     }
                     else
                     {
@@ -51,8 +51,15 @@ namespace QLKS.UserControls
 
         private void xoaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DeleteData.Instance.DeletePhong(phong);
-            UserControl_DSPhong.instance.Panel = QLKS.Controlss.Instance.SettingControls(UserControl_DSPhong.instance.Panel, new Phong());
+            if (phong.MaPhong != GetData.Instance.GetPhongs().LastOrDefault().MaPhong)
+            {
+                MessageBox.Show("Không thể xóa phòng này");
+            }
+            else
+            {
+                DeleteData.Instance.DeletePhong(phong);
+                UserControl_DSPhong.instance.Panel = QLKS.Controlss.Instance.SettingControls(UserControl_DSPhong.instance.Panel, new Phong(), UserControl_DSPhong.instance.check);
+            }
         }
 
         private void xemToolStripMenuItem_Click(object sender, EventArgs e)

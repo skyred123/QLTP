@@ -25,7 +25,7 @@ namespace QLKS.UserControls
             InitializeComponent();
             instance = this;
             dataGridView = dgv_Phong;
-            dtp_NgayTra.Value = new DateTime(dtp_NgayTra.Value.Year, dtp_NgayTra.Value.Month, dtp_NgayTra.Value.Day +1);
+            dtp_NgayTra.Value = new DateTime(dtp_NgayNhan.Value.Year, dtp_NgayNhan.Value.Month, dtp_NgayNhan.Value.Day +1);
         }
         private void UserControl_HopDong_Load(object sender, EventArgs e)
         {
@@ -63,8 +63,22 @@ namespace QLKS.UserControls
             HopDong hd = new HopDong();
             hd.MaNV = ViewData.Instance.GetNhanVien().MaNV;
             hd.MaKH = khachhang.MaKH;
-            hd.TongGia = 999999;
-            UC_HopDong_Controller.Instance.AddHopdong(hd);
+            long s = 0;
+            if (dgv_Phong.Rows.Count == 0)
+            {
+                MessageBox.Show("Chưa Nhập Phòng");
+                return;
+            }
+            foreach (DataGridViewRow row in dgv_Phong.Rows)
+            {
+                s = (long)(s + GetData.Instance.GetPhong((Guid)row.Cells[0].Value).LoaiPhong.Gia);
+            }
+            hd.TongGia = s;
+            if (UC_HopDong_Controller.Instance.AddHopdong(hd) == false)
+            {
+                return;
+            }
+            bool check = false;
             foreach (DataGridViewRow row in dgv_Phong.Rows)
             {
                 CT_HD cT_HD = new CT_HD();
@@ -80,9 +94,50 @@ namespace QLKS.UserControls
                     cT_HD.TinhTrang = "Đã đặt phòng";
                 }
                 cT_HD.MaPhong = (Guid)row.Cells[0].Value;
-                UC_HopDong_Controller.Instance.AddCTHD(cT_HD);
+                check = UC_HopDong_Controller.Instance.AddCTHD(cT_HD);
             }
-            MessageBox.Show("Lưu Thành Công");
+            if (check == true)
+            {
+            }
+            else if(check == false && hd != null)
+            {
+                DeleteData.Instance.DeleteHopDong(hd);
+            }
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            txt_MaKH.Text= string.Empty;
+            txt_TenKH.Text = string.Empty;
+            txt_SDT.Text = string.Empty;
+            txt_Email.Text = string.Empty;
+            dgv_Phong.Rows.Clear();
+            dtp_NgayNhan.Value = DateTime.Now;
+            dtp_NgayTra.Value = new DateTime(dtp_NgayTra.Value.Year, dtp_NgayTra.Value.Month, dtp_NgayTra.Value.Day + 1);
+        }
+
+        private void dtp_NgayNhan_ValueChanged(object sender, EventArgs e)
+        {
+            if(dtp_NgayNhan.Value >= DateTime.Now)
+            {
+                
+            }
+            else
+            {
+                dtp_NgayNhan.Value = DateTime.Now.Date;
+            }
+        }
+
+        private void dtp_NgayTra_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtp_NgayTra.Value >= dtp_NgayNhan.Value)
+            {
+
+            }
+            else
+            {
+                dtp_NgayTra.Value = new DateTime(dtp_NgayNhan.Value.Year, dtp_NgayNhan.Value.Month, dtp_NgayNhan.Value.Day);
+            }
         }
     }
 }

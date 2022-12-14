@@ -19,15 +19,35 @@ namespace QLKS.UserControls
         public UserControl_CT_HopDong(/*DateTime time*/Form form)
         {
             InitializeComponent();
-            Controlss.Instance.AddDGVs(dgv_PhongTrong,new Phong());
+            
             this.form = form;
+            Load_DGV();
         }
         public UserControl_CT_HopDong(DateTime time, Form form)
         {
             InitializeComponent();
             this.form = form;
         }
-
+        public void Load_DGV()
+        {
+            foreach(Phong phong in GetData.Instance.GetPhongs())
+            {
+                if (phong.CT_HD.Count() == 0)
+                {
+                    Controlss.Instance.AddDGV(dgv_PhongTrong, phong);
+                }
+                else
+                {
+                    foreach (CT_HD cT_HD in phong.CT_HD)
+                    {
+                        if (cT_HD.NgayTra < DateTime.Now)
+                        {
+                            Controlss.Instance.AddDGV(dgv_PhongTrong, phong);
+                        }
+                    }
+                }
+            }
+        }
         private void dgv_PhongTrong_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgv_PhongTrong.Columns[e.ColumnIndex].ToolTipText == "Thêm")

@@ -215,7 +215,7 @@ namespace QLKS
                 {
                     if (item.MaNV.Contains(str) || item.TenNV.ToLower().Contains(str) || item.SDT.Contains(str) || item.ChucVu.TenCV.ToLower().Contains(str) || item.Email.ToLower().Contains(str))
                     {
-                        AddDGVs(dataGridView, item);
+                        AddDGV(dataGridView, item);
                     }
                 }
             }
@@ -235,39 +235,68 @@ namespace QLKS
         {
             button.Text = str;
         }
-        public Panel SettingControls(Panel panel_View,object ojb)
+        public Panel SettingControls(Panel panel_View,object ojb, bool dk)
         {
             panel_View.Controls.Clear();
-            Panel panel = new Panel();
             Label label = new Label();
-            List<Tang> list = GetData.Instance.GetTangs();
-            list.Reverse();
-
-
-            foreach (Tang tang in list)
+            if (dk == true)
             {
-
-
-                panel = new Panel();
-                panel.Dock = DockStyle.Top;
-                panel.AutoSize = true;
-                panel_View.Controls.Add(panel);
-
                 FlowLayoutPanel flowLayout = new FlowLayoutPanel();
-                flowLayout.Dock = DockStyle.Top;
-                flowLayout.AutoScroll = true;
-                flowLayout.Size = new Size(panel_View.Width, 210);
-                panel.Controls.Add(flowLayout);
-
-                label = new Label();
-                label.Dock = DockStyle.Top;
-                label.Text = "Tầng " + tang.SoTang;
-                panel.Controls.Add(label);
-                if (tang.Phongs.Count() >= 0)
+                foreach (Tang tang in GetData.Instance.GetTangs())
                 {
+                    flowLayout.Dock = DockStyle.Fill;
+                    flowLayout.AutoScroll = true;
+                    flowLayout.Size = new Size(panel_View.Width, 210);
+                    panel_View.Controls.Add(flowLayout);
+                    flowLayout.SetFlowBreak(label, true);
+
+                    label = new Label();
+                    label.Text = "Tầng " + tang.SoTang;
+                    flowLayout.Controls.Add(label);
+
+                    UserControl_ThePhong _ThePhong = null;
                     foreach (Phong phong in tang.Phongs)
                     {
-                        flowLayout.Controls.Add(new UserControl_ThePhong(GetData.Instance.GetPhong(phong.MaPhong)));
+                        _ThePhong = new UserControl_ThePhong(GetData.Instance.GetPhong(phong.MaPhong));
+                        flowLayout.Controls.Add(_ThePhong);
+                    }
+                    if (_ThePhong != null)
+                        flowLayout.SetFlowBreak(_ThePhong, true);
+                }
+            }
+            else
+            {
+                panel_View.Controls.Clear();
+                Panel panel = new Panel();
+                List<Tang> list = GetData.Instance.GetTangs();
+                list.Reverse();
+
+
+                foreach (Tang tang in list)
+                {
+
+
+                    panel = new Panel();
+                    panel.Dock = DockStyle.Top;
+                    panel.AutoSize = true;
+                    panel_View.Controls.Add(panel);
+
+                    FlowLayoutPanel flowLayout = new FlowLayoutPanel();
+                    flowLayout.Dock = DockStyle.Top;
+                    flowLayout.AutoScroll = true;
+                    flowLayout.Size = new Size(panel_View.Width, 210);
+                    panel.Controls.Add(flowLayout);
+
+                    label = new Label();
+                    label.Dock = DockStyle.Top;
+                    label.Text = "Tầng " + tang.SoTang;
+                    panel.Controls.Add(label);
+                    if (tang.Phongs.Count() >= 0)
+                    {
+                        foreach (Phong phong in tang.Phongs)
+                        {
+                            flowLayout.Controls.Add(new UserControl_ThePhong(GetData.Instance.GetPhong(phong.MaPhong)));
+                        }
                     }
                 }
             }

@@ -50,5 +50,10 @@ namespace Library.Servser
             dbContext.LoaiPhongs.Remove(loaihhong);
             dbContext.SaveChanges();
         }
+        public void DeleteHopDong(HopDong hopDong)
+        {
+            dbContext.HopDongs.Remove(hopDong);
+            dbContext.SaveChanges();
+        }
     }
 }

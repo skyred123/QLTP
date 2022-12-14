@@ -22,13 +22,31 @@ namespace Controller.UserControls_Controller
                 return instance;
             }
         }
-        public void AddHopdong(HopDong hd)
+        public bool AddHopdong(HopDong hd)
         {
-            Server.Instance.AddData().AddHopDong(hd);
+            if (hd.MaKH != string.Empty && hd.TongGia != 0)
+            {
+                Server.Instance.AddData().AddHopDong(hd);
+                return true;
+            }
+            else
+            {
+                //MessageBox.Show("Nhập không thành công");
+                return false;
+            }
         }
-        public void AddCTHD(CT_HD cT_HD)
+        public bool AddCTHD(CT_HD cT_HD)
         {
-            Server.Instance.AddData().AddCT_HD(cT_HD);
+            if (cT_HD.MaHD != Guid.Empty && cT_HD.MaPhong != Guid.Empty )
+            {
+                Server.Instance.AddData().AddCT_HD(cT_HD);
+                return true;
+            }
+            else
+            {
+                //MessageBox.Show("Nhập không thành công");
+                return false;
+            }
         }
     }
 }

@@ -66,7 +66,6 @@ namespace QLKS.UserControls
             Phong phong = new Phong();
             phong.TenPhong = txt_TenPhong.Text;
             phong.MaLoai = ((LoaiPhong)cbx_LoaiPhong.SelectedItem).MaLoai;
-            //phong.LoaiPhong = ((LoaiPhong)cbx_LoaiPhong.SelectedItem);
             phong.TrangThai = txt_TrangThai.Text;
             phong.MaTang = ((Tang)cbx_Tang.SelectedItem).MaTang;
             if (ViewData.Instance.GetAdd() == true)
@@ -78,7 +77,7 @@ namespace QLKS.UserControls
             {
                 phong.MaPhong = ViewData.Instance.GetPhongEdit().MaPhong;
                 UC_TTPhong_Controller.Instance.UpdatePhong(phong);
-                UserControl_DSPhong.instance.Panel = QLKS.Controlss.Instance.SettingControls(UserControl_DSPhong.instance.Panel, new Phong());
+                UserControl_DSPhong.instance.Panel = QLKS.Controlss.Instance.SettingControls(UserControl_DSPhong.instance.Panel, new Phong(), UserControl_DSPhong.instance.check);
             }
         }
 

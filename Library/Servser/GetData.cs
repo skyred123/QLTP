@@ -15,10 +15,19 @@ namespace Library.Servser
         public GetData()
         {
             dbContext = new ApplicationDbContext();
+            dbContext.Phongs.Include(e => e.HD_DichVu).Include(e => e.CT_HD).Include(e => e.LoaiPhong).Include(e => e.Tang).Load();
+            dbContext.KhachHangs.Include(e => e.HopDongs).Load();
+            dbContext.NhanViens.Include(e => e.ChucVu).Include(e => e.HopDongs).Include(e => e.Users).Load();
+            dbContext.ChucVus.Include(e => e.NhanViens).Load();
+            dbContext.Users.Include(e => e.NhanVien).Load();
+            dbContext.KhachHangs.Include(e => e.HopDongs).Load();
+            dbContext.Tangs.Include(e => e.Phongs).Load();
+            dbContext.LoaiPhongs.Include(e => e.Phongs).Load();
+            dbContext.CT_HD.Include(e => e.HopDong).Include(e => e.Phong).Load();
         }
         public List<ChucVu> GetChucVus()
         {
-            return dbContext.ChucVus.Include(e => e.NhanViens).ToList();
+            return dbContext.ChucVus.ToList();
         }
         public ChucVu? GetChucVu(Guid id)
         {
@@ -26,7 +35,7 @@ namespace Library.Servser
         }
         public List<NhanVien> GetNhanViens()
         {
-            return dbContext.NhanViens.Include(e => e.ChucVu).Include(e => e.HopDongs).Include(e => e.Users).ToList();
+            return dbContext.NhanViens.ToList();
         }
         public NhanVien? GetNhanVien(string id)
         {
@@ -34,7 +43,7 @@ namespace Library.Servser
         }
         public List<User> GetUsers()
         {
-            return dbContext.Users.Include(e => e.NhanVien).ToList();
+            return dbContext.Users.ToList();
         }
         public User? GetUser(Guid id)
         {
@@ -42,7 +51,7 @@ namespace Library.Servser
         }
         public List<KhachHang> GetKhachHangs() 
         {
-            return dbContext.KhachHangs.Include(e => e.HopDongs).ToList();
+            return dbContext.KhachHangs.ToList();
         }
         public KhachHang? GetKhachHang(string id)
         {
@@ -50,7 +59,7 @@ namespace Library.Servser
         }
         public List<Tang> GetTangs()
         {
-            return dbContext.Tangs.Include(e => e.Phongs).ToList();
+            return dbContext.Tangs.ToList();
         }
         public Tang? GetTang(Guid id)
         {
@@ -58,7 +67,7 @@ namespace Library.Servser
         }
         public List<Phong> GetPhongs()
         {
-            return dbContext.Phongs.Include(e => e.HD_DichVu).Include(e => e.CT_HD).Include(e => e.LoaiPhong).Include(e=> e.Tang).ToList();
+            return dbContext.Phongs.ToList();
         }
         public Phong? GetPhong(Guid id)
         {
@@ -66,7 +75,7 @@ namespace Library.Servser
         }
         public List<LoaiPhong> GetLoaiPhongs()
         {
-            return dbContext.LoaiPhongs.Include(e => e.Phongs).ToList();
+            return dbContext.LoaiPhongs.ToList();
         }
         public LoaiPhong? GetLoaiPhong(Guid id)
         {
@@ -82,7 +91,7 @@ namespace Library.Servser
         }
         public List<CT_HD> GetCT_HDs()
         {
-            return dbContext.CT_HD.Include(e => e.HopDong).Include(e => e.Phong).ToList();
+            return dbContext.CT_HD.ToList();
         }
         public CT_HD GetCT_HD(Guid id)
         {

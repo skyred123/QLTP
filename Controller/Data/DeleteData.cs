@@ -46,5 +46,9 @@ namespace Controller.Data
         {
             Server.Instance.DeleteData().DeleteLoaiPhong(lp);
         }
+        public void DeleteHopDong(HopDong hd)
+        {
+            Server.Instance.DeleteData().DeleteHopDong(hd);
+        }
     }
 }

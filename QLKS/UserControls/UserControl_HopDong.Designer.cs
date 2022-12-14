@@ -50,8 +50,8 @@ namespace QLKS.UserControls
             this.dgv_Phong = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_Luu = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.btn_Luu = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -186,6 +186,7 @@ namespace QLKS.UserControls
             this.btn_Delete.TabIndex = 10;
             this.btn_Delete.Text = "Xóa";
             this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -234,6 +235,7 @@ namespace QLKS.UserControls
             this.dtp_NgayTra.Name = "dtp_NgayTra";
             this.dtp_NgayTra.Size = new System.Drawing.Size(165, 31);
             this.dtp_NgayTra.TabIndex = 1;
+            this.dtp_NgayTra.ValueChanged += new System.EventHandler(this.dtp_NgayTra_ValueChanged);
             // 
             // dtp_NgayNhan
             // 
@@ -244,6 +246,7 @@ namespace QLKS.UserControls
             this.dtp_NgayNhan.Name = "dtp_NgayNhan";
             this.dtp_NgayNhan.Size = new System.Drawing.Size(165, 31);
             this.dtp_NgayNhan.TabIndex = 0;
+            this.dtp_NgayNhan.ValueChanged += new System.EventHandler(this.dtp_NgayNhan_ValueChanged);
             // 
             // label1
             // 
@@ -301,6 +304,15 @@ namespace QLKS.UserControls
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(3, 451);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(139, 41);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // btn_Luu
             // 
             this.btn_Luu.Location = new System.Drawing.Point(281, 451);
@@ -310,15 +322,6 @@ namespace QLKS.UserControls
             this.btn_Luu.Text = "Lưu";
             this.btn_Luu.UseVisualStyleBackColor = true;
             this.btn_Luu.Click += new System.EventHandler(this.btn_Luu_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(3, 451);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(139, 41);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // UserControl_HopDong
             // 

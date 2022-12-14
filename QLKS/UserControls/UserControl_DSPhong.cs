@@ -17,16 +17,23 @@ namespace QLKS.UserControls
     {
         public static UserControl_DSPhong instance;
         public Panel Panel;
+        public bool check;
         public UserControl_DSPhong()
         {
             InitializeComponent();
             instance = this;
             Panel = this.panel_View;
+            check_List.Checked = check;
         }
 
         private void UserControl_DSPhong_Load(object sender, EventArgs e)
         {
-            panel_View = QLKS.Controlss.Instance.SettingControls(panel_View, new Phong());
+            panel_View = QLKS.Controlss.Instance.SettingControls(panel_View, new Phong(),check_List.Checked);
+        }
+
+        private void check_List_CheckedChanged(object sender, EventArgs e)
+        {
+            panel_View = QLKS.Controlss.Instance.SettingControls(panel_View, new Phong(), check_List.Checked);
         }
     }
 }

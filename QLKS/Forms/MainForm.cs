@@ -48,10 +48,20 @@ namespace QLKS.Forms
                 if (tenCV == "Nhân Viên")
                 {
                     QLKS.Controlss.Instance.HideButton(btn_NhanVien3);
+                    QLKS.Controlss.Instance.HideButton(btn_NhanVien4);
                 }
                 else  if(tenCV == "Quản Lý")
                 {
                     
+                }
+                else
+                {
+                    QLKS.Controlss.Instance.HideButton(btn_NhanVien3);
+                    QLKS.Controlss.Instance.HideButton(btn_NhanVien4);
+                    QLKS.Controlss.Instance.HideButton(btn_KhachHang1);
+                    QLKS.Controlss.Instance.HideButton(btn_Phong1);
+                    QLKS.Controlss.Instance.HideButton(btn_DichVu2);
+                    QLKS.Controlss.Instance.HideButton(btn_HopDong2);
                 }
             }
             QLKS.Controlss.Instance.ButtonText(btn_NhanVien, tenCV);
@@ -136,11 +146,6 @@ namespace QLKS.Forms
         }
 
         private void btn_DichVu2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_DichVu3_Click(object sender, EventArgs e)
         {
 
         }
