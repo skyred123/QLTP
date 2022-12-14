@@ -25,14 +25,28 @@ namespace QLKS.UserControls
         {
             pbx_Image.Image = Image.FromFile("D:\\Eleaning\\Code\\QLKS\\QLKS\\Image\\house.jfif");
             label_TenPhong.Text = phong.TenPhong;
-            if (phong.CT_HD.Count() != 0)
+            if (phong.CT_HD.Count() ==0)
             {
-                label_TinhTrang.Text = "Phòng Đang Thuê";
+                label_TinhTrang.Text = "Phòng Trống";
+                label_TenKH.Text = "Phòng Trống";
             }
             else
             {
-                label_TinhTrang.Text = "Phòng Trống";
+                foreach (CT_HD cT_HD in phong.CT_HD)
+                {
+                    if (cT_HD.NgayTra.Value > DateTime.Now)
+                    {
+                        label_TinhTrang.Text = "Phòng Đang Thuê";
+                        label_TenKH.Text = GetData.Instance.GetHopDong(GetData.Instance.GetCT_HD(cT_HD.MaHD).HopDong.MaHD).KhachHang.TenKH;
+                    }
+                    else
+                    {
+                        label_TinhTrang.Text = "Phòng Trống";
+                        label_TenKH.Text = "Phòng Trống";
+                    }
+                }
             }
+            
         }
 
         private void xoaToolStripMenuItem_Click(object sender, EventArgs e)

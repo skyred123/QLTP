@@ -41,7 +41,7 @@ namespace Library
         }
         public static DbContextOptions<ApplicationDbContext> getApplicationDbContext()
         {
-            String con= @"Server=DESKTOP-K5EGHTF\SQLEXPRESS;Database=QLTP;User Id=sa;Password=sa;";
+            String con= @"Server=DESKTOP-K5EGHTF\SQLEXPRESS;Database=QLTP1;User Id=sa;Password=sa;";
             var contextOptions = new DbContextOptionsBuilder<ApplicationDbContext>().UseSqlServer(con).Options;
             return contextOptions;
         }

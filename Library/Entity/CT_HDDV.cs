@@ -18,8 +18,9 @@ namespace Library.Entity
         [Column(Order = 1)]
         public Guid MaHDDV { get; set; }
 
+        [ForeignKey("MaDV")]
         public virtual DichVu DichVu { get; set; }
-
+        [ForeignKey("MaHDDV")]
         public virtual HD_DichVu HD_DichVu { get; set; }
     }
 }

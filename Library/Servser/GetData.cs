@@ -26,7 +26,7 @@ namespace Library.Servser
         }
         public List<NhanVien> GetNhanViens()
         {
-            return dbContext.NhanViens.Include(e => e.ChucVu).Include(e=>e.HopDongs).Include(e=>e.Users).ToList();
+            return dbContext.NhanViens.Include(e => e.ChucVu).Include(e => e.HopDongs).Include(e => e.Users).ToList();
         }
         public NhanVien? GetNhanVien(string id)
         {
@@ -50,7 +50,7 @@ namespace Library.Servser
         }
         public List<Tang> GetTangs()
         {
-            return dbContext.Tangs.Include(e=>e.Phongs).ToList();
+            return dbContext.Tangs.Include(e => e.Phongs).ToList();
         }
         public Tang? GetTang(Guid id)
         {
@@ -58,7 +58,7 @@ namespace Library.Servser
         }
         public List<Phong> GetPhongs()
         {
-            return dbContext.Phongs.Include(e => e.HD_DichVu).Include(e => e.LoaiPhong).Include(e=>e.CT_HD).Include(e=> e.Tang).ToList();
+            return dbContext.Phongs.Include(e => e.HD_DichVu).Include(e => e.CT_HD).Include(e => e.LoaiPhong).Include(e=> e.Tang).ToList();
         }
         public Phong? GetPhong(Guid id)
         {
@@ -72,13 +72,21 @@ namespace Library.Servser
         {
             return GetLoaiPhongs().FirstOrDefault(e => e.MaLoai == id);
         }
+        public List<HopDong> GetHopDongs()
+        {
+            return dbContext.HopDongs.Include(e => e.NhanVien).Include(e => e.KhachHang).Include(e => e.CT_HD).ToList();
+        }
+        public HopDong GetHopDong(Guid id)
+        {
+            return GetHopDongs().FirstOrDefault(e => e.MaHD == id);
+        }
         public List<CT_HD> GetCT_HDs()
         {
             return dbContext.CT_HD.Include(e => e.HopDong).Include(e => e.Phong).ToList();
-        }/*
-        public CT_HD GetCT_HD(CT_HD cT_HD)
+        }
+        public CT_HD GetCT_HD(Guid id)
         {
-            return GetCT_HDs().FirstOrDefault(e=>e.MaHD)
-        }*/
+            return GetCT_HDs().FirstOrDefault(e => e.MaHD == id);
+        }
     }
 }

@@ -18,9 +18,9 @@ namespace Library.Entity
         [Column(Order = 1)]
         public Guid MaHD { get; set; }
         public string TinhTrang { get; set; }
-
+        [ForeignKey("MaHD")]
         public virtual HopDong HopDong { get; set; }
-
+        [ForeignKey("MaPhong")]
         public virtual Phong Phong { get; set; }
     }
 }

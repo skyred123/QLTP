@@ -23,9 +23,10 @@ namespace Library.Servser
             }
         }
 
-        
+        public ApplicationDbContext dbContext;
         public Server()
         {
+            dbContext = new ApplicationDbContext();
         }
         public AddData AddData() => new AddData();
         public DeleteData DeleteData() => new DeleteData();

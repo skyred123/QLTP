@@ -90,5 +90,21 @@ namespace Controller.Data
         {
             return Server.Instance.GetData().GetLoaiPhong(id);
         }
+        public List<HopDong> GetHopDongs()
+        {
+            return Server.Instance.GetData().GetHopDongs();
+        }
+        public HopDong GetHopDong(Guid id)
+        {
+            return Server.Instance.GetData().GetHopDong(id);
+        }
+        public List<CT_HD> GetCT_HDs()
+        {
+            return Server.Instance.GetData().GetCT_HDs();
+        }
+        public CT_HD? GetCT_HD(Guid id)
+        {
+            return Server.Instance.GetData().GetCT_HD(id);
+        }
     }
 }
