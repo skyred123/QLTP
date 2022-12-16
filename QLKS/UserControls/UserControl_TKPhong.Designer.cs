@@ -127,6 +127,7 @@
             // cbx_Tang
             // 
             this.cbx_Tang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbx_Tang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_Tang.FormattingEnabled = true;
             this.cbx_Tang.Location = new System.Drawing.Point(254, 153);
             this.cbx_Tang.Name = "cbx_Tang";
@@ -167,6 +168,7 @@
             // cbx_LoaiPhong
             // 
             this.cbx_LoaiPhong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbx_LoaiPhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_LoaiPhong.FormattingEnabled = true;
             this.cbx_LoaiPhong.Location = new System.Drawing.Point(254, 253);
             this.cbx_LoaiPhong.Name = "cbx_LoaiPhong";

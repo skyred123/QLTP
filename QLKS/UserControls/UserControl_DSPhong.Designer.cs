@@ -46,8 +46,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(711, 494);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -55,9 +55,9 @@
             // 
             this.panel_View.AutoScroll = true;
             this.panel_View.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_View.Location = new System.Drawing.Point(3, 151);
+            this.panel_View.Location = new System.Drawing.Point(3, 101);
             this.panel_View.Name = "panel_View";
-            this.panel_View.Size = new System.Drawing.Size(705, 340);
+            this.panel_View.Size = new System.Drawing.Size(705, 390);
             this.panel_View.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -72,7 +72,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(705, 142);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(705, 92);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // check_List

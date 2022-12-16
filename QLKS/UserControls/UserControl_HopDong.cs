@@ -34,7 +34,7 @@ namespace QLKS.UserControls
         private void btn_ChonPhong_Click(object sender, EventArgs e)
         {
             EditForm form = new EditForm();
-            UserControl_CT_HopDong _CT_HopDong = new UserControl_CT_HopDong(form);
+            UserControl_CT_HopDong _CT_HopDong = new UserControl_CT_HopDong(dtp_NgayNhan.Value, form);
             _CT_HopDong.Dock= DockStyle.Fill;
             form.Controls.Add(_CT_HopDong);
             form.ShowDialog();
@@ -98,6 +98,8 @@ namespace QLKS.UserControls
             }
             if (check == true)
             {
+                MessageBox.Show("Lưu hóa đơn thành công");
+                dgv_Phong.Rows.Clear();
             }
             else if(check == false && hd != null)
             {
@@ -118,7 +120,7 @@ namespace QLKS.UserControls
 
         private void dtp_NgayNhan_ValueChanged(object sender, EventArgs e)
         {
-            if(dtp_NgayNhan.Value >= DateTime.Now)
+            if(dtp_NgayNhan.Value >= DateTime.Now && dtp_NgayNhan.Value <= dtp_NgayTra.Value)
             {
                 
             }

@@ -64,5 +64,12 @@ namespace Library.Servser
             item.Gia = loaiPhong.Gia;
             dbContext.SaveChanges();
         }
+        public void UpdateDichVu(DichVu dichVu)
+        {
+            var item = dbContext.DichVus.FirstOrDefault(p => p.MaDV == dichVu.MaDV);
+            item.TenDV = dichVu.TenDV;
+            item.GiaDV = dichVu.GiaDV;
+            dbContext.SaveChanges();
+        }
     }
 }

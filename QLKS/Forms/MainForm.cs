@@ -60,7 +60,6 @@ namespace QLKS.Forms
                     QLKS.Controlss.Instance.HideButton(btn_NhanVien4);
                     QLKS.Controlss.Instance.HideButton(btn_KhachHang1);
                     QLKS.Controlss.Instance.HideButton(btn_Phong1);
-                    QLKS.Controlss.Instance.HideButton(btn_DichVu2);
                     QLKS.Controlss.Instance.HideButton(btn_HopDong2);
                 }
             }
@@ -142,12 +141,7 @@ namespace QLKS.Forms
 
         private void btn_DichVu1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btn_DichVu2_Click(object sender, EventArgs e)
-        {
-
+            Controlss.Instance.GetUserControl(panel_View, null, new UserControl_DichVu());
         }
         #endregion
 
@@ -159,7 +153,7 @@ namespace QLKS.Forms
 
         private void btn_HopDong1_Click(object sender, EventArgs e)
         {
-
+            Controlss.Instance.GetUserControl(panel_View, null, new UserControl_DSHopDong());
         }
 
         private void btn_HopDong2_Click(object sender, EventArgs e)

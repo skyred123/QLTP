@@ -76,7 +76,7 @@ namespace QLKS.UserControls
                 txt_Ten.Text = nhanVien.TenNV;
                 txt_SDT.Text = nhanVien.SDT;
                 txt_Email.Text = nhanVien.Email;
-                cbx_ChucVu.SelectedItem = nhanVien.ChucVu;
+                cbx_ChucVu.Text = nhanVien.ChucVu.TenCV;
             }
         }
 

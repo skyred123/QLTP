@@ -23,9 +23,13 @@ namespace QLKS.UserControls
             InitializeComponent();
         }
         public void Form_Load()
-        {
-            int index = GetData.Instance.GetTangs().FirstOrDefault(e=> e.MaTang == ((Tang)cbx_Tang.SelectedItem).MaTang).Phongs.Count();
-            txt_TenPhong.Text = "Phòng "+((Tang)cbx_Tang.SelectedItem).SoTang + "0" + (index +1);
+        { 
+            if (cbx_Tang.Text != string.Empty)
+            {
+                int index = GetData.Instance.GetTangs().FirstOrDefault(e => e.MaTang == ((Tang)cbx_Tang.SelectedItem).MaTang).Phongs.Count();
+                txt_TenPhong.Text = "Phòng " + ((Tang)cbx_Tang.SelectedItem).SoTang + "0" + (index + 1);
+                //txt_TenPhong.Text = "Phòng " + (Tang)cbx_Tang.SelectedItem).MaTang + "0" + (index + 1);
+            }
         }
         private void UserControl_TTPhong_Load(object sender, EventArgs e)
         {
@@ -77,7 +81,7 @@ namespace QLKS.UserControls
             {
                 phong.MaPhong = ViewData.Instance.GetPhongEdit().MaPhong;
                 UC_TTPhong_Controller.Instance.UpdatePhong(phong);
-                UserControl_DSPhong.instance.Panel = QLKS.Controlss.Instance.SettingControls(UserControl_DSPhong.instance.Panel, new Phong(), UserControl_DSPhong.instance.check);
+                UserControl_DSPhong.instance.List_ThePhong();
             }
         }
 

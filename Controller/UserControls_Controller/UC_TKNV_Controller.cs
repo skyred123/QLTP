@@ -63,12 +63,12 @@ namespace Controller.UserControls_Controller
         }
         public bool UpdateNhanVien(NhanVien nhanVien,NhanVien nv)
         {
-            if (nhanVien.MaNV.Count() != 10)
+            if (nhanVien.MaNV.Count() != 10 || System.Text.RegularExpressions.Regex.IsMatch(nhanVien.SDT, "^[0-9\x20]+$") == false)
             {
                 MessageBox.Show("Sai Số CCCD");
                 return false;
             }
-            else if (System.Text.RegularExpressions.Regex.IsMatch(nhanVien.SDT, "[0-9]") == false && nhanVien.SDT.Count() != 10)
+            if (System.Text.RegularExpressions.Regex.IsMatch(nhanVien.SDT, "^[0-9\x20]+$") == false || nhanVien.SDT.Count() != 10)
             {
                 MessageBox.Show("Sai Số Điện Thoại");
                 return false;
@@ -99,7 +99,6 @@ namespace Controller.UserControls_Controller
                 if (Server.Instance.GetData().GetNhanVien(nhanVien.MaNV)!= null && nhanVien.MaNV == nv.MaNV)
                 {
                     Server.Instance.UpdateData().UpdateNV(nhanVien);
-                    
                 }
                 else
                 {
@@ -114,7 +113,7 @@ namespace Controller.UserControls_Controller
                 {
                     ViewData.nhanVien= nhanVien;
                 }
-                ViewData.nhanVienEdit = nhanVien;
+                ViewData.nhanVienEdit = Server.Instance.GetData().GetNhanVien(nhanVien.MaNV);
                 MessageBox.Show("Lưu Thành Công");
                 return true;
             }

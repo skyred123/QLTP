@@ -22,6 +22,9 @@ namespace Library.Entity
 
         public long? GiaDV { get; set; }
 
+        [Column(TypeName = "image")]
+        public byte[]? Image { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_HDDV> CT_HDDV { get; set; }
     }

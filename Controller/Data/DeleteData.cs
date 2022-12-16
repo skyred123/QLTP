@@ -50,5 +50,9 @@ namespace Controller.Data
         {
             Server.Instance.DeleteData().DeleteHopDong(hd);
         }
+        public void DeleteDichVu(DichVu dv)
+        {
+            Server.Instance.DeleteData().DeleteDichVu(dv);
+        }
     }
 }

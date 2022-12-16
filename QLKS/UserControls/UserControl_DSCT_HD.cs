@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QLKS.UserControls
 {
-    public partial class UserControl_TheUser : UserControl
+    public partial class UserControl_DSCT_HD : UserControl
     {
-        public UserControl_TheUser()
+        public UserControl_DSCT_HD()
         {
             InitializeComponent();
         }

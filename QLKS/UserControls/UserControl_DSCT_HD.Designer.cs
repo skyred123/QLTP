@@ -1,13 +1,13 @@
-﻿namespace QLKS.Forms
+﻿namespace QLKS.UserControls
 {
-    partial class EditForm
+    partial class UserControl_DSCT_HD
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,25 +20,22 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             this.SuspendLayout();
             // 
-            // EditForm
+            // UserControl_DSCT_HD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 450);
-            this.Name = "EditForm";
-            this.Text = "EditForm";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditForm_FormClosing);
-            this.Load += new System.EventHandler(this.EditForm_Load);
+            this.Name = "UserControl_DSCT_HD";
+            this.Size = new System.Drawing.Size(597, 420);
             this.ResumeLayout(false);
 
         }

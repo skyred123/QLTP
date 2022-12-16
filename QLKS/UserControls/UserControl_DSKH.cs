@@ -45,8 +45,17 @@ namespace QLKS.UserControls
                     if (MessageBox.Show("Thông Báo", "Bạn Muốn Xóa", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         KhachHang khachHang = GetData.Instance.GetKhachHang(dgv_KhachHang.Rows[e.RowIndex].Cells[0].Value.ToString());
-                        DeleteData.Instance.DeleteKH(khachHang);
-                        MessageBox.Show("Xóa Thành Công");
+                        if(khachHang.HopDongs.Count == 0) 
+                        { 
+                            MessageBox.Show("Khách Có Thuê Thành Công");
+                            return;
+                        }
+                        else
+                        {
+                            DeleteData.Instance.DeleteKH(khachHang);
+                            dgv_KhachHang.Rows.Remove(dgv_KhachHang.Rows[e.RowIndex]);
+                            MessageBox.Show("Xóa Thành Công");
+                        }
                     }
                 }
                 dgv_KhachHang.Refresh();

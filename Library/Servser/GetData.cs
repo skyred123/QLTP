@@ -97,5 +97,13 @@ namespace Library.Servser
         {
             return GetCT_HDs().FirstOrDefault(e => e.MaHD == id);
         }
+        public List<DichVu> GetDichVus()
+        {
+            return dbContext.DichVus.ToList();
+        }
+        public DichVu GetDichVu(Guid id)
+        {
+            return GetDichVus().FirstOrDefault(e => e.MaDV == id);
+        }
     }
 }

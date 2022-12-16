@@ -59,5 +59,10 @@ namespace Library.Servser
             dbContext.CT_HD.Add(ct_hd);
             dbContext.SaveChanges();
         }
+        public void AddDichVu(DichVu dichVu)
+        {
+            dbContext.DichVus.Add(dichVu);
+            dbContext.SaveChanges();
+        }
     }
 }

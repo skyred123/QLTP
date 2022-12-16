@@ -144,6 +144,16 @@ namespace QLKS
                 LoaiPhong lp = (LoaiPhong)ojb;
                 dataGridView.Rows.Add(lp.MaLoai,lp.TenLoaiPhong,lp.Gia);
             }
+            else if (ojb.GetType() == typeof(HopDong))
+            {
+                HopDong hd = (HopDong)ojb;
+                dataGridView.Rows.Add(hd.MaNV,hd.KhachHang.TenKH,hd.NhanVien.TenNV,hd.TongGia);
+            }
+            else if (ojb.GetType() == typeof(DichVu))
+            {
+                DichVu dv = (DichVu)ojb;
+                dataGridView.Rows.Add(dv.MaDV,dv.TenDV,dv.GiaDV);
+            }
             return dataGridView;
         }
         public DataGridView AddDGVs(DataGridView dataGridView,object ojb)
@@ -200,6 +210,26 @@ namespace QLKS
                     }
                 }
             }
+            else if(ojb.GetType() == typeof(HopDong))
+            {
+                if (GetData.Instance.GetHopDongs().Count() != 0)
+                {
+                    foreach (HopDong hopDong in GetData.Instance.GetHopDongs())
+                    {
+                        dataGridView = AddDGV(dataGridView, hopDong);
+                    }
+                }
+            }
+            else if (ojb.GetType() == typeof(DichVu))
+            {
+                if (GetData.Instance.GetDichVus().Count() != 0)
+                {
+                    foreach (DichVu dichVu in GetData.Instance.GetDichVus())
+                    {
+                        dataGridView = AddDGV(dataGridView, dichVu);
+                    }
+                }
+            }
             return dataGridView;
         }
         public DataGridView Search(DataGridView dataGridView, String str,object ojb)
@@ -235,56 +265,21 @@ namespace QLKS
         {
             button.Text = str;
         }
-        public Panel SettingControls(Panel panel_View,object ojb, bool dk)
-        {
-            panel_View.Controls.Clear();
-            Label label = new Label();
-            if (dk == true)
-            {
-                FlowLayoutPanel flowLayout = new FlowLayoutPanel();
-                foreach (Tang tang in GetData.Instance.GetTangs())
-                {
-                    flowLayout.Dock = DockStyle.Fill;
-                    flowLayout.AutoScroll = true;
-                    flowLayout.Size = new Size(panel_View.Width, 210);
-                    panel_View.Controls.Add(flowLayout);
-                    flowLayout.SetFlowBreak(label, true);
-
-                    label = new Label();
-                    label.Text = "Tầng " + tang.SoTang;
-                    flowLayout.Controls.Add(label);
-
-                    UserControl_ThePhong _ThePhong = null;
-                    foreach (Phong phong in tang.Phongs)
-                    {
-                        _ThePhong = new UserControl_ThePhong(GetData.Instance.GetPhong(phong.MaPhong));
-                        flowLayout.Controls.Add(_ThePhong);
-                    }
-                    if (_ThePhong != null)
-                        flowLayout.SetFlowBreak(_ThePhong, true);
-                }
-            }
-            else
-            {
-                panel_View.Controls.Clear();
-                Panel panel = new Panel();
-                List<Tang> list = GetData.Instance.GetTangs();
-                list.Reverse();
-
-
-                foreach (Tang tang in list)
-                {
-
-
-                    panel = new Panel();
+    }
+}
+/*
+                    panel = new panel();
                     panel.Dock = DockStyle.Top;
                     panel.AutoSize = true;
                     panel_View.Controls.Add(panel);
 
                     FlowLayoutPanel flowLayout = new FlowLayoutPanel();
+                    flowLayout.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+                    flowLayout.Location = new System.Drawing.Point(46, 92);
                     flowLayout.Dock = DockStyle.Top;
-                    flowLayout.AutoScroll = true;
-                    flowLayout.Size = new Size(panel_View.Width, 210);
+                    flowLayout.AutoSize = true;
+                    //flowLayout.AutoScroll = true;
+                    //flowLayout.Size = new Size(panel_View.Width, 210);
                     panel.Controls.Add(flowLayout);
 
                     label = new Label();
@@ -297,10 +292,5 @@ namespace QLKS
                         {
                             flowLayout.Controls.Add(new UserControl_ThePhong(GetData.Instance.GetPhong(phong.MaPhong)));
                         }
-                    }
-                }
-            }
-            return panel_View;
-        }
-    }
-}
+                    }                    
+ */

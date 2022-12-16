@@ -21,6 +21,10 @@ namespace QLKS.UserControls
             this.phong = p;
         }
 
+        public Phong GetPhong()
+        {
+            return this.phong;
+        }
         private void UserControl_ThePhong_Load(object sender, EventArgs e)
         {
             pbx_Image.Image = Image.FromFile("D:\\Eleaning\\Code\\QLKS\\QLKS\\Image\\house.jfif");
@@ -29,6 +33,7 @@ namespace QLKS.UserControls
             {
                 label_TinhTrang.Text = "Phòng Trống";
                 label_TenKH.Text = "Phòng Trống";
+                datDichVuToolStripMenuItem.Visible = false;
             }
             else
             {
@@ -36,13 +41,15 @@ namespace QLKS.UserControls
                 {
                     if (cT_HD.NgayTra.Value > DateTime.Now)
                     {
-                        label_TinhTrang.Text = "Phòng Đang Thuê";
+                        label_TinhTrang.Text = cT_HD.TinhTrang;
                         label_TenKH.Text = GetData.Instance.GetCT_HD(cT_HD.MaHD).HopDong.KhachHang.TenKH;
+                        datDichVuToolStripMenuItem.Visible = true;
                     }
                     else
                     {
                         label_TinhTrang.Text = "Phòng Trống";
                         label_TenKH.Text = "Phòng Trống";
+                        datDichVuToolStripMenuItem.Visible = false;
                     }
                 }
             }
@@ -51,26 +58,34 @@ namespace QLKS.UserControls
 
         private void xoaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (phong.MaPhong != GetData.Instance.GetPhongs().LastOrDefault().MaPhong)
+            if (phong.MaPhong != GetData.Instance.GetTangs().LastOrDefault(e => e.MaTang == phong.Tang.MaTang).Phongs.LastOrDefault().MaPhong || phong.CT_HD.LastOrDefault().NgayTra > DateTime.Now)
             {
                 MessageBox.Show("Không thể xóa phòng này");
             }
             else
             {
-                DeleteData.Instance.DeletePhong(phong);
-                UserControl_DSPhong.instance.Panel = QLKS.Controlss.Instance.SettingControls(UserControl_DSPhong.instance.Panel, new Phong(), UserControl_DSPhong.instance.check);
+                if (MessageBox.Show("Thông Báo", "Bạn Muốn Xóa", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    DeleteData.Instance.DeletePhong(phong);
+                    UserControl_DSPhong.instance.List_ThePhong();
+                }
             }
         }
 
         private void xemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(this.phong.LoaiPhong.TenLoaiPhong);
+            MessageBox.Show(this.phong.TenPhong);
         }
 
         private void suaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ViewData.Instance.SetUpdate(phong);
             QLKS.Controlss.Instance.GetEditForm(new UserControl_TKPhong(), new EditForm());
+        }
+
+        private void đặtDịchVụToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

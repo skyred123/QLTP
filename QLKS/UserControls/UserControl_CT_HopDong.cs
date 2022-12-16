@@ -15,18 +15,15 @@ namespace QLKS.UserControls
 {
     public partial class UserControl_CT_HopDong : UserControl
     {
+        public static UserControl_CT_HopDong instance;
         private Form form;
-        public UserControl_CT_HopDong(/*DateTime time*/Form form)
+        private DateTime time;
+        public UserControl_CT_HopDong(DateTime dateTime, Form form)
         {
             InitializeComponent();
-            
+            this.time = dateTime;
             this.form = form;
             Load_DGV();
-        }
-        public UserControl_CT_HopDong(DateTime time, Form form)
-        {
-            InitializeComponent();
-            this.form = form;
         }
         public void Load_DGV()
         {
@@ -40,7 +37,7 @@ namespace QLKS.UserControls
                 {
                     foreach (CT_HD cT_HD in phong.CT_HD)
                     {
-                        if (cT_HD.NgayTra < DateTime.Now)
+                        if (cT_HD.NgayTra < time)
                         {
                             Controlss.Instance.AddDGV(dgv_PhongTrong, phong);
                         }

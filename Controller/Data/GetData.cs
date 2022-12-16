@@ -106,5 +106,13 @@ namespace Controller.Data
         {
             return Server.Instance.GetData().GetCT_HD(id);
         }
+        public List<DichVu> GetDichVus()
+        {
+            return Server.Instance.GetData().GetDichVus();
+        }
+        public DichVu? GetDichVu(Guid id)
+        {
+            return Server.Instance.GetData().GetDichVu(id);
+        }
     }
 }

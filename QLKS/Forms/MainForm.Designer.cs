@@ -37,7 +37,6 @@
             this.btn_HopDong1 = new System.Windows.Forms.Button();
             this.btn_HopDong = new System.Windows.Forms.Button();
             this.panel_DichVu = new System.Windows.Forms.Panel();
-            this.btn_DichVu2 = new System.Windows.Forms.Button();
             this.btn_DichVu1 = new System.Windows.Forms.Button();
             this.btn_DichVu = new System.Windows.Forms.Button();
             this.panel_Phong = new System.Windows.Forms.Panel();
@@ -98,7 +97,7 @@
             this.btn_DangXuat.BackColor = System.Drawing.Color.CadetBlue;
             this.btn_DangXuat.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_DangXuat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_DangXuat.Location = new System.Drawing.Point(0, 835);
+            this.btn_DangXuat.Location = new System.Drawing.Point(0, 790);
             this.btn_DangXuat.Name = "btn_DangXuat";
             this.btn_DangXuat.Size = new System.Drawing.Size(223, 50);
             this.btn_DangXuat.TabIndex = 11;
@@ -113,7 +112,7 @@
             this.panel_HopDong.Controls.Add(this.btn_HopDong2);
             this.panel_HopDong.Controls.Add(this.btn_HopDong1);
             this.panel_HopDong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_HopDong.Location = new System.Drawing.Point(0, 700);
+            this.panel_HopDong.Location = new System.Drawing.Point(0, 655);
             this.panel_HopDong.Name = "panel_HopDong";
             this.panel_HopDong.Size = new System.Drawing.Size(223, 135);
             this.panel_HopDong.TabIndex = 10;
@@ -169,7 +168,7 @@
             this.btn_HopDong.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btn_HopDong.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_HopDong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_HopDong.Location = new System.Drawing.Point(0, 650);
+            this.btn_HopDong.Location = new System.Drawing.Point(0, 605);
             this.btn_HopDong.Name = "btn_HopDong";
             this.btn_HopDong.Size = new System.Drawing.Size(223, 50);
             this.btn_HopDong.TabIndex = 9;
@@ -180,29 +179,13 @@
             // panel_DichVu
             // 
             this.panel_DichVu.AutoSize = true;
-            this.panel_DichVu.Controls.Add(this.btn_DichVu2);
             this.panel_DichVu.Controls.Add(this.btn_DichVu1);
             this.panel_DichVu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_DichVu.Location = new System.Drawing.Point(0, 560);
             this.panel_DichVu.Name = "panel_DichVu";
-            this.panel_DichVu.Size = new System.Drawing.Size(223, 90);
+            this.panel_DichVu.Size = new System.Drawing.Size(223, 45);
             this.panel_DichVu.TabIndex = 8;
             this.panel_DichVu.Visible = false;
-            // 
-            // btn_DichVu2
-            // 
-            this.btn_DichVu2.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btn_DichVu2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_DichVu2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_DichVu2.Location = new System.Drawing.Point(0, 45);
-            this.btn_DichVu2.Name = "btn_DichVu2";
-            this.btn_DichVu2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btn_DichVu2.Size = new System.Drawing.Size(223, 45);
-            this.btn_DichVu2.TabIndex = 4;
-            this.btn_DichVu2.Text = "Đăng Ký Dịch Vụ";
-            this.btn_DichVu2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_DichVu2.UseVisualStyleBackColor = false;
-            this.btn_DichVu2.Click += new System.EventHandler(this.btn_DichVu2_Click);
             // 
             // btn_DichVu1
             // 
@@ -486,7 +469,6 @@
         private Button btn_HopDong1;
         private Button btn_HopDong;
         private Panel panel_DichVu;
-        private Button btn_DichVu2;
         private Button btn_DichVu1;
         private Button btn_DichVu;
         private Panel panel_Phong;

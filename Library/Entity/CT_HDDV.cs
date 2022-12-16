@@ -8,7 +8,10 @@ namespace Library.Entity
     public partial class CT_HDDV
     {
         [Column(TypeName = "date")]
-        public DateTime? ThoiGianSD { get; set; }
+        public DateTime? NgayDat { get; set; }
+
+        [Column(TypeName = "int")]
+        public int SoLuong { get; set; }
 
         [Key]
         [Column(Order = 0)]

@@ -28,13 +28,13 @@ namespace Controller.UserControls_Controller
         {
             if(khachHang.MaKH != null && khachHang.TenKH != null && khachHang.SDT != null && khachHang.Email != null)
             {
-                if (khachHang.MaKH.Count() != 10)
+                if (khachHang.MaKH.Count() != 10 || System.Text.RegularExpressions.Regex.IsMatch(khachHang.MaKH, "^[0-9\x20]+$") == false)
                 {
                     MessageBox.Show("Sai Số CCCD");
                     return false;
 
                 }
-                else if (System.Text.RegularExpressions.Regex.IsMatch(khachHang.SDT, "[0-9]") == false && khachHang.SDT.Count() != 10)
+                else if (System.Text.RegularExpressions.Regex.IsMatch(khachHang.SDT, "[0-9]") == false || khachHang.SDT.Count() != 10)
                 {
                     MessageBox.Show("Sai Số Điện Thoại");
                     return false;

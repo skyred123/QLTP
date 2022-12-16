@@ -55,5 +55,10 @@ namespace Library.Servser
             dbContext.HopDongs.Remove(hopDong);
             dbContext.SaveChanges();
         }
+        public void DeleteDichVu(DichVu dichVu)
+        {
+            dbContext.DichVus.Remove(dichVu);
+            dbContext.SaveChanges();
+        }
     }
 }
