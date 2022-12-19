@@ -15,6 +15,7 @@ namespace QLKS.UserControls
 {
     public partial class UserControl_ThePhong : UserControl
     {
+        private CT_HD cT_HDs;
         public UserControl_ThePhong(Phong p)
         {
             InitializeComponent();
@@ -34,6 +35,7 @@ namespace QLKS.UserControls
                 label_TinhTrang.Text = "Phòng Trống";
                 label_TenKH.Text = "Phòng Trống";
                 datDichVuToolStripMenuItem.Visible = false;
+                cT_HDs = null;
             }
             else
             {
@@ -43,13 +45,14 @@ namespace QLKS.UserControls
                     {
                         label_TinhTrang.Text = cT_HD.TinhTrang;
                         label_TenKH.Text = GetData.Instance.GetCT_HD(cT_HD.MaHD).HopDong.KhachHang.TenKH;
-                        datDichVuToolStripMenuItem.Visible = true;
+                        cT_HDs = cT_HD;
                     }
                     else
                     {
                         label_TinhTrang.Text = "Phòng Trống";
                         label_TenKH.Text = "Phòng Trống";
                         datDichVuToolStripMenuItem.Visible = false;
+                        cT_HDs = null;
                     }
                 }
             }
@@ -79,8 +82,15 @@ namespace QLKS.UserControls
 
         private void suaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ViewData.Instance.SetUpdate(phong);
-            QLKS.Controlss.Instance.GetEditForm(new UserControl_TKPhong(), new EditForm());
+            if (cT_HDs == null)
+            {
+                ViewData.Instance.SetUpdate(phong);
+                QLKS.Controlss.Instance.GetEditForm(new UserControl_TKPhong(), new EditForm());
+            }
+            else
+            {
+                MessageBox.Show("Không thể sửa phòng này");
+            }
         }
 
         private void đặtDịchVụToolStripMenuItem_Click(object sender, EventArgs e)

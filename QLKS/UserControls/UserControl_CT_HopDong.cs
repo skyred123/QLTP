@@ -27,22 +27,24 @@ namespace QLKS.UserControls
         }
         public void Load_DGV()
         {
+            List<Phong> phongList = new List<Phong>();
             foreach(Phong phong in GetData.Instance.GetPhongs())
             {
                 if (phong.CT_HD.Count() == 0)
                 {
-                    Controlss.Instance.AddDGV(dgv_PhongTrong, phong);
+                    phongList.Add(phong);
                 }
                 else
                 {
-                    foreach (CT_HD cT_HD in phong.CT_HD)
+                    if(phong.CT_HD.LastOrDefault().NgayTra < DateTime.Now)
                     {
-                        if (cT_HD.NgayTra < time)
-                        {
-                            Controlss.Instance.AddDGV(dgv_PhongTrong, phong);
-                        }
+                        phongList.Add(phong);
                     }
                 }
+            }
+            foreach (Phong phong in phongList)
+            {
+                Controlss.Instance.AddDGV(dgv_PhongTrong, phong);
             }
         }
         private void dgv_PhongTrong_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -75,6 +77,11 @@ namespace QLKS.UserControls
                 Controlss.Instance.AddDGV(UserControl_HopDong.instance.dataGridView, phong);
             }
             form.Hide();
+        }
+
+        private void btn_Xoa_Click(object sender, EventArgs e)
+        {
+            dgv_PhongChon.Rows.Clear();
         }
     }
 }

@@ -64,5 +64,15 @@ namespace Library.Servser
             dbContext.DichVus.Add(dichVu);
             dbContext.SaveChanges();
         }
+        public void AddHD_DichVu(HD_DichVu hddv)
+        {
+            dbContext.HD_DichVu.Add(hddv);
+            dbContext.SaveChanges();
+        }
+        public void AddCT_HDDV(CT_HDDV ct_hddv)
+        {
+            dbContext.CT_HDDV.Add(ct_hddv);
+            dbContext.SaveChanges();
+        }
     }
 }

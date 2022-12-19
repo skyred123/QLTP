@@ -24,6 +24,7 @@ namespace Library.Servser
             dbContext.Tangs.Include(e => e.Phongs).Load();
             dbContext.LoaiPhongs.Include(e => e.Phongs).Load();
             dbContext.CT_HD.Include(e => e.HopDong).Include(e => e.Phong).Load();
+            dbContext.HD_DichVu.Include(e=>e.HopDong).Include(e=>e.CT_HDDV).Include(e=>e.Phong).Load();
         }
         public List<ChucVu> GetChucVus()
         {

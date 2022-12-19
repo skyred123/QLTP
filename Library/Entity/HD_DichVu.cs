@@ -18,14 +18,16 @@ namespace Library.Entity
 
         public long? TongTien { get; set; }
 
-        
         public Guid MaPhong { get; set; }
+
+        public Guid MaHD { get; set; }
 
         [ForeignKey("MaPhong")]
         public virtual Phong Phong { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_HDDV> CT_HDDV { get; set; }
 
-        
+        [ForeignKey("MaHD")]
+        public virtual HopDong HopDong { get; set; }
     }
 }

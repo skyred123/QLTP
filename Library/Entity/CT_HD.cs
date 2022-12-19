@@ -7,9 +7,9 @@ namespace Library.Entity
 
     public partial class CT_HD
     {
-        [Column(TypeName = "date")]
-        public DateTime? NgayThue { get; set; }
-        public DateTime? NgayTra { get; set; }
+        //[Column(TypeName = "date")]
+        public DateTime NgayThue { get; set; }
+        public DateTime NgayTra { get; set; }
         [Key]
         [Column(Order = 0)]
         public Guid MaPhong { get; set; }

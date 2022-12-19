@@ -68,7 +68,8 @@ namespace QLKS.UserControls
         private void UserControl_Click(object sender, EventArgs e)
         {
             UserControl_ThePhong ojb = (UserControl_ThePhong)sender;
-            Controlss.Instance.GetEditForm(new UserControl_CT_HDDV(ojb.GetPhong()),new EditForm());
+            EditForm form = new EditForm();
+            Controlss.Instance.GetEditForm(new UserControl_CT_HDDV(ojb.GetPhong()), form);
         }
         private void UserControl_DSPhong_Load(object sender, EventArgs e)
         {

@@ -71,5 +71,10 @@ namespace Library.Servser
             item.GiaDV = dichVu.GiaDV;
             dbContext.SaveChanges();
         }
+        public void UpdateCTHD(CT_HD cT_HD)
+        {
+            var item = dbContext.HD_DichVu.FirstOrDefault(p=> p.MaHD== cT_HD.MaHD);
+            //item.MaHD = 
+        }
     }
 }
