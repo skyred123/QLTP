@@ -30,9 +30,9 @@ namespace Controller.UserControls_Controller
         {
             Server.Instance.AddData().AddHD_DichVu(hD_DichVu);
         }
-        public void UpdateCTHD(HD_DichVu hD_DV)
+        public void UpdateCTHD(CT_HD cT_HD)
         {
-            //s
+            Server.Instance.UpdateData().UpdateCTHD(cT_HD);
         }
     }
 }

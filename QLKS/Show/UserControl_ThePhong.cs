@@ -30,18 +30,20 @@ namespace QLKS.UserControls
         {
             pbx_Image.Image = Image.FromFile("D:\\Eleaning\\Code\\QLKS\\QLKS\\Image\\house.jfif");
             label_TenPhong.Text = phong.TenPhong;
+            label_Loai.Text = phong.LoaiPhong.TenLoaiPhong;
             if (phong.CT_HD.Count() ==0)
             {
                 label_TinhTrang.Text = "Phòng Trống";
                 label_TenKH.Text = "Phòng Trống";
                 datDichVuToolStripMenuItem.Visible = false;
+                this.BackColor = Color.LawnGreen;
                 cT_HDs = null;
             }
             else
             {
                 foreach (CT_HD cT_HD in phong.CT_HD)
                 {
-                    if (cT_HD.NgayTra.Value > DateTime.Now)
+                    if (cT_HD.NgayTra > DateTime.Now)
                     {
                         label_TinhTrang.Text = cT_HD.TinhTrang;
                         label_TenKH.Text = GetData.Instance.GetCT_HD(cT_HD.MaHD).HopDong.KhachHang.TenKH;
@@ -52,6 +54,7 @@ namespace QLKS.UserControls
                         label_TinhTrang.Text = "Phòng Trống";
                         label_TenKH.Text = "Phòng Trống";
                         datDichVuToolStripMenuItem.Visible = false;
+                        this.BackColor = Color.LawnGreen;
                         cT_HDs = null;
                     }
                 }
@@ -61,23 +64,41 @@ namespace QLKS.UserControls
 
         private void xoaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (phong.MaPhong != GetData.Instance.GetTangs().LastOrDefault(e => e.MaTang == phong.Tang.MaTang).Phongs.LastOrDefault().MaPhong || phong.CT_HD.LastOrDefault().NgayTra > DateTime.Now)
+            if (phong.CT_HD.Count != 0)
             {
-                MessageBox.Show("Không thể xóa phòng này");
+                if (phong.MaPhong != GetData.Instance.GetTangs().LastOrDefault(e => e.MaTang == phong.Tang.MaTang).Phongs.LastOrDefault().MaPhong || phong.CT_HD.LastOrDefault().NgayTra > DateTime.Now)
+                {
+                    MessageBox.Show("Không thể xóa phòng này");
+                }
+                else
+                {
+                    if (MessageBox.Show("Thông Báo", "Bạn Muốn Xóa", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        DeleteData.Instance.DeletePhong(phong);
+                        UserControl_DSPhong.instance.List_ThePhong();
+                    }
+                }
             }
             else
             {
-                if (MessageBox.Show("Thông Báo", "Bạn Muốn Xóa", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (phong.MaPhong != GetData.Instance.GetTangs().LastOrDefault(e => e.MaTang == phong.Tang.MaTang).Phongs.LastOrDefault().MaPhong)
                 {
-                    DeleteData.Instance.DeletePhong(phong);
-                    UserControl_DSPhong.instance.List_ThePhong();
+                    MessageBox.Show("Không thể xóa phòng này");
+                }
+                else
+                {
+                    if (MessageBox.Show("Thông Báo", "Bạn Muốn Xóa", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        DeleteData.Instance.DeletePhong(phong);
+                        UserControl_DSPhong.instance.List_ThePhong();
+                    }
                 }
             }
         }
 
         private void xemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(this.phong.TenPhong);
+            Controlss.Instance.GetEditForm(new UserControl_TKPhong(false), new EditForm());
         }
 
         private void suaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -85,7 +106,7 @@ namespace QLKS.UserControls
             if (cT_HDs == null)
             {
                 ViewData.Instance.SetUpdate(phong);
-                QLKS.Controlss.Instance.GetEditForm(new UserControl_TKPhong(), new EditForm());
+                QLKS.Controlss.Instance.GetEditForm(new UserControl_TKPhong(true), new EditForm());
             }
             else
             {

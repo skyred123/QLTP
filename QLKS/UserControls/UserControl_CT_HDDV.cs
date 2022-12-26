@@ -40,19 +40,31 @@ namespace QLKS.UserControls
                     label_TenKH.Text = phong.CT_HD.LastOrDefault().HopDong.KhachHang.TenKH;
                     label_NgayNhan.Text = phong.CT_HD.LastOrDefault().NgayThue.ToString();
                     label_NgayTra.Text = phong.CT_HD.LastOrDefault().NgayTra.ToString();
+                    Load_DataGridView();
+                }
+                else
+                {
+                    btn_ChonDV.Visible = false;
+                    btn_ThanhToan.Visible = false;
+                    btn_LuuDV.Visible = false;
+                    label_TenKH.Text = "Phòng Trống";
+                    label_NgayNhan.Text = "Phòng Trống";
+                    label_NgayTra.Text = "Phòng Trống";
+                    dgv_DichVu.Enabled = false;
+                    dgv_DVChon.Enabled = false;
                 }
             }
             else
             {
+                btn_ChonDV.Visible = false;
+                btn_ThanhToan.Visible = false;
+                btn_LuuDV.Visible = false;
                 label_TenKH.Text = "Phòng Trống";
                 label_NgayNhan.Text = "Phòng Trống";
                 label_NgayTra.Text = "Phòng Trống";
-                btn_LuuDV.Visible = false;
-                btn_ThanhToan.Visible = false;
                 dgv_DichVu.Enabled= false;
                 dgv_DVChon.Enabled= false;
             }
-            Load_DataGridView();
         }
         public void Load_DataGridView()
         {
@@ -111,18 +123,22 @@ namespace QLKS.UserControls
 
         private void btn_ThanhToan_Click(object sender, EventArgs e)
         {
-            DateTime time = DateTime.Parse(label_NgayNhan.Text);
-            if(time >= DateTime.Now) 
-            {
-                CT_HD cT_HD = phong.CT_HD.LastOrDefault();
-                cT_HD.NgayThue = DateTime.Now;
-                cT_HD.TinhTrang = "Đã Nhận Phòng";
-            }
+            phong.CT_HD.LastOrDefault().NgayTra = DateTime.Now;
+            UserControl_HoaDon _HoaDon = new UserControl_HoaDon(phong);
+            _HoaDon.print();
         }
 
         private void btn_NhanPhong_Click(object sender, EventArgs e)
         {
-
+            DateTime time = DateTime.Parse(label_NgayNhan.Text);
+            if (time >= DateTime.Now)
+            {
+                CT_HD cT_HD = phong.CT_HD.LastOrDefault();
+                cT_HD.NgayThue = DateTime.Now;
+                cT_HD.TinhTrang = "Đã Nhận Phòng";
+                UC_CT_HDDV_Controller.Instance.UpdateCTHD(cT_HD);
+                label_NgayNhan.Text = DateTime.Now.ToString();
+            }
         }
     }
 }

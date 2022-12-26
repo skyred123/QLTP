@@ -18,17 +18,25 @@ namespace QLKS.UserControls
 {
     public partial class UserControl_TKPhong : UserControl
     {
-        public UserControl_TKPhong()
+        private bool check;
+        public UserControl_TKPhong(bool check)
         {
             InitializeComponent();
+            this.check = check;
         }
         public void Form_Load()
         { 
-            if (cbx_Tang.Text != string.Empty)
+            if (check)
             {
-                int index = GetData.Instance.GetTangs().FirstOrDefault(e => e.MaTang == ((Tang)cbx_Tang.SelectedItem).MaTang).Phongs.Count();
-                txt_TenPhong.Text = "Phòng " + ((Tang)cbx_Tang.SelectedItem).SoTang + "0" + (index + 1);
-                //txt_TenPhong.Text = "Phòng " + (Tang)cbx_Tang.SelectedItem).MaTang + "0" + (index + 1);
+                if (cbx_Tang.Text != string.Empty)
+                {
+                    int index = GetData.Instance.GetTangs().FirstOrDefault(e => e.MaTang == ((Tang)cbx_Tang.SelectedItem).MaTang).Phongs.Count();
+                    txt_TenPhong.Text = "Phòng " + ((Tang)cbx_Tang.SelectedItem).SoTang + "0" + (index + 1);
+                }
+            }
+            else
+            {
+                txt_TrangThai.Enabled= false;
             }
         }
         private void UserControl_TTPhong_Load(object sender, EventArgs e)

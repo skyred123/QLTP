@@ -73,8 +73,11 @@ namespace Library.Servser
         }
         public void UpdateCTHD(CT_HD cT_HD)
         {
-            var item = dbContext.HD_DichVu.FirstOrDefault(p=> p.MaHD== cT_HD.MaHD);
-            //item.MaHD = 
+            var item = dbContext.CT_HD.FirstOrDefault(p=> p.MaHD== cT_HD.MaHD);
+            item.NgayTra = cT_HD.NgayTra;
+            item.NgayThue = cT_HD.NgayThue;
+            item.TinhTrang = cT_HD.TinhTrang;
+            dbContext.SaveChanges();
         }
     }
 }

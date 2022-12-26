@@ -62,7 +62,6 @@ namespace Controller.UserControls_Controller
                 }
             }
             ViewData.khachHangEdit = khachHang;
-            MessageBox.Show("Lưu Thành Công");
             return true;
         }
     }

@@ -25,11 +25,14 @@ namespace QLKS.UserControls
             InitializeComponent();
             instance = this;
             dataGridView = dgv_Phong;
-            dtp_NgayTra.Value = new DateTime(dtp_NgayNhan.Value.Year, dtp_NgayNhan.Value.Month, dtp_NgayNhan.Value.Day +1);
+            dtp_NgayTra.Value = dtp_NgayNhan.Value;
+            dtp_NgayTra.Value = dtp_NgayTra.Value.AddDays(1);
         }
         private void UserControl_HopDong_Load(object sender, EventArgs e)
         {
             ViewData.Instance.SetAdd();
+            dtp_NgayNhan.CustomFormat= "MM/dd/yyyy hh:mm";
+            dtp_NgayTra.CustomFormat = "MM/dd/yyyy ss";
         }
         private void btn_ChonPhong_Click(object sender, EventArgs e)
         {
@@ -85,14 +88,7 @@ namespace QLKS.UserControls
                 cT_HD.MaHD = hd.MaHD;
                 cT_HD.NgayThue = dtp_NgayNhan.Value;
                 cT_HD.NgayTra = dtp_NgayTra.Value;
-                if (dtp_NgayNhan.Value.Day == DateTime.Now.Day && dtp_NgayNhan.Value.Month == DateTime.Now.Month && dtp_NgayNhan.Value.Month == DateTime.Now.Month)
-                {
-                    cT_HD.TinhTrang = "Đã nhận phòng";
-                }
-                else
-                {
-                    cT_HD.TinhTrang = "Đã đặt phòng";
-                }
+                cT_HD.TinhTrang = "Đã nhận phòng";
                 cT_HD.MaPhong = (Guid)row.Cells[0].Value;
                 check = UC_HopDong_Controller.Instance.AddCTHD(cT_HD);
             }
@@ -120,14 +116,6 @@ namespace QLKS.UserControls
 
         private void dtp_NgayNhan_ValueChanged(object sender, EventArgs e)
         {
-            if(dtp_NgayNhan.Value >= DateTime.Now && dtp_NgayNhan.Value <= dtp_NgayTra.Value)
-            {
-                
-            }
-            else
-            {
-                dtp_NgayNhan.Value = DateTime.Now.Date;
-            }
         }
 
         private void dtp_NgayTra_ValueChanged(object sender, EventArgs e)
@@ -140,6 +128,12 @@ namespace QLKS.UserControls
             {
                 dtp_NgayTra.Value = new DateTime(dtp_NgayNhan.Value.Year, dtp_NgayNhan.Value.Month, dtp_NgayNhan.Value.Day);
             }
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            dtp_NgayNhan.Value = DateTime.Now;
+            dtp_NgayTra.Value = dtp_NgayTra.Value.AddSeconds(1);
         }
     }
 }

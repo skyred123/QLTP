@@ -35,7 +35,6 @@
             this.label_NgayNhan = new System.Windows.Forms.Label();
             this.label_NgayTra = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_NhanPhong = new System.Windows.Forms.Button();
             this.btn_ThanhToan = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.dgv_DVChon = new System.Windows.Forms.DataGridView();
@@ -143,8 +142,7 @@
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.08385F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.91615F));
-            this.tableLayoutPanel3.Controls.Add(this.btn_NhanPhong, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btn_ThanhToan, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btn_ThanhToan, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 422);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -153,22 +151,11 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(978, 43);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
-            // btn_NhanPhong
-            // 
-            this.btn_NhanPhong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_NhanPhong.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_NhanPhong.Location = new System.Drawing.Point(647, 3);
-            this.btn_NhanPhong.Name = "btn_NhanPhong";
-            this.btn_NhanPhong.Size = new System.Drawing.Size(143, 35);
-            this.btn_NhanPhong.TabIndex = 4;
-            this.btn_NhanPhong.Text = "Nhận Phòng";
-            this.btn_NhanPhong.UseVisualStyleBackColor = true;
-            this.btn_NhanPhong.Click += new System.EventHandler(this.btn_NhanPhong_Click);
-            // 
             // btn_ThanhToan
             // 
+            this.btn_ThanhToan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_ThanhToan.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_ThanhToan.Location = new System.Drawing.Point(796, 3);
+            this.btn_ThanhToan.Location = new System.Drawing.Point(643, 3);
             this.btn_ThanhToan.Name = "btn_ThanhToan";
             this.btn_ThanhToan.Size = new System.Drawing.Size(147, 35);
             this.btn_ThanhToan.TabIndex = 2;
@@ -382,6 +369,5 @@
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column6;
-        private Button btn_NhanPhong;
     }
 }

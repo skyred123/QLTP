@@ -33,8 +33,6 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HopDong)).BeginInit();
@@ -62,8 +60,6 @@
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4,
-            this.Column5,
             this.Column6});
             this.dgv_HopDong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_HopDong.Location = new System.Drawing.Point(3, 136);
@@ -100,25 +96,6 @@
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.HeaderText = "Giá";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.HeaderText = "Xóa";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Text = "Xóa";
-            this.Column5.ToolTipText = "Xóa";
-            this.Column5.UseColumnTextForButtonValue = true;
-            // 
             // Column6
             // 
             this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -150,8 +127,6 @@
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewButtonColumn Column5;
         private DataGridViewButtonColumn Column6;
     }
 }

@@ -1,4 +1,6 @@
-﻿using Library.Entity;
+﻿using Controller.Data;
+using Library.Entity;
+using QLKS.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,7 +25,8 @@ namespace QLKS.UserControls
         {
             if (dgv_HopDong.Columns[e.ColumnIndex].ToolTipText == "Chi Tiết")
             {
-
+                HopDong hd = GetData.Instance.GetHopDong((Guid)dgv_HopDong.Rows[e.RowIndex].Cells[0].Value);
+                Controlss.Instance.GetEditForm(new UserControl_DSCT_HD(hd), new EditForm());
             }
         }
     }

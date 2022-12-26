@@ -27,6 +27,7 @@ namespace Library.Entity
         [StringLength(10)]
         public string MaKH { get; set; }
 
+        public virtual ICollection<HD_DichVu> HD_DichVu { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_HD> CT_HD { get; set; }
         [ForeignKey("MaKH")]

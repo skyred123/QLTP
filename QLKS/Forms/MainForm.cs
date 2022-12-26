@@ -124,7 +124,7 @@ namespace QLKS.Forms
         private void btn_Phong1_Click(object sender, EventArgs e)
         {
             ViewData.Instance.SetAdd();
-            QLKS.Controlss.Instance.GetUserControl(panel_View, null, new UserControl_TKPhong());
+            QLKS.Controlss.Instance.GetUserControl(panel_View, null, new UserControl_TKPhong(true));
         }
 
         private void btn_Phong2_Click(object sender, EventArgs e)

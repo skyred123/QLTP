@@ -147,12 +147,17 @@ namespace QLKS
             else if (ojb.GetType() == typeof(HopDong))
             {
                 HopDong hd = (HopDong)ojb;
-                dataGridView.Rows.Add(hd.MaNV,hd.KhachHang.TenKH,hd.NhanVien.TenNV,hd.TongGia);
+                dataGridView.Rows.Add(hd.MaHD,hd.KhachHang.TenKH,hd.NhanVien.TenNV);
             }
             else if (ojb.GetType() == typeof(DichVu))
             {
                 DichVu dv = (DichVu)ojb;
                 dataGridView.Rows.Add(dv.MaDV,dv.TenDV,dv.GiaDV);
+            }
+            else if(ojb.GetType() == typeof(CT_HD))
+            {
+                CT_HD cthd = (CT_HD)ojb;
+                dataGridView.Rows.Add(cthd.MaPhong,cthd.Phong.TenPhong,cthd.NgayThue,cthd.NgayTra);
             }
             return dataGridView;
         }
@@ -267,30 +272,3 @@ namespace QLKS
         }
     }
 }
-/*
-                    panel = new panel();
-                    panel.Dock = DockStyle.Top;
-                    panel.AutoSize = true;
-                    panel_View.Controls.Add(panel);
-
-                    FlowLayoutPanel flowLayout = new FlowLayoutPanel();
-                    flowLayout.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-                    flowLayout.Location = new System.Drawing.Point(46, 92);
-                    flowLayout.Dock = DockStyle.Top;
-                    flowLayout.AutoSize = true;
-                    //flowLayout.AutoScroll = true;
-                    //flowLayout.Size = new Size(panel_View.Width, 210);
-                    panel.Controls.Add(flowLayout);
-
-                    label = new Label();
-                    label.Dock = DockStyle.Top;
-                    label.Text = "Tầng " + tang.SoTang;
-                    panel.Controls.Add(label);
-                    if (tang.Phongs.Count() >= 0)
-                    {
-                        foreach (Phong phong in tang.Phongs)
-                        {
-                            flowLayout.Controls.Add(new UserControl_ThePhong(GetData.Instance.GetPhong(phong.MaPhong)));
-                        }
-                    }                    
- */

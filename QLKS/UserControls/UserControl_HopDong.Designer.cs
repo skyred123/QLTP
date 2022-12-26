@@ -30,10 +30,12 @@ namespace QLKS.UserControls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.dtp_NgayNhan = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_MaKH = new System.Windows.Forms.TextBox();
             this.txt_TenKH = new System.Windows.Forms.TextBox();
@@ -43,15 +45,14 @@ namespace QLKS.UserControls
             this.btn_Delete = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_ChonPhong = new System.Windows.Forms.Button();
-            this.dtp_NgayTra = new System.Windows.Forms.DateTimePicker();
-            this.dtp_NgayNhan = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.dgv_Phong = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_Luu = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtp_NgayTra = new System.Windows.Forms.DateTimePicker();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -81,6 +82,7 @@ namespace QLKS.UserControls
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.label4, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.dtp_NgayNhan, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label5, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.txt_MaKH, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.txt_TenKH, 1, 2);
@@ -122,6 +124,17 @@ namespace QLKS.UserControls
             this.label4.Size = new System.Drawing.Size(158, 25);
             this.label4.TabIndex = 1;
             this.label4.Text = "Tên Khách Hàng";
+            // 
+            // dtp_NgayNhan
+            // 
+            this.dtp_NgayNhan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtp_NgayNhan.Enabled = false;
+            this.dtp_NgayNhan.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtp_NgayNhan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_NgayNhan.Location = new System.Drawing.Point(3, 3);
+            this.dtp_NgayNhan.Name = "dtp_NgayNhan";
+            this.dtp_NgayNhan.Size = new System.Drawing.Size(237, 31);
+            this.dtp_NgayNhan.TabIndex = 0;
             // 
             // label5
             // 
@@ -192,16 +205,14 @@ namespace QLKS.UserControls
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.08419F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.11294F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.597536F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.63039F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.49076F));
             this.tableLayoutPanel2.Controls.Add(this.btn_ChonPhong, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.dtp_NgayTra, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.dtp_NgayNhan, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.dgv_Phong, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.button2, 0, 6);
             this.tableLayoutPanel2.Controls.Add(this.btn_Luu, 1, 6);
+            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.dtp_NgayTra, 1, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(495, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -218,59 +229,13 @@ namespace QLKS.UserControls
             // 
             // btn_ChonPhong
             // 
-            this.btn_ChonPhong.Location = new System.Drawing.Point(281, 234);
+            this.btn_ChonPhong.Location = new System.Drawing.Point(280, 234);
             this.btn_ChonPhong.Name = "btn_ChonPhong";
             this.btn_ChonPhong.Size = new System.Drawing.Size(139, 41);
             this.btn_ChonPhong.TabIndex = 7;
             this.btn_ChonPhong.Text = "Chọn Phòng";
             this.btn_ChonPhong.UseVisualStyleBackColor = true;
             this.btn_ChonPhong.Click += new System.EventHandler(this.btn_ChonPhong_Click);
-            // 
-            // dtp_NgayTra
-            // 
-            this.dtp_NgayTra.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtp_NgayTra.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtp_NgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_NgayTra.Location = new System.Drawing.Point(281, 157);
-            this.dtp_NgayTra.Name = "dtp_NgayTra";
-            this.dtp_NgayTra.Size = new System.Drawing.Size(165, 31);
-            this.dtp_NgayTra.TabIndex = 1;
-            this.dtp_NgayTra.ValueChanged += new System.EventHandler(this.dtp_NgayTra_ValueChanged);
-            // 
-            // dtp_NgayNhan
-            // 
-            this.dtp_NgayNhan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtp_NgayNhan.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtp_NgayNhan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_NgayNhan.Location = new System.Drawing.Point(281, 80);
-            this.dtp_NgayNhan.Name = "dtp_NgayNhan";
-            this.dtp_NgayNhan.Size = new System.Drawing.Size(165, 31);
-            this.dtp_NgayNhan.TabIndex = 0;
-            this.dtp_NgayNhan.ValueChanged += new System.EventHandler(this.dtp_NgayNhan_ValueChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(3, 77);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(272, 25);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Ngày Thuê";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(3, 154);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(272, 25);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Ngày Trả";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // dgv_Phong
             // 
@@ -285,7 +250,7 @@ namespace QLKS.UserControls
             this.dgv_Phong.RowHeadersWidth = 51;
             this.tableLayoutPanel2.SetRowSpan(this.dgv_Phong, 3);
             this.dgv_Phong.RowTemplate.Height = 29;
-            this.dgv_Phong.Size = new System.Drawing.Size(272, 211);
+            this.dgv_Phong.Size = new System.Drawing.Size(271, 211);
             this.dgv_Phong.TabIndex = 4;
             // 
             // Column1
@@ -315,13 +280,42 @@ namespace QLKS.UserControls
             // 
             // btn_Luu
             // 
-            this.btn_Luu.Location = new System.Drawing.Point(281, 451);
+            this.btn_Luu.Location = new System.Drawing.Point(280, 451);
             this.btn_Luu.Name = "btn_Luu";
             this.btn_Luu.Size = new System.Drawing.Size(139, 41);
             this.btn_Luu.TabIndex = 5;
             this.btn_Luu.Text = "Lưu";
             this.btn_Luu.UseVisualStyleBackColor = true;
             this.btn_Luu.Click += new System.EventHandler(this.btn_Luu_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(193, 77);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 25);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Ngày Trả";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
+            // dtp_NgayTra
+            // 
+            this.dtp_NgayTra.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtp_NgayTra.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtp_NgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_NgayTra.Location = new System.Drawing.Point(280, 80);
+            this.dtp_NgayTra.Name = "dtp_NgayTra";
+            this.dtp_NgayTra.Size = new System.Drawing.Size(186, 31);
+            this.dtp_NgayTra.TabIndex = 1;
+            this.dtp_NgayTra.ValueChanged += new System.EventHandler(this.dtp_NgayTra_ValueChanged);
+            // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // UserControl_HopDong
             // 
@@ -347,7 +341,6 @@ namespace QLKS.UserControls
         private TableLayoutPanel tableLayoutPanel2;
         private DateTimePicker dtp_NgayTra;
         private DateTimePicker dtp_NgayNhan;
-        private Label label1;
         private Label label2;
         private Button button2;
         private Button btn_Luu;
@@ -365,5 +358,6 @@ namespace QLKS.UserControls
         private TextBox txt_Email;
         private Label label6;
         private Button btn_Delete;
+        private System.Windows.Forms.Timer timer;
     }
 }
