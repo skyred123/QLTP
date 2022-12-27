@@ -46,6 +46,7 @@ namespace Library.Servser
         {
             var item = dbContext.ChucVus.FirstOrDefault(p => p.MaCV == chucVu.MaCV);
             item.TenCV = chucVu.TenCV;
+            item.Quyen= chucVu.Quyen;
             dbContext.SaveChanges();
         }
         public void UpdatePhong(Phong phong)

@@ -17,6 +17,8 @@ namespace Library.Entity
         [Key]
         public Guid MaCV { get; set; }
 
+        public bool Quyen { get; set; }
+
         [StringLength(50)]
         public string TenCV { get; set; }
 

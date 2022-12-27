@@ -38,7 +38,7 @@ namespace QLKS.UserControls
                     if (chucVu != null || chucVu.NhanViens.Count() == 0)
                     {
                         DeleteData.Instance.DeleteChucVu(chucVu);
-                        dgv_ChucVu.Rows.Remove(dgv_ChucVu.Rows[e.RowIndex]);
+                        QLKS.Controlss.Instance.AddDGVs(dgv_ChucVu, new ChucVu());
                     }
                     else
                     {
@@ -50,6 +50,7 @@ namespace QLKS.UserControls
             {
                 Guid id = (Guid)dgv_ChucVu.Rows[e.RowIndex].Cells[0].Value;
                 txt_ChucVu.Text = dgv_ChucVu.Rows[e.RowIndex].Cells[1].Value.ToString();
+                cb_Quyen.Checked = bool.Parse(dgv_ChucVu.Rows[e.RowIndex].Cells[2].Value.ToString());
             }
         }
 
@@ -70,6 +71,7 @@ namespace QLKS.UserControls
             ChucVu chucVu = new ChucVu();
             chucVu.MaCV = (Guid)dgv_ChucVu.SelectedCells[0].OwningRow.Cells[0].Value;
             chucVu.TenCV = txt_ChucVu.Text;
+            chucVu.Quyen = cb_Quyen.Checked;
             UC_ChucVu_Controller.Instance.UpdateChucVu(chucVu);
             QLKS.Controlss.Instance.AddDGVs(dgv_ChucVu, new ChucVu());
         }
@@ -77,9 +79,22 @@ namespace QLKS.UserControls
         private void btn_Thêm_Click(object sender, EventArgs e)
         {
             ChucVu chucVu = new ChucVu();
-            chucVu.TenCV = txt_ChucVu.Text;   
+            chucVu.TenCV = txt_ChucVu.Text; 
+            chucVu.Quyen = cb_Quyen.Checked;
             if(UC_ChucVu_Controller.Instance.AddChucVu(chucVu))
                 QLKS.Controlss.Instance.AddDGV(dgv_ChucVu, chucVu);
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(cb_Quyen.Checked )
+            {
+                cb_Quyen.Text = "True";
+            }
+            else
+            {
+                cb_Quyen.Text = "False";
+            }
         }
     }
 }

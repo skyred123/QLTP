@@ -35,35 +35,15 @@ namespace QLKS.Forms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            string? tenCV;
-            if (ViewData.Instance.GetNhanVien() == null) tenCV = "Admin";
-            else tenCV = ViewData.Instance.GetNhanVien().ChucVu.TenCV;
-            if (tenCV == "Admin")
+            if (ViewData.Instance.GetNhanVien().ChucVu.Quyen == false)
             {
-                QLKS.Controlss.Instance.HideButton(btn_NhanVien1);
-                QLKS.Controlss.Instance.HideButton(btn_NhanVien2);
+                QLKS.Controlss.Instance.HideButton(btn_NhanVien3);
+                QLKS.Controlss.Instance.HideButton(btn_NhanVien4);
+                QLKS.Controlss.Instance.HideButton(btn_KhachHang1);
+                QLKS.Controlss.Instance.HideButton(btn_Phong1);
+                QLKS.Controlss.Instance.HideButton(btn_HopDong2);
             }
-            else
-            {
-                if (tenCV == "Nhân Viên")
-                {
-                    QLKS.Controlss.Instance.HideButton(btn_NhanVien3);
-                    QLKS.Controlss.Instance.HideButton(btn_NhanVien4);
-                }
-                else  if(tenCV == "Quản Lý")
-                {
-                    
-                }
-                else
-                {
-                    QLKS.Controlss.Instance.HideButton(btn_NhanVien3);
-                    QLKS.Controlss.Instance.HideButton(btn_NhanVien4);
-                    QLKS.Controlss.Instance.HideButton(btn_KhachHang1);
-                    QLKS.Controlss.Instance.HideButton(btn_Phong1);
-                    QLKS.Controlss.Instance.HideButton(btn_HopDong2);
-                }
-            }
-            QLKS.Controlss.Instance.ButtonText(btn_NhanVien, tenCV);
+            QLKS.Controlss.Instance.ButtonText(btn_NhanVien, ViewData.Instance.GetNhanVien().ChucVu.TenCV);
         }
         #region Nhan Vien
 

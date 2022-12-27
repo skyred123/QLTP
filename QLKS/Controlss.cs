@@ -117,7 +117,7 @@ namespace QLKS
             if(ojb.GetType() == typeof(ChucVu)) 
             {
                 ChucVu cv = (ChucVu)ojb;
-                dataGridView.Rows.Add(cv.MaCV,cv.TenCV);
+                dataGridView.Rows.Add(cv.MaCV,cv.TenCV,cv.Quyen.ToString());
             }
             else if(ojb.GetType() == typeof(NhanVien))
             {
