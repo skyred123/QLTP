@@ -25,18 +25,25 @@ namespace QLKS.UserControls
             this.check = check;
         }
         public void Form_Load()
-        { 
+        {
+            if (cbx_Tang.Text != string.Empty)
+            {
+                int index = GetData.Instance.GetTangs().FirstOrDefault(e => e.MaTang == ((Tang)cbx_Tang.SelectedItem).MaTang).Phongs.Count();
+                txt_TenPhong.Text = "Phòng " + ((Tang)cbx_Tang.SelectedItem).SoTang + "0" + (index + 1);
+            }
             if (check)
             {
-                if (cbx_Tang.Text != string.Empty)
-                {
-                    int index = GetData.Instance.GetTangs().FirstOrDefault(e => e.MaTang == ((Tang)cbx_Tang.SelectedItem).MaTang).Phongs.Count();
-                    txt_TenPhong.Text = "Phòng " + ((Tang)cbx_Tang.SelectedItem).SoTang + "0" + (index + 1);
-                }
+                
             }
             else
             {
+                Link_LoaiPhong.Enabled = false;
+                link_Tang.Enabled= false;
+                cbx_Tang.Enabled = false;
+                cbx_LoaiPhong.Enabled= false;
                 txt_TrangThai.Enabled= false;
+                btn_Luu.Enabled= false;
+                btn_Xoa.Enabled= false;
             }
         }
         private void UserControl_TTPhong_Load(object sender, EventArgs e)

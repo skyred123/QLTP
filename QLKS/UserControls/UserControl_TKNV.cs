@@ -122,10 +122,7 @@ namespace QLKS.UserControls
             {
                 if(UC_TKNV_Controller.Instance.UpdateNhanVien(item,null) == true)
                 {
-                    if (UserControl_DSNV.instance.dataGridView != null)
-                    {
-                        QLKS.Controlss.Instance.AddDGVs(UserControl_DSNV.instance.dataGridView, new NhanVien());
-                    }
+                    QLKS.Controlss.Instance.AddDGVs(UserControl_DSNV.instance.dataGridView, new NhanVien());
                 }
             }
             else if (ViewData.Instance.GetUpdate())

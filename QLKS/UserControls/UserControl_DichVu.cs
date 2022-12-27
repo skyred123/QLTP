@@ -73,7 +73,7 @@ namespace QLKS.UserControls
         {
             DichVu dichVu = new DichVu();
             ImageConverter converter = new ImageConverter();
-            if (System.Text.RegularExpressions.Regex.IsMatch(txt_Gia.Text, "^[0-9\x20]+$") == true || pictureBox_Image != null)
+            if (System.Text.RegularExpressions.Regex.IsMatch(txt_Gia.Text, "^[0-9\x20]+$") == true && pictureBox_Image.Image != null && txt_Gia.Text != string.Empty)
             {
                 dichVu.GiaDV = int.Parse(txt_Gia.Text);
                 dichVu.TenDV = txt_TenMA.Text;
@@ -96,10 +96,13 @@ namespace QLKS.UserControls
             {
                 if (MessageBox.Show("Thông Báo", "Bạn Muốn Xóa", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    DeleteData.Instance.DeleteDichVu(dichVu);
-                    List_DichVu();
-                    Clears();
-                    MessageBox.Show("Xóa thành công");
+                    if (dichVu.CT_HDDV.Count != 0)
+                    {
+                        DeleteData.Instance.DeleteDichVu(dichVu);
+                        List_DichVu();
+                        Clears();
+                        MessageBox.Show("Xóa thành công");
+                    }
                 }
             }
             else

@@ -45,7 +45,7 @@ namespace QLKS.UserControls
                     if (MessageBox.Show("Thông Báo", "Bạn Muốn Xóa", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         KhachHang khachHang = GetData.Instance.GetKhachHang(dgv_KhachHang.Rows[e.RowIndex].Cells[0].Value.ToString());
-                        if(khachHang.HopDongs.Count == 0) 
+                        if(khachHang.HopDongs.Count != 0) 
                         { 
                             MessageBox.Show("Khách Có Thuê Thành Công");
                             return;
