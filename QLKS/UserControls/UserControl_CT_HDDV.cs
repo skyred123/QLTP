@@ -20,14 +20,16 @@ namespace QLKS.UserControls
         public DataGridView dataGridView;
         public long tongTien;
         private Phong phong;
+        private Form form;
 
-        public UserControl_CT_HDDV(Phong p)
+        public UserControl_CT_HDDV(Phong p,Form f)
         {
             InitializeComponent();
             tongTien = 0;
             instance= this;
             dataGridView = dgv_DVChon;
             this.phong = p;
+            this.form = f;
         }
 
         private void UserControl_CT_HDDV_Load(object sender, EventArgs e)
@@ -108,6 +110,7 @@ namespace QLKS.UserControls
                 }
                 phong = GetData.Instance.GetPhong(phong.MaPhong);
                 Load_DataGridView();
+                dgv_DVChon.Rows.Clear();
                 MessageBox.Show("Lưu Thành Công");
             }
             catch (Exception ex)
@@ -126,6 +129,7 @@ namespace QLKS.UserControls
             phong.CT_HD.LastOrDefault().NgayTra = DateTime.Now;
             UserControl_HoaDon _HoaDon = new UserControl_HoaDon(phong);
             _HoaDon.print();
+            this.form.Hide();
         }
 
         private void btn_NhanPhong_Click(object sender, EventArgs e)

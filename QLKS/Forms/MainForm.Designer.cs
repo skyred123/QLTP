@@ -32,7 +32,6 @@
             this.panel_Menu = new System.Windows.Forms.Panel();
             this.btn_DangXuat = new System.Windows.Forms.Button();
             this.panel_HopDong = new System.Windows.Forms.Panel();
-            this.btn_HopDong3 = new System.Windows.Forms.Button();
             this.btn_HopDong2 = new System.Windows.Forms.Button();
             this.btn_HopDong1 = new System.Windows.Forms.Button();
             this.btn_HopDong = new System.Windows.Forms.Button();
@@ -97,7 +96,7 @@
             this.btn_DangXuat.BackColor = System.Drawing.Color.CadetBlue;
             this.btn_DangXuat.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_DangXuat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_DangXuat.Location = new System.Drawing.Point(0, 790);
+            this.btn_DangXuat.Location = new System.Drawing.Point(0, 745);
             this.btn_DangXuat.Name = "btn_DangXuat";
             this.btn_DangXuat.Size = new System.Drawing.Size(223, 50);
             this.btn_DangXuat.TabIndex = 11;
@@ -108,30 +107,14 @@
             // panel_HopDong
             // 
             this.panel_HopDong.AutoSize = true;
-            this.panel_HopDong.Controls.Add(this.btn_HopDong3);
             this.panel_HopDong.Controls.Add(this.btn_HopDong2);
             this.panel_HopDong.Controls.Add(this.btn_HopDong1);
             this.panel_HopDong.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_HopDong.Location = new System.Drawing.Point(0, 655);
             this.panel_HopDong.Name = "panel_HopDong";
-            this.panel_HopDong.Size = new System.Drawing.Size(223, 135);
+            this.panel_HopDong.Size = new System.Drawing.Size(223, 90);
             this.panel_HopDong.TabIndex = 10;
             this.panel_HopDong.Visible = false;
-            // 
-            // btn_HopDong3
-            // 
-            this.btn_HopDong3.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btn_HopDong3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_HopDong3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_HopDong3.Location = new System.Drawing.Point(0, 90);
-            this.btn_HopDong3.Name = "btn_HopDong3";
-            this.btn_HopDong3.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btn_HopDong3.Size = new System.Drawing.Size(223, 45);
-            this.btn_HopDong3.TabIndex = 6;
-            this.btn_HopDong3.Text = "Báo Cáo";
-            this.btn_HopDong3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_HopDong3.UseVisualStyleBackColor = false;
-            this.btn_HopDong3.Click += new System.EventHandler(this.btn_HopDong3_Click);
             // 
             // btn_HopDong2
             // 
@@ -464,7 +447,6 @@
         private Panel panel_Menu;
         private Button btn_DangXuat;
         private Panel panel_HopDong;
-        private Button btn_HopDong3;
         private Button btn_HopDong2;
         private Button btn_HopDong1;
         private Button btn_HopDong;

@@ -73,7 +73,7 @@ namespace Library.Servser
         }
         public void UpdateCTHD(CT_HD cT_HD)
         {
-            var item = dbContext.CT_HD.FirstOrDefault(p=> p.MaHD== cT_HD.MaHD);
+            var item = dbContext.CT_HD.FirstOrDefault(p=> p.MaHD== cT_HD.MaHD && p.MaPhong == cT_HD.MaPhong);
             item.NgayTra = cT_HD.NgayTra;
             item.NgayThue = cT_HD.NgayThue;
             item.TinhTrang = cT_HD.TinhTrang;
