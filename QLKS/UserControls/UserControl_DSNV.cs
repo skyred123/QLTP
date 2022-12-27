@@ -33,8 +33,11 @@ namespace QLKS.UserControls
                 if (MessageBox.Show("Thông Báo","Bạn Muốn Xóa",MessageBoxButtons.YesNo)==DialogResult.Yes)
                 {
                     NhanVien nhanVien = GetData.Instance.GetNhanVien(dgv_NhanVien.Rows[e.RowIndex].Cells[0].Value.ToString());
-                    DeleteData.Instance.DeleteNV(nhanVien);
-                    MessageBox.Show("Xóa Thành Công");
+                    if(nhanVien.HopDongs.Count == 0 && ViewData.Instance.GetNhanVien().MaNV != nhanVien.MaNV) 
+                    {
+                        DeleteData.Instance.DeleteNV(nhanVien);
+                        MessageBox.Show("Xóa Thành Công");
+                    }
                 }
             }
             else

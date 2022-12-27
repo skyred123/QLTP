@@ -111,6 +111,7 @@
             this.pictureBox_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_Image.TabIndex = 0;
             this.pictureBox_Image.TabStop = false;
+            this.pictureBox_Image.Click += new System.EventHandler(this.pictureBox_Image_Click);
             // 
             // btn_Image
             // 

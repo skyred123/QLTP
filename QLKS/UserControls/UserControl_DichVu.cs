@@ -131,5 +131,10 @@ namespace QLKS.UserControls
                 MessageBox.Show("Thiếu Dữ Liệu");
             }
         }
+
+        private void pictureBox_Image_Click(object sender, EventArgs e)
+        {
+            Controlss.Instance.OpenFile(pictureBox_Image);
+        }
     }
 }

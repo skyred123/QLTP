@@ -34,7 +34,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(663, 450);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(729, 450);
             this.Name = "EditForm";
             this.Text = "EditForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditForm_FormClosing);
