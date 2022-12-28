@@ -111,7 +111,8 @@ namespace QLKS.UserControls
             item.MaCV = ((ChucVu)cbx_ChucVu.SelectedItem).MaCV;
             if (image_Avatar.Image == null)
             {
-                //item.Image = (byte[])converter.ConvertTo(Image.FromFile("D:\\Eleaning\\Code\\QLKS\\QLKS\\Image\\AvatarRong.jpg"), typeof(byte[]));
+                MessageBox.Show("Chưa Nhập Hình");
+                return;
             }
             else
             {
@@ -139,7 +140,6 @@ namespace QLKS.UserControls
         {
             QLKS.Controlss.Instance.OpenFile(image_Avatar);
         }
-
         private void btn_LuuMK_Click(object sender, EventArgs e)
         {
             User user = new User();

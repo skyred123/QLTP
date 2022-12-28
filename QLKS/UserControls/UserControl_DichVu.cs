@@ -92,16 +92,19 @@ namespace QLKS.UserControls
         
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(txt_Gia.Text, "^[0-9\x20]+$") == true || pictureBox_Image != null)
+            if (System.Text.RegularExpressions.Regex.IsMatch(txt_Gia.Text, "^[0-9\x20]+$") == true && pictureBox_Image.Image != null && txt_Gia.Text != string.Empty)
             {
                 if (MessageBox.Show("Thông Báo", "Bạn Muốn Xóa", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    if (dichVu.CT_HDDV.Count != 0)
+                    if (dichVu != null)
                     {
-                        DeleteData.Instance.DeleteDichVu(dichVu);
-                        List_DichVu();
-                        Clears();
-                        MessageBox.Show("Xóa thành công");
+                        if (dichVu.CT_HDDV.Count != 0)
+                        {
+                            DeleteData.Instance.DeleteDichVu(dichVu);
+                            List_DichVu();
+                            Clears();
+                            MessageBox.Show("Xóa thành công");
+                        }
                     }
                 }
             }
@@ -114,7 +117,7 @@ namespace QLKS.UserControls
         private void btnSua__Click(object sender, EventArgs e)
         {
             ImageConverter converter = new ImageConverter();
-            if (System.Text.RegularExpressions.Regex.IsMatch(txt_Gia.Text, "^[0-9\x20]+$") == true || pictureBox_Image != null)
+            if (System.Text.RegularExpressions.Regex.IsMatch(txt_Gia.Text, "^[0-9\x20]+$") == true && pictureBox_Image.Image != null && txt_Gia.Text != string.Empty)
             {
                 dichVu.GiaDV = int.Parse(txt_Gia.Text);
                 dichVu.TenDV = txt_TenMA.Text;

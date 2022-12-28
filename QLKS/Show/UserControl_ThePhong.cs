@@ -28,7 +28,6 @@ namespace QLKS.UserControls
         }
         private void UserControl_ThePhong_Load(object sender, EventArgs e)
         {
-            //pbx_Image.Image = Image.FromFile("D:\\Eleaning\\Code\\QLKS\\QLKS\\Image\\house.jfif");
             label_TenPhong.Text = phong.TenPhong;
             label_Loai.Text = phong.LoaiPhong.TenLoaiPhong;
             if (phong.CT_HD.Count() ==0)

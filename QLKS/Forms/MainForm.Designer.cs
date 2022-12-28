@@ -462,8 +462,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1051, 525);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.MinimumSize = new System.Drawing.Size(244, 442);
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "Quản Lý Thuê Phòng";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel_Menu.ResumeLayout(false);
