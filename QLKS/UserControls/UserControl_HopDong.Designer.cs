@@ -43,16 +43,15 @@ namespace QLKS.UserControls
             this.label6 = new System.Windows.Forms.Label();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.dtp_NgayNhan = new System.Windows.Forms.DateTimePicker();
             this.dgv_Phong = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtp_NgayTra = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_ChonPhong = new System.Windows.Forms.Button();
+            this.dtp_NgayNhan = new System.Windows.Forms.DateTimePicker();
             this.btn_Luu = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -217,26 +216,13 @@ namespace QLKS.UserControls
             this.tableLayoutPanel2.Size = new System.Drawing.Size(487, 541);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
-            // dtp_NgayNhan
-            // 
-            this.tableLayoutPanel2.SetColumnSpan(this.dtp_NgayNhan, 2);
-            this.dtp_NgayNhan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtp_NgayNhan.Enabled = false;
-            this.dtp_NgayNhan.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtp_NgayNhan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_NgayNhan.Location = new System.Drawing.Point(124, 92);
-            this.dtp_NgayNhan.Name = "dtp_NgayNhan";
-            this.dtp_NgayNhan.Size = new System.Drawing.Size(236, 31);
-            this.dtp_NgayNhan.TabIndex = 0;
-            // 
             // dgv_Phong
             // 
             this.dgv_Phong.AllowUserToAddRows = false;
             this.dgv_Phong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Phong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.Column2,
-            this.Column3});
+            this.Column2});
             this.tableLayoutPanel2.SetColumnSpan(this.dgv_Phong, 3);
             this.dgv_Phong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_Phong.Location = new System.Drawing.Point(3, 234);
@@ -246,29 +232,6 @@ namespace QLKS.UserControls
             this.dgv_Phong.RowTemplate.Height = 29;
             this.dgv_Phong.Size = new System.Drawing.Size(357, 211);
             this.dgv_Phong.TabIndex = 4;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Mã Phòng";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Tên Phòng";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Tình Trạng";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
             // 
             // dtp_NgayTra
             // 
@@ -304,6 +267,18 @@ namespace QLKS.UserControls
             this.btn_ChonPhong.UseVisualStyleBackColor = true;
             this.btn_ChonPhong.Click += new System.EventHandler(this.btn_ChonPhong_Click);
             // 
+            // dtp_NgayNhan
+            // 
+            this.tableLayoutPanel2.SetColumnSpan(this.dtp_NgayNhan, 2);
+            this.dtp_NgayNhan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtp_NgayNhan.Enabled = false;
+            this.dtp_NgayNhan.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtp_NgayNhan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_NgayNhan.Location = new System.Drawing.Point(124, 92);
+            this.dtp_NgayNhan.Name = "dtp_NgayNhan";
+            this.dtp_NgayNhan.Size = new System.Drawing.Size(236, 31);
+            this.dtp_NgayNhan.TabIndex = 0;
+            // 
             // btn_Luu
             // 
             this.tableLayoutPanel2.SetColumnSpan(this.btn_Luu, 2);
@@ -320,6 +295,22 @@ namespace QLKS.UserControls
             this.timer.Enabled = true;
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.HeaderText = "Mã Phòng";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "Tên Phòng";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // UserControl_HopDong
             // 
@@ -359,9 +350,8 @@ namespace QLKS.UserControls
         private Label label6;
         private Button btn_Delete;
         private System.Windows.Forms.Timer timer;
+        private Button btn_Luu;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private Button btn_Luu;
     }
 }
