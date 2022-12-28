@@ -66,7 +66,7 @@
             // panel_View
             // 
             this.panel_View.AutoSize = true;
-            this.panel_View.BackgroundImage = global::QLKS.Properties.Resources.chinh;
+            this.panel_View.BackgroundImage = global::QLKS.Properties.Resources._308511205_794990031772180_1985672587144526876_n;
             this.panel_View.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel_View.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_View.Location = new System.Drawing.Point(253, 55);
