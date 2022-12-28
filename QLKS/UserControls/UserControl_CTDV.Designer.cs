@@ -30,22 +30,22 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgv_DV = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_Luu = new System.Windows.Forms.Button();
             this.btn_Xoa = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label_TongTien = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dgv_DVChon = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label_TongTien = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DV)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
@@ -58,8 +58,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.dgv_DV, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dgv_DVChon, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -87,29 +86,65 @@
             this.dgv_DV.TabIndex = 4;
             this.dgv_DV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DichVu_CellContentClick);
             // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.HeaderText = "Mã Dịch Vụ";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "Dịch Vụ";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.HeaderText = "Giá";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.HeaderText = "Thêm";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Text = "Thêm";
+            this.Column4.ToolTipText = "Thêm";
+            this.Column4.UseColumnTextForButtonValue = true;
+            // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.btn_Luu, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btn_Xoa, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label1, 0, 1);
+            this.tableLayoutPanel3.ColumnCount = 4;
+            this.tableLayoutPanel1.SetColumnSpan(this.tableLayoutPanel3, 2);
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.Controls.Add(this.btn_Luu, 3, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btn_Xoa, 2, 1);
             this.tableLayoutPanel3.Controls.Add(this.label_TongTien, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label1, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(389, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(380, 155);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(766, 155);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // btn_Luu
             // 
             this.btn_Luu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_Luu.Location = new System.Drawing.Point(193, 36);
+            this.btn_Luu.Location = new System.Drawing.Point(576, 114);
             this.btn_Luu.Name = "btn_Luu";
             this.btn_Luu.Size = new System.Drawing.Size(113, 38);
             this.btn_Luu.TabIndex = 0;
@@ -120,49 +155,13 @@
             // btn_Xoa
             // 
             this.btn_Xoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_Xoa.Location = new System.Drawing.Point(3, 36);
+            this.btn_Xoa.Location = new System.Drawing.Point(385, 114);
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.Size = new System.Drawing.Size(113, 38);
             this.btn_Xoa.TabIndex = 1;
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.UseVisualStyleBackColor = true;
             this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(97, 130);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 25);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Tổng Tiền";
-            // 
-            // label_TongTien
-            // 
-            this.label_TongTien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label_TongTien.AutoSize = true;
-            this.label_TongTien.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label_TongTien.Location = new System.Drawing.Point(193, 130);
-            this.label_TongTien.Name = "label_TongTien";
-            this.label_TongTien.Size = new System.Drawing.Size(22, 25);
-            this.label_TongTien.TabIndex = 3;
-            this.label_TongTien.Text = "0";
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(380, 155);
-            this.tableLayoutPanel2.TabIndex = 2;
             // 
             // dgv_DVChon
             // 
@@ -221,37 +220,38 @@
             this.dataGridViewButtonColumn1.ToolTipText = "Xóa";
             this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
             // 
-            // Column4
+            // label_TongTien
             // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.HeaderText = "Thêm";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Text = "Thêm";
-            this.Column4.ToolTipText = "Thêm";
-            this.Column4.UseColumnTextForButtonValue = true;
+            this.label_TongTien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label_TongTien.AutoSize = true;
+            this.label_TongTien.Location = new System.Drawing.Point(194, 130);
+            this.label_TongTien.Name = "label_TongTien";
+            this.label_TongTien.Size = new System.Drawing.Size(22, 25);
+            this.label_TongTien.TabIndex = 2;
+            this.label_TongTien.Text = "0";
             // 
-            // Column3
+            // label1
             // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.HeaderText = "Giá";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(98, 130);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 25);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Tổng Tiền";
             // 
-            // Column2
+            // label2
             // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Dịch Vụ";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Mã Dịch Vụ";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Visible = false;
+            this.label2.AutoSize = true;
+            this.tableLayoutPanel3.SetColumnSpan(this.label2, 4);
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(760, 77);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Chọn Dịch Vụ";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UserControl_CTDV
             // 
@@ -276,11 +276,8 @@
         private TableLayoutPanel tableLayoutPanel3;
         private Button btn_Luu;
         private Button btn_Xoa;
-        private TableLayoutPanel tableLayoutPanel2;
         private DataGridView dgv_DV;
         private DataGridView dgv_DVChon;
-        private Label label1;
-        private Label label_TongTien;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn Column5;
@@ -290,5 +287,8 @@
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewButtonColumn Column4;
+        private Label label_TongTien;
+        private Label label1;
+        private Label label2;
     }
 }

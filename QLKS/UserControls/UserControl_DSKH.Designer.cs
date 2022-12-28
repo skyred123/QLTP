@@ -41,6 +41,7 @@
             this.btn_TimKiem = new System.Windows.Forms.Button();
             this.txt_TimKiem = new System.Windows.Forms.TextBox();
             this.btn_Xoa = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_KhachHang)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -150,10 +151,11 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel2.Controls.Add(this.label1, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label1, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.btn_TimKiem, 2, 5);
-            this.tableLayoutPanel2.Controls.Add(this.txt_TimKiem, 2, 2);
+            this.tableLayoutPanel2.Controls.Add(this.txt_TimKiem, 2, 3);
             this.tableLayoutPanel2.Controls.Add(this.btn_Xoa, 3, 5);
+            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -170,7 +172,7 @@
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Location = new System.Drawing.Point(153, 66);
+            this.label1.Location = new System.Drawing.Point(153, 99);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 25);
             this.label1.TabIndex = 0;
@@ -191,7 +193,7 @@
             // 
             this.tableLayoutPanel2.SetColumnSpan(this.txt_TimKiem, 2);
             this.txt_TimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_TimKiem.Location = new System.Drawing.Point(309, 69);
+            this.txt_TimKiem.Location = new System.Drawing.Point(309, 102);
             this.txt_TimKiem.Name = "txt_TimKiem";
             this.txt_TimKiem.Size = new System.Drawing.Size(306, 27);
             this.txt_TimKiem.TabIndex = 8;
@@ -206,6 +208,20 @@
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.UseVisualStyleBackColor = true;
             this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.label2, 5);
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.tableLayoutPanel2.SetRowSpan(this.label2, 2);
+            this.label2.Size = new System.Drawing.Size(762, 66);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Danh Sánh Khách Hàng";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UserControl_DSKH
             // 
@@ -238,5 +254,6 @@
         private Button btn_TimKiem;
         private TextBox txt_TimKiem;
         private Button btn_Xoa;
+        private Label label2;
     }
 }

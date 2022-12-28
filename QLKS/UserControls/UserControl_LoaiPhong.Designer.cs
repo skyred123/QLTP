@@ -42,6 +42,7 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_Them = new System.Windows.Forms.Button();
             this.btn_Sua = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_LoaiPhong)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -55,14 +56,15 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.55844F));
             this.tableLayoutPanel1.Controls.Add(this.dgv_LoaiPhong, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(602, 462);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(602, 419);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dgv_LoaiPhong
@@ -75,11 +77,11 @@
             this.Column3,
             this.Column4});
             this.dgv_LoaiPhong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_LoaiPhong.Location = new System.Drawing.Point(3, 51);
+            this.dgv_LoaiPhong.Location = new System.Drawing.Point(3, 60);
             this.dgv_LoaiPhong.Name = "dgv_LoaiPhong";
             this.dgv_LoaiPhong.RowHeadersWidth = 51;
             this.dgv_LoaiPhong.RowTemplate.Height = 29;
-            this.dgv_LoaiPhong.Size = new System.Drawing.Size(345, 344);
+            this.dgv_LoaiPhong.Size = new System.Drawing.Size(345, 356);
             this.dgv_LoaiPhong.TabIndex = 0;
             this.dgv_LoaiPhong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_LoaiPhong_CellContentClick);
             // 
@@ -130,7 +132,7 @@
             this.tableLayoutPanel2.Controls.Add(this.txt_Gia, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(354, 51);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(354, 60);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 5;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -138,13 +140,13 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(245, 344);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(245, 356);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 68);
+            this.label1.Location = new System.Drawing.Point(3, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 20);
             this.label1.TabIndex = 0;
@@ -153,7 +155,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 136);
+            this.label2.Location = new System.Drawing.Point(3, 142);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 20);
             this.label2.TabIndex = 1;
@@ -162,7 +164,7 @@
             // txt_LoaiPhong
             // 
             this.txt_LoaiPhong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_LoaiPhong.Location = new System.Drawing.Point(95, 71);
+            this.txt_LoaiPhong.Location = new System.Drawing.Point(95, 74);
             this.txt_LoaiPhong.Name = "txt_LoaiPhong";
             this.txt_LoaiPhong.Size = new System.Drawing.Size(147, 27);
             this.txt_LoaiPhong.TabIndex = 2;
@@ -170,7 +172,7 @@
             // txt_Gia
             // 
             this.txt_Gia.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_Gia.Location = new System.Drawing.Point(95, 139);
+            this.txt_Gia.Location = new System.Drawing.Point(95, 145);
             this.txt_Gia.Name = "txt_Gia";
             this.txt_Gia.Size = new System.Drawing.Size(147, 27);
             this.txt_Gia.TabIndex = 3;
@@ -184,13 +186,13 @@
             this.tableLayoutPanel3.Controls.Add(this.btn_Them, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btn_Sua, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 207);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 216);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel2.SetRowSpan(this.tableLayoutPanel3, 2);
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(239, 134);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(239, 137);
             this.tableLayoutPanel3.TabIndex = 4;
             // 
             // btn_Them
@@ -213,15 +215,29 @@
             this.btn_Sua.UseVisualStyleBackColor = true;
             this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.label3, 2);
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(596, 57);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Phòng";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // UserControl_LoaiPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UserControl_LoaiPhong";
-            this.Size = new System.Drawing.Size(602, 462);
+            this.Size = new System.Drawing.Size(602, 419);
             this.Load += new System.EventHandler(this.UserControl_LoaiPhong_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_LoaiPhong)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -246,5 +262,6 @@
         private TableLayoutPanel tableLayoutPanel3;
         private Button btn_Them;
         private Button btn_Sua;
+        private Label label3;
     }
 }

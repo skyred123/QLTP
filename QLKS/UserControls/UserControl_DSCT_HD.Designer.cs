@@ -38,6 +38,7 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_CTHDDV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_CTHD)).BeginInit();
@@ -50,6 +51,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.Controls.Add(this.dgv_CTHDDV, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.dgv_CTHD, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -67,11 +69,11 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.dgv_CTHDDV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_CTHDDV.Location = new System.Drawing.Point(502, 72);
+            this.dgv_CTHDDV.Location = new System.Drawing.Point(3, 72);
             this.dgv_CTHDDV.Name = "dgv_CTHDDV";
             this.dgv_CTHDDV.RowHeadersWidth = 51;
             this.dgv_CTHDDV.RowTemplate.Height = 29;
-            this.dgv_CTHDDV.Size = new System.Drawing.Size(244, 421);
+            this.dgv_CTHDDV.Size = new System.Drawing.Size(493, 421);
             this.dgv_CTHDDV.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -100,11 +102,11 @@
             this.Column3,
             this.Column4});
             this.dgv_CTHD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_CTHD.Location = new System.Drawing.Point(3, 72);
+            this.dgv_CTHD.Location = new System.Drawing.Point(502, 72);
             this.dgv_CTHD.Name = "dgv_CTHD";
             this.dgv_CTHD.RowHeadersWidth = 51;
             this.dgv_CTHD.RowTemplate.Height = 29;
-            this.dgv_CTHD.Size = new System.Drawing.Size(493, 421);
+            this.dgv_CTHD.Size = new System.Drawing.Size(244, 421);
             this.dgv_CTHD.TabIndex = 0;
             this.dgv_CTHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CTHD_CellContentClick);
             // 
@@ -151,6 +153,19 @@
             this.Column4.ToolTipText = "Dịch Vụ";
             this.Column4.UseColumnTextForButtonValue = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.label1, 2);
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(743, 69);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Hóa Dơn Dịch Vụ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // UserControl_DSCT_HD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -160,6 +175,7 @@
             this.Size = new System.Drawing.Size(749, 496);
             this.Load += new System.EventHandler(this.UserControl_DSCT_HD_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_CTHDDV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_CTHD)).EndInit();
             this.ResumeLayout(false);
@@ -178,5 +194,6 @@
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewButtonColumn Column4;
+        private Label label1;
     }
 }

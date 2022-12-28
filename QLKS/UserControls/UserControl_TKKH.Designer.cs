@@ -39,6 +39,7 @@
             this.btn_Luu = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_Delete = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +58,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btn_Luu, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.btn_Delete, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -168,6 +170,19 @@
             this.btn_Delete.UseVisualStyleBackColor = true;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.label5, 2);
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(3, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(466, 91);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Khách Hàng";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // UserControl_TKKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -195,5 +210,6 @@
         private Button btn_Luu;
         private Label label4;
         private Button btn_Delete;
+        private Label label5;
     }
 }

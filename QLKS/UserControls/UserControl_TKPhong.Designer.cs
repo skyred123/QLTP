@@ -68,15 +68,15 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(502, 502);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(502, 507);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // Link_LoaiPhong
             // 
             this.Link_LoaiPhong.AutoSize = true;
             this.Link_LoaiPhong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Link_LoaiPhong.Location = new System.Drawing.Point(3, 250);
+            this.Link_LoaiPhong.Location = new System.Drawing.Point(3, 283);
             this.Link_LoaiPhong.Name = "Link_LoaiPhong";
             this.Link_LoaiPhong.Size = new System.Drawing.Size(245, 20);
             this.Link_LoaiPhong.TabIndex = 17;
@@ -87,9 +87,9 @@
             // btn_Xoa
             // 
             this.btn_Xoa.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_Xoa.Location = new System.Drawing.Point(111, 353);
+            this.btn_Xoa.Location = new System.Drawing.Point(111, 408);
             this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(137, 44);
+            this.btn_Xoa.Size = new System.Drawing.Size(137, 55);
             this.btn_Xoa.TabIndex = 11;
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.UseVisualStyleBackColor = true;
@@ -116,9 +116,9 @@
             // btn_Luu
             // 
             this.btn_Luu.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_Luu.Location = new System.Drawing.Point(362, 353);
+            this.btn_Luu.Location = new System.Drawing.Point(362, 408);
             this.btn_Luu.Name = "btn_Luu";
-            this.btn_Luu.Size = new System.Drawing.Size(137, 44);
+            this.btn_Luu.Size = new System.Drawing.Size(137, 55);
             this.btn_Luu.TabIndex = 10;
             this.btn_Luu.Text = "Lưu";
             this.btn_Luu.UseVisualStyleBackColor = true;
@@ -129,7 +129,7 @@
             this.cbx_Tang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbx_Tang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_Tang.FormattingEnabled = true;
-            this.cbx_Tang.Location = new System.Drawing.Point(254, 153);
+            this.cbx_Tang.Location = new System.Drawing.Point(254, 164);
             this.cbx_Tang.Name = "cbx_Tang";
             this.cbx_Tang.Size = new System.Drawing.Size(245, 28);
             this.cbx_Tang.TabIndex = 12;
@@ -139,7 +139,7 @@
             // 
             this.link_Tang.AutoSize = true;
             this.link_Tang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.link_Tang.Location = new System.Drawing.Point(3, 150);
+            this.link_Tang.Location = new System.Drawing.Point(3, 161);
             this.link_Tang.Name = "link_Tang";
             this.link_Tang.Size = new System.Drawing.Size(245, 20);
             this.link_Tang.TabIndex = 13;
@@ -151,7 +151,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Location = new System.Drawing.Point(3, 200);
+            this.label2.Location = new System.Drawing.Point(3, 222);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(245, 20);
             this.label2.TabIndex = 14;
@@ -160,7 +160,7 @@
             // txt_TrangThai
             // 
             this.txt_TrangThai.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_TrangThai.Location = new System.Drawing.Point(254, 203);
+            this.txt_TrangThai.Location = new System.Drawing.Point(254, 225);
             this.txt_TrangThai.Name = "txt_TrangThai";
             this.txt_TrangThai.Size = new System.Drawing.Size(245, 27);
             this.txt_TrangThai.TabIndex = 15;
@@ -170,7 +170,7 @@
             this.cbx_LoaiPhong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbx_LoaiPhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_LoaiPhong.FormattingEnabled = true;
-            this.cbx_LoaiPhong.Location = new System.Drawing.Point(254, 253);
+            this.cbx_LoaiPhong.Location = new System.Drawing.Point(254, 286);
             this.cbx_LoaiPhong.Name = "cbx_LoaiPhong";
             this.cbx_LoaiPhong.Size = new System.Drawing.Size(245, 28);
             this.cbx_LoaiPhong.TabIndex = 16;
@@ -181,7 +181,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UserControl_TKPhong";
-            this.Size = new System.Drawing.Size(502, 502);
+            this.Size = new System.Drawing.Size(502, 507);
             this.Load += new System.EventHandler(this.UserControl_TTPhong_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
