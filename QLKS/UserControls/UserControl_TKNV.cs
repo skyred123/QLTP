@@ -89,9 +89,8 @@ namespace QLKS.UserControls
             }
             if (ViewData.Instance.GetUpdate())
             {
-                if (ViewData.Instance.GetNhanVien() != null)
+                if (ViewData.Instance.GetNhanVien() == null)
                 {
-                    txt_TenMK.Text = "Admin";
                 }
                 else
                 {

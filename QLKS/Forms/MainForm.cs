@@ -21,6 +21,7 @@ namespace QLKS.Forms
     {
         public MainForm()
         {
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
         }
         public void HideMenu()
@@ -153,6 +154,11 @@ namespace QLKS.Forms
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel_View_Paint(object sender, PaintEventArgs e)
         {
 
         }

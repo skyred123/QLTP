@@ -41,8 +41,8 @@ namespace Controller.UserControls_Controller
                         {
                             item.Name = user.Name;
                             item.Password = mkm2;
-                            Server.Instance.UpdateData().UpdateUser(user);
-                            return "Lưu Thành Công 1";
+                            Server.Instance.UpdateData().UpdateUser(item);
+                            return "Lưu Thành Công";
                         }
                     }
                     else

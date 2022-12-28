@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel_View = new System.Windows.Forms.Panel();
             this.panel_Menu = new System.Windows.Forms.Panel();
             this.btn_DangXuat = new System.Windows.Forms.Button();
@@ -65,11 +66,14 @@
             // panel_View
             // 
             this.panel_View.AutoSize = true;
+            this.panel_View.BackgroundImage = global::QLKS.Properties.Resources.chinh;
+            this.panel_View.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel_View.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_View.Location = new System.Drawing.Point(253, 59);
+            this.panel_View.Location = new System.Drawing.Point(253, 55);
             this.panel_View.Name = "panel_View";
-            this.panel_View.Size = new System.Drawing.Size(795, 507);
+            this.panel_View.Size = new System.Drawing.Size(795, 467);
             this.panel_View.TabIndex = 1;
+            this.panel_View.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_View_Paint);
             // 
             // panel_Menu
             // 
@@ -86,9 +90,9 @@
             this.panel_Menu.Controls.Add(this.panel_NhanVien);
             this.panel_Menu.Controls.Add(this.btn_NhanVien);
             this.panel_Menu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Menu.Location = new System.Drawing.Point(3, 59);
+            this.panel_Menu.Location = new System.Drawing.Point(3, 55);
             this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(244, 507);
+            this.panel_Menu.Size = new System.Drawing.Size(244, 467);
             this.panel_Menu.TabIndex = 0;
             // 
             // btn_DangXuat
@@ -96,8 +100,11 @@
             this.btn_DangXuat.BackColor = System.Drawing.Color.CadetBlue;
             this.btn_DangXuat.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_DangXuat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_DangXuat.Image = global::QLKS.Properties.Resources.exit;
+            this.btn_DangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_DangXuat.Location = new System.Drawing.Point(0, 745);
             this.btn_DangXuat.Name = "btn_DangXuat";
+            this.btn_DangXuat.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_DangXuat.Size = new System.Drawing.Size(223, 50);
             this.btn_DangXuat.TabIndex = 11;
             this.btn_DangXuat.Text = "Đăng Xuất";
@@ -151,8 +158,11 @@
             this.btn_HopDong.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btn_HopDong.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_HopDong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_HopDong.Image = global::QLKS.Properties.Resources.document_signed;
+            this.btn_HopDong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_HopDong.Location = new System.Drawing.Point(0, 605);
             this.btn_HopDong.Name = "btn_HopDong";
+            this.btn_HopDong.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_HopDong.Size = new System.Drawing.Size(223, 50);
             this.btn_HopDong.TabIndex = 9;
             this.btn_HopDong.Text = "Hợp Đồng";
@@ -190,8 +200,11 @@
             this.btn_DichVu.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btn_DichVu.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_DichVu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_DichVu.Image = global::QLKS.Properties.Resources.hamburger_soda;
+            this.btn_DichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_DichVu.Location = new System.Drawing.Point(0, 510);
             this.btn_DichVu.Name = "btn_DichVu";
+            this.btn_DichVu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_DichVu.Size = new System.Drawing.Size(223, 50);
             this.btn_DichVu.TabIndex = 7;
             this.btn_DichVu.Text = "Dịch Vụ";
@@ -245,8 +258,11 @@
             this.btn_Phong.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btn_Phong.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_Phong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Phong.Image = ((System.Drawing.Image)(resources.GetObject("btn_Phong.Image")));
+            this.btn_Phong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Phong.Location = new System.Drawing.Point(0, 370);
             this.btn_Phong.Name = "btn_Phong";
+            this.btn_Phong.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_Phong.Size = new System.Drawing.Size(223, 50);
             this.btn_Phong.TabIndex = 5;
             this.btn_Phong.Text = "Phòng";
@@ -298,10 +314,14 @@
             // btn_KhachHang
             // 
             this.btn_KhachHang.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_KhachHang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_KhachHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_KhachHang.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_KhachHang.Image = global::QLKS.Properties.Resources.user;
+            this.btn_KhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_KhachHang.Location = new System.Drawing.Point(0, 230);
             this.btn_KhachHang.Name = "btn_KhachHang";
+            this.btn_KhachHang.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_KhachHang.Size = new System.Drawing.Size(223, 50);
             this.btn_KhachHang.TabIndex = 3;
             this.btn_KhachHang.Text = "Khách Hàng";
@@ -392,8 +412,11 @@
             this.btn_NhanVien.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_NhanVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_NhanVien.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_NhanVien.Image = global::QLKS.Properties.Resources.user;
+            this.btn_NhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_NhanVien.Location = new System.Drawing.Point(0, 0);
             this.btn_NhanVien.Name = "btn_NhanVien";
+            this.btn_NhanVien.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_NhanVien.Size = new System.Drawing.Size(223, 50);
             this.btn_NhanVien.TabIndex = 1;
             this.btn_NhanVien.Text = "Nhân Viên";
@@ -414,14 +437,14 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1051, 569);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1051, 525);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1051, 569);
+            this.ClientSize = new System.Drawing.Size(1051, 525);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MainForm";
             this.Text = "MainForm";

@@ -14,15 +14,15 @@ using System.Windows.Forms;
 
 namespace QLKS.UserControls
 {
-    public partial class UserControl_CT_HDDV : UserControl
+    public partial class UserControl_HDDV : UserControl
     {
-        public static UserControl_CT_HDDV instance;
+        public static UserControl_HDDV instance;
         public DataGridView dataGridView;
         public long tongTien;
         private Phong phong;
         private Form form;
 
-        public UserControl_CT_HDDV(Phong p,Form f)
+        public UserControl_HDDV(Phong p,Form f)
         {
             InitializeComponent();
             tongTien = 0;

@@ -1,6 +1,6 @@
 ﻿namespace QLKS.UserControls
 {
-    partial class UserControl_CT_HDDV
+    partial class UserControl_HDDV
     {
         /// <summary> 
         /// Required designer variable.

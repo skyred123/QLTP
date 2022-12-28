@@ -17,6 +17,7 @@ namespace QLKS.Forms
     {
         public EditForm()
         {
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
         }
 

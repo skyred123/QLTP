@@ -19,6 +19,7 @@ namespace QLKS.Forms
     {
         public LoginForm()
         {
+            StartPosition= FormStartPosition.CenterScreen;
             InitializeComponent();
         }
 

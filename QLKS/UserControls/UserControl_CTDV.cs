@@ -84,11 +84,11 @@ namespace QLKS.UserControls
 
         private void btn_Luu_Click(object sender, EventArgs e)
         {
-            UserControl_CT_HDDV.instance.tongTien = long.Parse(label_TongTien.Text);
-            UserControl_CT_HDDV.instance.dataGridView.Rows.Clear();
+            UserControl_HDDV.instance.tongTien = long.Parse(label_TongTien.Text);
+            UserControl_HDDV.instance.dataGridView.Rows.Clear();
             foreach(DataGridViewRow row in dgv_DVChon.Rows)
             {
-                UserControl_CT_HDDV.instance.dataGridView.Rows.Add(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString(), row.Cells[3].Value.ToString());
+                UserControl_HDDV.instance.dataGridView.Rows.Add(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString(), row.Cells[3].Value.ToString());
             }
             form.Hide();
         }
