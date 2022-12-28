@@ -129,7 +129,10 @@ namespace QLKS.UserControls
                 if (UC_TKNV_Controller.Instance.UpdateNhanVien(item, ViewData.Instance.GetNhanVienEdit()))
                 {
                     QLKS.Controlss.Instance.HidePanel(panel_DTTTK);
-                    QLKS.Controlss.Instance.AddDGVs(UserControl_DSNV.instance.dataGridView, new NhanVien());
+                    if (UserControl_DSNV.instance != null)
+                    {
+                        QLKS.Controlss.Instance.AddDGVs(UserControl_DSNV.instance.dataGridView, new NhanVien());
+                    }
                 }
             }
         }

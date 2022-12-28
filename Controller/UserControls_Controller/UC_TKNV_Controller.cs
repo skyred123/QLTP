@@ -111,7 +111,7 @@ namespace Controller.UserControls_Controller
                 }
                 if(nv == ViewData.nhanVien)
                 {
-                    ViewData.nhanVien= nhanVien;
+                    ViewData.nhanVien= Server.Instance.GetData().GetNhanVien(nhanVien.MaNV);
                 }
                 ViewData.nhanVienEdit = Server.Instance.GetData().GetNhanVien(nhanVien.MaNV);
                 MessageBox.Show("Lưu Thành Công");

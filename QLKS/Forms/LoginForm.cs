@@ -36,8 +36,8 @@ namespace QLKS.Forms
 
         private void DangNhap_Load(object sender, EventArgs e)
         {
-            /*txt_Ten.Text = "0123456789";
-            txt_MatKhau.Text = "1";*/
+            txt_Ten.Text = "0123456789";
+            txt_MatKhau.Text = "1";
         }
     }
 }

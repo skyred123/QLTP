@@ -55,7 +55,7 @@ namespace QLKS.UserControls
                 if(UC_TKKH_Controller.Instance.UpdateKhachHang(kh, null))
                 {
                     MessageBox.Show("Lưu Thành Công");
-                    QLKS.Controlss.Instance.AddDGV(UserControl_DSKH.instance.dataGridView, new KhachHang());
+                    //QLKS.Controlss.Instance.AddDGV(UserControl_DSKH.instance.dataGridView, new KhachHang());
                 }
             }
         }

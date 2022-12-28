@@ -36,7 +36,6 @@ namespace QLKS.UserControls
                 label_TinhTrang.Text = "Phòng Trống";
                 label_TenKH.Text = "Phòng Trống";
                 datDichVuToolStripMenuItem.Visible = false;
-                this.BackColor = Color.LawnGreen;
                 cT_HDs = null;
             }
             else
@@ -54,7 +53,6 @@ namespace QLKS.UserControls
                         label_TinhTrang.Text = "Phòng Trống";
                         label_TenKH.Text = "Phòng Trống";
                         datDichVuToolStripMenuItem.Visible = false;
-                        this.BackColor = Color.LawnGreen;
                         cT_HDs = null;
                     }
                 }

@@ -26,15 +26,16 @@ namespace QLKS.UserControls
 
         private void UserControl_HoaDon_Load(object sender, EventArgs e)
         {
-            label_TenNV.Text = "NV: "+ cT_HD.HopDong.NhanVien.TenNV;
+            /*label_TenNV.Text = "NV: "+ cT_HD.HopDong.NhanVien.TenNV;
             label_TenKH.Text = "KH: " + cT_HD.HopDong.KhachHang.TenKH;
             label_TenPhong.Text = phong.TenPhong;
             label_NgayDat.Text = cT_HD.NgayThue.ToString();
             label_NgayTra.Text = cT_HD.NgayTra.ToString();
             TimeSpan time = (cT_HD.NgayTra - cT_HD.NgayThue);
             Time.Text = "Thời Gian Thuê: "+ ((int)time.TotalHours).ToString();
-            Load_DGV();
-            Luu_HoaDon();
+            dgv_DV.AutoSize= true;
+            Load_DGV();*/
+            //Luu_HoaDon();
         }
         public void Luu_HoaDon()
         {
@@ -76,8 +77,22 @@ namespace QLKS.UserControls
         Bitmap bitmap;
         public void print()
         {
-            bitmap = new Bitmap(this.Width, this.Height);
-            this.DrawToBitmap(bitmap, new Rectangle(0, 0, this.Width, this.Height));
+            label_TenNV.Text = "NV: " + cT_HD.HopDong.NhanVien.TenNV;
+            label_TenKH.Text = "KH: " + cT_HD.HopDong.KhachHang.TenKH;
+            label_TenPhong.Text = phong.TenPhong;
+            label_NgayDat.Text = cT_HD.NgayThue.ToString();
+            label_NgayTra.Text = cT_HD.NgayTra.ToString();
+            TimeSpan time = (cT_HD.NgayTra - cT_HD.NgayThue);
+            Time.Text = "Thời Gian Thuê: " + ((int)time.TotalHours).ToString();
+            dgv_DV.AutoSize = true;
+            Load_DGV();
+            print1();
+        }
+        public void print1()
+       {
+            
+            bitmap = new Bitmap(panel1.Width, panel1.Height);
+            panel1.DrawToBitmap(bitmap, new Rectangle(0, 0, panel1.Width, panel1.Height));
             printPreviewDialog.Document = printDocument;
             printPreviewDialog.ShowDialog();
         }
