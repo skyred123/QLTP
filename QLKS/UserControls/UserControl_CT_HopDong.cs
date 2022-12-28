@@ -81,6 +81,11 @@ namespace QLKS.UserControls
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
+            foreach (DataGridViewRow row in dgv_PhongChon.Rows)
+            {
+                Phong phong = GetData.Instance.GetPhong((Guid)row.Cells[0].Value);
+                Controlss.Instance.AddDGV(dgv_PhongTrong, phong);
+            }
             dgv_PhongChon.Rows.Clear();
         }
     }

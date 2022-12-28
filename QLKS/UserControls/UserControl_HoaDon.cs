@@ -86,6 +86,7 @@ namespace QLKS.UserControls
             Time.Text = "Thời Gian Thuê: " + ((int)time.TotalHours).ToString();
             dgv_DV.AutoSize = true;
             Load_DGV();
+            Luu_HoaDon();
             print1();
         }
         public void print1()
