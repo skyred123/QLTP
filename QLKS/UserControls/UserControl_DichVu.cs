@@ -98,7 +98,7 @@ namespace QLKS.UserControls
                 {
                     if (dichVu != null)
                     {
-                        if (dichVu.CT_HDDV.Count != 0)
+                        if (dichVu.CT_HDDV.Count == 0)
                         {
                             DeleteData.Instance.DeleteDichVu(dichVu);
                             List_DichVu();
