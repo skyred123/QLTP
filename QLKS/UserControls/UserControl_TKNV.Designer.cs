@@ -161,6 +161,7 @@
             // 
             this.image_Avatar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.image_Avatar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.image_Avatar.Image = global::QLKS.Properties.Resources.AvatarRong;
             this.image_Avatar.Location = new System.Drawing.Point(25, 4);
             this.image_Avatar.Margin = new System.Windows.Forms.Padding(25, 4, 3, 4);
             this.image_Avatar.Name = "image_Avatar";

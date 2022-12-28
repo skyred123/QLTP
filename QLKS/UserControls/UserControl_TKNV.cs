@@ -112,7 +112,7 @@ namespace QLKS.UserControls
             item.MaCV = ((ChucVu)cbx_ChucVu.SelectedItem).MaCV;
             if (image_Avatar.Image == null)
             {
-                item.Image = (byte[])converter.ConvertTo(Image.FromFile("D:\\Eleaning\\Code\\QLKS\\QLKS\\Image\\AvatarRong.jpg"), typeof(byte[]));
+                //item.Image = (byte[])converter.ConvertTo(Image.FromFile("D:\\Eleaning\\Code\\QLKS\\QLKS\\Image\\AvatarRong.jpg"), typeof(byte[]));
             }
             else
             {

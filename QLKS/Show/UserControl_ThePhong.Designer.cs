@@ -48,6 +48,7 @@ namespace QLKS.UserControls
             // pbx_Image
             // 
             this.pbx_Image.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbx_Image.Image = global::QLKS.Properties.Resources.house;
             this.pbx_Image.Location = new System.Drawing.Point(22, 18);
             this.pbx_Image.Name = "pbx_Image";
             this.pbx_Image.Size = new System.Drawing.Size(109, 140);
