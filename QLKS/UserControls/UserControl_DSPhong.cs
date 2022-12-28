@@ -40,6 +40,7 @@ namespace QLKS.UserControls
                 label = new Label();
                 label.Dock = DockStyle.Top;
                 label.Text = "Tầng " + tang.SoTang;
+                label.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 
                 flowLayout = new FlowLayoutPanel();
                 flowLayout.AutoSize = true;

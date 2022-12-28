@@ -54,6 +54,7 @@
             this.btn_NhanVien1 = new System.Windows.Forms.Button();
             this.btn_NhanVien = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel_Menu.SuspendLayout();
             this.panel_HopDong.SuspendLayout();
             this.panel_DichVu.SuspendLayout();
@@ -69,9 +70,9 @@
             this.panel_View.BackgroundImage = global::QLKS.Properties.Resources._308511205_794990031772180_1985672587144526876_n;
             this.panel_View.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel_View.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_View.Location = new System.Drawing.Point(253, 55);
+            this.panel_View.Location = new System.Drawing.Point(253, 80);
             this.panel_View.Name = "panel_View";
-            this.panel_View.Size = new System.Drawing.Size(795, 467);
+            this.panel_View.Size = new System.Drawing.Size(795, 442);
             this.panel_View.TabIndex = 1;
             this.panel_View.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_View_Paint);
             // 
@@ -90,9 +91,9 @@
             this.panel_Menu.Controls.Add(this.panel_NhanVien);
             this.panel_Menu.Controls.Add(this.btn_NhanVien);
             this.panel_Menu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Menu.Location = new System.Drawing.Point(3, 55);
+            this.panel_Menu.Location = new System.Drawing.Point(3, 80);
             this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(244, 467);
+            this.panel_Menu.Size = new System.Drawing.Size(244, 442);
             this.panel_Menu.TabIndex = 0;
             // 
             // btn_DangXuat
@@ -430,15 +431,30 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.panel_View, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel_Menu, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.33334F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1051, 525);
             this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label1.Location = new System.Drawing.Point(253, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(795, 77);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Quản Lý";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -491,5 +507,6 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Button btn_KhachHang2;
         private Button btn_KhachHang1;
+        private Label label1;
     }
 }
